@@ -12,6 +12,9 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [showPageFlip, setShowPageFlip] = useState(false);
+  const [currentFlip, setCurrentFlip] = useState(0);
+  const [showPopup, setShowPopup] = useState(false);
 
   const navLinks = [
     { label: "Home", path: "/" },
@@ -20,6 +23,14 @@ const Header = () => {
     { label: "Career", path: "/career" },
     { label: "All Jobs", path: "/all-jobs" },
     { label: "Contact", path: "/contact" },
+  ];
+
+  const colors = [
+    "bg-blue-500",
+    "bg-green-500",
+    "bg-yellow-500",
+    "bg-purple-500",
+    "bg-pink-500",
   ];
 
   useEffect(() => {
@@ -51,8 +62,126 @@ const Header = () => {
     if (mobileMenuOpen) setMobileMenuOpen(false);
   };
 
+  const handleFaLayerClick = () => {
+    setShowPageFlip(true);
+    setCurrentFlip(0);
+  };
+
+  useEffect(() => {
+    if (!showPageFlip) return;
+
+    const flipInterval = setInterval(() => {
+      if (currentFlip < colors.length - 1) {
+        setCurrentFlip((prev) => prev + 1);
+      } else {
+        clearInterval(flipInterval);
+        setShowPageFlip(false);
+        setShowPopup(true);
+      }
+    }, 500);
+
+    return () => clearInterval(flipInterval);
+  }, [showPageFlip, currentFlip]);
+
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+
   return (
     <header className="fixed w-full z-50 top-0">
+      {/* Page Flip Animation */}
+      <AnimatePresence>
+        {showPageFlip && (
+          <motion.div
+            key="page-flip"
+            className="fixed bg-gray-900/90 inset-0 z-50 flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {colors.map((color, index) => (
+              <motion.div
+                key={index}
+                className={`absolute inset-0 ${color}`}
+                initial={{ rotateY: 0, opacity: 0 }}
+                animate={{
+                  rotateY: index <= currentFlip ? 180 : 0,
+                  opacity: index === currentFlip ? 1 : 0,
+                  zIndex: index === currentFlip ? 1 : 0,
+                }}
+                transition={{
+                  rotateY: { duration: 0.5, ease: "easeInOut" },
+                  opacity: { duration: 0.3 },
+                }}
+                style={{
+                  transformOrigin: "left center",
+                  backfaceVisibility: "hidden",
+                }}
+              />
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Full Screen Popup */}
+      <AnimatePresence>
+        {showPopup && (
+          <motion.div
+            key="popup"
+            className="fixed inset-0 z-50 bg-white flex flex-col"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <button
+              onClick={closePopup}
+              className="absolute top-4 right-4 p-2 text-gray-600 hover:bg-gray-100 rounded-full"
+            >
+              <FiX size={24} />
+            </button>
+
+            <motion.div
+              className="flex h-full"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            >
+              <div className="w-1/2 flex items-center justify-center bg-gray-100 p-8">
+                <motion.div
+                  initial={{ scale: 0.8 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.5, duration: 0.5 }}
+                >
+                  <h2 className="text-4xl font-bold mb-4">Ababil Group</h2>
+                  <p className="text-lg">
+                    Leading the way in innovation and excellence
+                  </p>
+                </motion.div>
+              </div>
+
+              <div className="w-1/2 flex items-center justify-center bg-blue-50 p-8">
+                <motion.div
+                  initial={{ scale: 0.8 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.7, duration: 0.5 }}
+                >
+                  <h2 className="text-4xl font-bold mb-4">Our Locations</h2>
+                  <ul className="space-y-2 text-lg">
+                    <li>Dhaka Headquarters</li>
+                    <li>Chittagong Office</li>
+                    <li>Sylhet Branch</li>
+                    <li>International Offices</li>
+                  </ul>
+                </motion.div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Header Content */}
       <AnimatePresence mode="wait">
         {scrollingDown ? (
           // Minimal Header (scrolling down)
@@ -85,6 +214,7 @@ const Header = () => {
                     className="p-2 text-white bg-gray-800 hover:bg-gray-700 rounded-full"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
+                    onClick={handleFaLayerClick}
                   >
                     <FaLayerGroup size={20} />
                   </motion.button>
@@ -141,6 +271,7 @@ const Header = () => {
                     className="p-2 text-gray-600 hover:bg-gray-100 rounded-full"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
+                    onClick={handleFaLayerClick}
                   >
                     <FaLayerGroup size={20} />
                   </motion.button>

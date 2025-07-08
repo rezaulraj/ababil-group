@@ -71,14 +71,14 @@ const HeroPeople = () => {
         <div className="max-w-2xl px-6 lg:px-12 py-32 text-left">
           <motion.h1
             style={{ x: textX, y: textY }}
-            className="text-4xl md:text-5xl lg:text-7xl font-semibold font-lato text-white leading-relaxed tracking-widest"
+            className="text-4xl md:text-5xl lg:text-7xl font-semibold font-lato text-white leading-relaxed tracking-widest select-none"
           >
             Abdul Rouf <br />
             Chowdhury
           </motion.h1>
           <motion.p
             style={{ x: textX, y: textY }}
-            className="text-sm text-white/80 mt-4 font-semibold"
+            className="text-sm text-white/80 mt-4 font-semibold select-none"
           >
             (22 September, 1937 – 18 February, 2023)
           </motion.p>
