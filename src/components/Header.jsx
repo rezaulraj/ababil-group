@@ -66,14 +66,15 @@ const Header = () => {
           >
             <div className="container mx-auto px-4">
               <div className="flex items-center justify-between h-16">
-                <motion.div
+                <motion.a
+                  href="/"
                   className="flex-shrink-0 bg-gray-800 p-2 rounded"
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5 }}
                 >
                   <img src={logoWhite} alt="Logo" className="h-8" />
-                </motion.div>
+                </motion.a>
                 <motion.div
                   className="flex items-center space-x-4"
                   initial={{ opacity: 0, x: 50 }}
@@ -103,12 +104,13 @@ const Header = () => {
           >
             <div className="container mx-auto px-4">
               <div className="flex items-center justify-between h-16 md:h-20">
-                {atTop ? (
-                  <img src={logoBlue} alt="Logo" className="h-8 md:h-10" />
-                ) : (
-                  <img src={logoWhite} alt="Logo" className="h-8 md:h-10" />
-                )}
-
+                <a href="/">
+                  {atTop ? (
+                    <img src={logoBlue} alt="Logo" className="h-8 md:h-10" />
+                  ) : (
+                    <img src={logoWhite} alt="Logo" className="h-8 md:h-10" />
+                  )}
+                </a>
                 <nav className="hidden md:flex items-center space-x-1 lg:space-x-4 mx-4">
                   {navLinks.map((link, index) => (
                     <motion.a
