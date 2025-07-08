@@ -99,11 +99,15 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className={`${atTop ? "bg-transparent" : "bg-white shadow-sm"}`}
+            className={`${atTop ? "bg-transparent" : "bg-black shadow-sm"}`}
           >
             <div className="container mx-auto px-4">
               <div className="flex items-center justify-between h-16 md:h-20">
-                <img src={logoBlue} alt="Logo" className="h-8 md:h-10" />
+                {atTop ? (
+                  <img src={logoBlue} alt="Logo" className="h-8 md:h-10" />
+                ) : (
+                  <img src={logoWhite} alt="Logo" className="h-8 md:h-10" />
+                )}
 
                 <nav className="hidden md:flex items-center space-x-1 lg:space-x-4 mx-4">
                   {navLinks.map((link, index) => (
@@ -111,7 +115,7 @@ const Header = () => {
                       key={index}
                       href={link.path}
                       className={`px-3 py-2 rounded-md text-sm lg:text-base font-medium ${
-                        atTop ? "text-white" : "text-gray-800"
+                        atTop ? "text-white" : "text-white"
                       }  hover:text-blue-600 transition-colors`}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
