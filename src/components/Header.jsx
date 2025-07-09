@@ -260,7 +260,7 @@ const Header = () => {
                 <div className="flex items-center space-x-4">
                   <motion.button
                     onClick={toggleSearch}
-                    className="p-2 text-gray-600 hover:bg-gray-100 rounded-full"
+                    className="p-2 text-gray-300 hover:bg-gray-100 hover:text-gray-600 rounded-full"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -268,7 +268,7 @@ const Header = () => {
                   </motion.button>
 
                   <motion.button
-                    className="p-2 text-gray-600 hover:bg-gray-100 rounded-full"
+                    className="p-2 text-gray-300 hover:bg-gray-100 hover:text-gray-600 rounded-full"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={handleFaLayerClick}

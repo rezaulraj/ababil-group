@@ -11,13 +11,13 @@ import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-screen-2xl mx-auto">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-4 mb-12">
           {/* Company Info */}
-          <div className="space-y-4">
+          <div className="space-y-4 lg:col-span-3 ">
             <h3 className="text-2xl font-bold text-blue-400">Rancon</h3>
-            <p className="text-gray-300">
+            <p className="text-gray-300 max-w-[300px]">
               Building the future with innovative solutions and exceptional
               service.
             </p>
@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
+          <div className="space-y-4 lg:col-span-2">
             <h4 className="text-lg font-semibold text-white">Quick Links</h4>
             <ul className="space-y-2">
               <li>
@@ -103,7 +103,7 @@ const Footer = () => {
           </div>
 
           {/* Services */}
-          <div className="space-y-4">
+          <div className="space-y-4 lg:col-span-2">
             <h4 className="text-lg font-semibold text-white">Services</h4>
             <ul className="space-y-2">
               <li>
@@ -150,7 +150,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-4">
+          <div className="space-y-4 lg:col-span-2">
             <h4 className="text-lg font-semibold text-white">Contact Us</h4>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
@@ -170,6 +170,29 @@ const Footer = () => {
                 <MdEmail className="text-blue-400" size={20} />
                 <p className="text-gray-400">info@rancon.com</p>
               </div>
+            </div>
+          </div>
+
+          <div className="space-y-4 lg:col-span-3">
+            <h4 className="text-lg font-semibold text-white">Follow Us</h4>
+            <div className="shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
+              <iframe
+                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100066224514696&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1387842505640830"
+                width="350"
+                height="350"
+                style={{
+                  border: "none",
+                  overflow: "hidden",
+                  scrollBehavior: "smooth",
+                  borderBlockColor: "#fff",
+                }}
+                scrolling="no"
+                frameBorder="0"
+                allowFullScreen={true}
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                className="w-[350px] h-[350px] rounded-2xl p-2 bg-amber-50"
+                title="Facebook Page Plugin"
+              ></iframe>
             </div>
           </div>
         </div>
