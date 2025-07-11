@@ -61,7 +61,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#"
+                  href="/"
                   className="text-gray-400 hover:text-blue-400 transition"
                 >
                   Home
@@ -69,31 +69,39 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/people-at-ababil-group"
                   className="text-gray-400 hover:text-blue-400 transition"
                 >
-                  About Us
+                  People At Ababil
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/media-and-news"
                   className="text-gray-400 hover:text-blue-400 transition"
                 >
-                  Services
+                  Media & News
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/career"
                   className="text-gray-400 hover:text-blue-400 transition"
                 >
-                  Projects
+                  Career
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/all-jobs"
+                  className="text-gray-400 hover:text-blue-400 transition"
+                >
+                  All Jobs
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/contact"
                   className="text-gray-400 hover:text-blue-400 transition"
                 >
                   Contact
