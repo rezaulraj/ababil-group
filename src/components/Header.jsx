@@ -198,12 +198,12 @@ const Header = () => {
               <div className="flex items-center justify-between h-22">
                 <motion.a
                   href="/"
-                  className="flex-shrink-0 bg-gray-100 p-1 rounded"
+                  className="flex-shrink-0 bg-gray-800 p-1 rounded"
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <img src={logo1} alt="Logo" className="h-16" />
+                  <img src={logo1} alt="Logo" className="h-16 filter brightness-5 invert" />
                 </motion.a>
                 <motion.div
                   className="flex items-center space-x-4"
@@ -212,7 +212,7 @@ const Header = () => {
                   transition={{ duration: 0.5 }}
                 >
                   <motion.button
-                    className="p-2 text-[#06334C] bg-white hover:bg-gray-100 rounded"
+                    className="p-2 text-white bg-gray-800 hover:bg-gray-800 rounded"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={handleFaLayerClick}
