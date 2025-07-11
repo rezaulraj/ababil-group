@@ -7,7 +7,7 @@ import {
   animate,
 } from "framer-motion";
 import bgimage from "../../assets/contact/herocontact.jpg?url";
-const HeroContact = () => {
+const HeroCareer = () => {
   const containerRef = useRef(null);
 
   // Scroll tracking
@@ -50,7 +50,7 @@ const HeroContact = () => {
   return (
     <section
       ref={containerRef}
-      className="relative h-[80vh] w-full overflow-hidden"
+      className="relative h-[90vh] w-full overflow-hidden"
     >
       {/* Background Image with Parallax */}
       <motion.div
@@ -63,12 +63,12 @@ const HeroContact = () => {
       />
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/80" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
 
       {/* Content */}
       <div className="relative z-10 h-full flex items-center">
         <motion.div
-          className="max-w-4xl px-8 lg:px-16"
+          className="max-w-5xl px-8 lg:px-16"
           style={{ x: textX, y: textY }}
         >
           <motion.h1
@@ -77,29 +77,19 @@ const HeroContact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            We're Here and <span className="text-blue-400">Ready</span> to
-            Assist You!
+            Build Your Career While{" "}
+            <span className="text-blue-400">Building the Nation</span>
           </motion.h1>
 
           <motion.p
-            className="text-lg md:text-xl text-gray-200 max-w-2xl mb-8"
+            className="text-lg md:text-xl text-gray-200 max-w-3xl mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Our team is available to answer your questions and help you with any
-            inquiries. Reach out to us today.
+            Be the Change and Become a Part of the Movement to Build a Stronger
+            Nation
           </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105">
-              Contact Us Now
-            </button>
-          </motion.div>
         </motion.div>
       </div>
 
@@ -110,8 +100,8 @@ const HeroContact = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
       >
-        <div className="animate-bounce flex flex-col items-center">
-          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+          <div className="animate-bounce w-6 h-10 border-2 border-white rounded-full flex justify-center">
             <div className="w-1 h-2 bg-white mt-2 rounded-full"></div>
           </div>
         </div>
@@ -119,5 +109,4 @@ const HeroContact = () => {
     </section>
   );
 };
-
-export default HeroContact;
+export default HeroCareer;

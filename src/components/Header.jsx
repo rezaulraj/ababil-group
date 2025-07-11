@@ -4,6 +4,7 @@ import { FiSearch, FiX, FiMenu } from "react-icons/fi";
 import { FaLayerGroup } from "react-icons/fa";
 import logoBlue from "/logoblue.png";
 import logoWhite from "/logowhite.png";
+import logo1 from "/logo1.png";
 
 const Header = () => {
   const [scrollingDown, setScrollingDown] = useState(false);
@@ -194,15 +195,15 @@ const Header = () => {
             className="bg-transparent"
           >
             <div className="container mx-auto px-4">
-              <div className="flex items-center justify-between h-16">
+              <div className="flex items-center justify-between h-22">
                 <motion.a
                   href="/"
-                  className="flex-shrink-0 bg-gray-800 p-2 rounded"
+                  className="flex-shrink-0 bg-gray-100 p-1 rounded"
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <img src={logoWhite} alt="Logo" className="h-8" />
+                  <img src={logo1} alt="Logo" className="h-16" />
                 </motion.a>
                 <motion.div
                   className="flex items-center space-x-4"
@@ -211,12 +212,12 @@ const Header = () => {
                   transition={{ duration: 0.5 }}
                 >
                   <motion.button
-                    className="p-2 text-white bg-gray-800 hover:bg-gray-700 rounded-full"
+                    className="p-2 text-[#06334C] bg-white hover:bg-gray-100 rounded"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={handleFaLayerClick}
                   >
-                    <FaLayerGroup size={20} />
+                    <FaLayerGroup size={32} />
                   </motion.button>
                 </motion.div>
               </div>
@@ -230,15 +231,19 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className={`${atTop ? "bg-transparent" : "bg-black shadow-sm"}`}
+            className={`${atTop ? "bg-transparent" : "bg-white shadow-sm"}`}
           >
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto">
               <div className="flex items-center justify-between h-16 md:h-20">
-                <a href="/">
+                <a href="/" className="">
                   {atTop ? (
-                    <img src={logoBlue} alt="Logo" className="h-8 md:h-10" />
+                    <img
+                      src={logo1}
+                      alt="Logo"
+                      className="h-38 filter brightness-5 invert"
+                    />
                   ) : (
-                    <img src={logoWhite} alt="Logo" className="h-8 md:h-10" />
+                    <img src={logo1} alt="Logo" className="h-38" />
                   )}
                 </a>
                 <nav className="hidden md:flex items-center space-x-1 lg:space-x-4 mx-4">
@@ -247,7 +252,7 @@ const Header = () => {
                       key={index}
                       href={link.path}
                       className={`px-3 py-2 rounded-md text-sm lg:text-base font-medium ${
-                        atTop ? "text-white" : "text-white"
+                        atTop ? "text-white" : "text-gray-800"
                       }  hover:text-blue-600 transition-colors`}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
@@ -260,7 +265,7 @@ const Header = () => {
                 <div className="flex items-center space-x-4">
                   <motion.button
                     onClick={toggleSearch}
-                    className="p-2 text-gray-300 hover:bg-gray-100 hover:text-gray-600 rounded-full"
+                    className="p-2 text-[#06334C] hover:bg-gray-300 hover:text-[#06334C] rounded-full"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -268,7 +273,7 @@ const Header = () => {
                   </motion.button>
 
                   <motion.button
-                    className="p-2 text-gray-300 hover:bg-gray-100 hover:text-gray-600 rounded-full"
+                    className="p-2 text-[#06334C] bg-gray-200 hover:bg-gray-300 hover:text-[#06334C] rounded-full"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={handleFaLayerClick}
@@ -278,7 +283,9 @@ const Header = () => {
 
                   <motion.button
                     onClick={toggleMobileMenu}
-                    className="md:hidden p-2 text-gray-600 hover:bg-gray-100 rounded-full"
+                    className={`md:hidden p-2 ${
+                      atTop ? "text-white" : "text-[#06334C]"
+                    } hover:bg-gray-100 rounded-full`}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -295,7 +302,7 @@ const Header = () => {
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="md:hidden overflow-hidden bg-white"
+                    className="md:hidden overflow-hidden bg-white rounded-md"
                   >
                     <div className="px-2 pt-2 pb-4 space-y-1">
                       {navLinks.map((link, index) => (

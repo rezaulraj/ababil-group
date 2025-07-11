@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import logoblue from "/logoblue.png";
+import logoblue from "/logo1.png";
 
 const HeroHome = () => {
   const videoLink =
@@ -56,8 +56,8 @@ const HeroHome = () => {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 text-center">
         {/* Animated Logo */}
-        <motion.div style={{ x: logoX, y: logoY }} className="mb-8">
-          <img src={logoblue} alt="Ababil Group Logo" className="h-42 w-auto" />
+        <motion.div style={{ x: logoX, y: logoY }} className="">
+          <img src={logoblue} alt="Ababil Group Logo" className="h-56 w-auto " />
         </motion.div>
 
         {/* Animated Main Heading */}
