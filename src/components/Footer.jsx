@@ -7,16 +7,22 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
-
+import logo from "/logo1.png";
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-screen-2xl mx-auto">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-4 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-2 mb-12">
           {/* Company Info */}
           <div className="space-y-4 lg:col-span-3 ">
-            <h3 className="text-2xl font-bold text-blue-400">Rancon</h3>
+            <a href="/">
+              <img
+                src={logo}
+                alt="ababil logo"
+                className="h-36 filter brightness-5 invert"
+              />
+            </a>
             <p className="text-gray-300 max-w-[300px]">
               Building the future with innovative solutions and exceptional
               service.
@@ -186,7 +192,7 @@ const Footer = () => {
             <div className="shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
               <iframe
                 src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100066224514696&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1387842505640830"
-                width="350"
+                // width="300"
                 height="350"
                 style={{
                   border: "none",
@@ -198,7 +204,7 @@ const Footer = () => {
                 frameBorder="0"
                 allowFullScreen={true}
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                className="w-[350px] h-[350px] rounded-2xl p-2 bg-amber-50"
+                className="w-auto h-[350px] rounded-2xl p-2 bg-amber-50"
                 title="Facebook Page Plugin"
               ></iframe>
             </div>
