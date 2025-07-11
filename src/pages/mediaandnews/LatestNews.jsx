@@ -103,16 +103,6 @@ const LatestNews = () => {
     currentIndex + cardsToShow
   );
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -125,7 +115,8 @@ const LatestNews = () => {
   return (
     <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-between mb-12">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-10">
           <div>
             <h2 className="text-3xl font-bold text-gray-900">
               Recruitment News
@@ -138,49 +129,30 @@ const LatestNews = () => {
             <button
               onClick={prevSlide}
               className="bg-white p-2 rounded-full shadow hover:bg-gray-100 transition-colors"
-              aria-label="Previous slide"
             >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
+              ◀
             </button>
             <button
               onClick={nextSlide}
               className="bg-white p-2 rounded-full shadow hover:bg-gray-100 transition-colors"
-              aria-label="Next slide"
             >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
+              ▶
             </button>
           </div>
         </div>
 
+        {/* Auto Sliding Cards */}
         <motion.div
-          variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.1,
+              },
+            },
+          }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
         >
           {visibleNews.map((news) => (
             <motion.div
@@ -191,9 +163,9 @@ const LatestNews = () => {
             >
               <div className="h-48 overflow-hidden">
                 <motion.img
-                  className="w-full h-full object-cover"
                   src={news.image}
                   alt={news.title}
+                  className="w-full h-full object-cover"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 />
@@ -225,21 +197,46 @@ const LatestNews = () => {
           ))}
         </motion.div>
 
-        <div className="flex justify-center mt-8 space-x-2">
-          {Array.from({ length: recruitmentNews.length - cardsToShow + 1 }).map(
-            (_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                  currentIndex === index
-                    ? "bg-indigo-600"
-                    : "bg-gray-300 hover:bg-gray-400"
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            )
-          )}
+        {/* All News Section */}
+        <div className="mt-8">
+          <h3 className="text-2xl font-semibold text-gray-800 mb-6">
+            All News
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {recruitmentNews.map((news) => (
+              <div
+                key={news.id}
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
+              >
+                <div className="h-48 overflow-hidden">
+                  <img
+                    src={news.image}
+                    alt={news.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center text-sm text-gray-500 mb-3">
+                    <FiCalendar className="mr-1.5" />
+                    <span className="mr-4">
+                      {new Date(news.date).toLocaleDateString()}
+                    </span>
+                    <FiClock className="mr-1.5" />
+                    <span>{news.readTime}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
+                    {news.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4 line-clamp-2">
+                    {news.excerpt}
+                  </p>
+                  <button className="flex items-center text-indigo-600 hover:text-indigo-800 font-medium">
+                    Read more <FiArrowRight className="ml-2" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
