@@ -140,22 +140,43 @@ const Footer = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex items-center">
-                <MdPhone className="text-blue-400 flex-shrink-0" size={18} />
-                <a
-                  href="tel:+11234567890"
-                  className="text-gray-400 hover:text-blue-400 transition-colors duration-300 ml-3 text-sm"
-                >
-                  +1 (123) 456-7890
-                </a>
+              <div className="flex items-start">
+                <MdLocationOn
+                  className="text-blue-400 mt-1 flex-shrink-0"
+                  size={18}
+                />
+                <div className="ml-3">
+                  <h2 className="text-sm font-medium text-gray-300 mb-1">
+                    Operations Center :
+                  </h2>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    Olaya Towers, Tower B, Intersection of Tahlia Street & Olaya
+                    Street, Riyadh, Saudi Arabia
+                  </p>
+                </div>
               </div>
+              <div className="flex items-start">
+                <MdLocationOn
+                  className="text-blue-400 mt-1 flex-shrink-0"
+                  size={18}
+                />
+                <div className="ml-3">
+                  <h2 className="text-sm font-medium text-gray-300 mb-1">
+                    Global Business Center :
+                  </h2>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    Globex Business Centre, The Gate, Doha, Qatar
+                  </p>
+                </div>
+              </div>
+
               <div className="flex items-center">
                 <MdEmail className="text-blue-400 flex-shrink-0" size={18} />
                 <a
                   href="mailto:info@rancon.com"
                   className="text-gray-400 hover:text-blue-400 transition-colors duration-300 ml-3 text-sm"
                 >
-                  info@rancon.com
+                  info@ababil.group
                 </a>
               </div>
             </div>

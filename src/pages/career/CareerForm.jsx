@@ -10,12 +10,12 @@ import { MdSubject } from "react-icons/md";
 
 const CareerForm = () => {
   return (
-    <div className="max-w-2xl mx-auto p-8 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-2xl border border-gray-100">
+    <div className="max-w-2xl mx-auto p-8 mb-10 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-2xl border border-gray-100">
       {/* Header with decorative elements */}
-      <div className="text-center mb-10">
+      <div className="text-center my-10">
         <div className="relative inline-block">
           <div className="absolute -inset-2 bg-indigo-100 rounded-lg blur opacity-75"></div>
-          <h2 className="relative text-3xl font-bold text-indigo-700">
+          <h2 className="relative text-3xl font-bold text-[#25A69F]">
             Join Our Team
           </h2>
         </div>

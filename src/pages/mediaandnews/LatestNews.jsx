@@ -49,9 +49,9 @@ const LatestNews = () => {
     {
       id: 4,
       title:
-        "How Ababil Group Helped Elena Land a Healthcare Job in Austria Without Leaving Romania",
+        "How Ababil Group Helped Digital Marketing Job in Austria Without Leaving Romania",
       excerpt:
-        "When Elena Mureșan, a 28-year-old from Bucharest, began searching for international job opportunities, she wasn’t sure where to start.",
+        "When the digital marketing job search began for international opportunities, it wasn’t clear where to start.",
       image:
         "https://images.unsplash.com/photo-1630569265403-9f38855679fa?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       date: "2023-05-28",

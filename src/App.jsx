@@ -10,10 +10,12 @@ import HeroCareer from "./pages/career/HeroCareer";
 import CareerPage from "./pages/career/CareerPage";
 import MediaNews from "./pages/mediaandnews/MediaNews";
 import LatestNewsDetails from "./pages/mediaandnews/LatestNewsDetails";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<HomePage />} />

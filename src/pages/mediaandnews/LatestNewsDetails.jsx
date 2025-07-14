@@ -142,11 +142,11 @@ const LatestNewsDetails = () => {
       {
         id: 5,
         title:
-          "How Ababil Group Helped Elena Land a Healthcare Job in Austria Without Leaving Romania",
+          "How Ababil Group Helped Digital Marketing Job in Austria Without Leaving Romania",
         excerpt:
-          "When Elena Mureșan, a 28-year-old from Bucharest, began searching for international job opportunities, she wasn’t sure where to start. She had training in elderly care and a strong work ethic but limited connections outside of Romania.",
+          "When the digital marketing job search began for international opportunities, it wasn’t clear where to start. She had training in elderly care and a strong work ethic but limited connections outside of Romania.",
         content:
-          "Then she came across Ababil Group’s virtual recruitment program for healthcare professionals seeking jobs in Austria. “What caught my eye was that everything could be done online application, interviews, even the onboarding process,” Elena recalls.",
+          "Then he came across Ababil Group’s virtual recruitment program for digital marketing professionals seeking jobs in Austria. “What caught my eye was that everything could be done online application, interviews, even the onboarding process,” Elena recalls.",
         para1:
           "Through Ababil Group’s seamless virtual recruitment platform, Elena was guided step-by-step. The team helped her polish her CV, prepare for a Zoom interview with a care home in Vienna, and navigate the legal paperwork required for employment abroad. “The process felt transparent and professional,” she said. “They even offered virtual orientation to help me understand Austrian work culture before I arrived.”",
         para2:
@@ -157,7 +157,7 @@ const LatestNewsDetails = () => {
         readTime: "5 min read",
         icon: "FaBriefcaseMedical",
         category: "Recruitment",
-        tags: ["healthcare", "virtual recruitment", "international jobs"],
+        tags: ["digital marketing", "virtual recruitment", "international jobs"],
       },
       {
         id: 6,
@@ -330,156 +330,200 @@ const LatestNewsDetails = () => {
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="mb-8">
-        <a
-          href="/latest-news"
-          className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
-        >
-          <FaArrowLeft className="mr-2" />
-          Back to all news
-        </a>
-      </div>
-
-      <article className="bg-white rounded-xl shadow-lg overflow-hidden">
-        {/* Featured Image */}
-        <div className="h-96 w-full overflow-hidden">
-          <img
-            src={newsItem.image}
-            alt={newsItem.title}
-            className="w-full h-full object-cover object-center"
-          />
-        </div>
-
-        {/* Article Content */}
-        <div className="p-8">
-          {/* Meta Information */}
-          <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-gray-600">
-            <div className="flex items-center">
-              <FaCalendarAlt className="mr-2" />
-              <span>
-                {getRelativeTime(newsItem.date)}
-                {/* Show both relative time and full date on hover */}
-                <span className="hidden md:inline-block ml-2 text-gray-400">
-                  (
-                  {new Date(newsItem.date).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "short",
-                    day: "numeric",
-                  })}
-                  )
+    <div className="">
+      <div
+        className="relative h-[75vh] w-full mb-12 overflow-hidden"
+        style={{
+          backgroundImage: `url(${newsItem.image})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+          <div className="text-center px-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              {newsItem.title}
+            </h1>
+            <div className="flex flex-wrap justify-center gap-4 text-white">
+              <div className="flex items-center">
+                <FaCalendarAlt className="mr-2" />
+                <span>
+                  {getRelativeTime(newsItem.date)}
+                  <span className="hidden md:inline-block ml-2">
+                    (
+                    {new Date(newsItem.date).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    })}
+                    )
+                  </span>
                 </span>
-              </span>
-            </div>
-            <div className="flex items-center">
-              <FaClock className="mr-2" />
-              <span>{newsItem.readTime}</span>
-            </div>
-            <div className="flex items-center bg-blue-100 px-3 py-1 rounded-full">
-              <IconContext.Provider value={{ className: "text-blue-600 mr-2" }}>
-                {React.createElement(iconComponents[newsItem.icon])}
-              </IconContext.Provider>
-              <span className="font-medium text-blue-600">
-                {newsItem.category}
-              </span>
-            </div>
-          </div>
-
-          {/* Title */}
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            {newsItem.title}
-          </h1>
-
-          {/* Excerpt */}
-          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-            {newsItem.excerpt}
-          </p>
-
-          {/* Content */}
-          <div className="prose max-w-none text-gray-700 space-y-4 mb-10">
-            <p className="mb-6">{newsItem.content}</p>
-            {/* Additional content paragraphs would go here */}
-            <p className="mb-6">{newsItem.para1}</p>
-            <p className="mb-6">{newsItem.para1}</p>
-          </div>
-
-          {/* Tags */}
-          <div className="flex flex-wrap gap-2 mt-8 pt-6 border-t border-gray-200">
-            <FaTag className="text-gray-400 mt-1 mr-1" />
-            {newsItem.tags.map((tag, index) => (
-              <span
-                key={index}
-                className="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700 mr-2 mb-2"
-              >
-                #{tag}
-              </span>
-            ))}
-          </div>
-        </div>
-      </article>
-
-      {/* Related Articles Section */}
-      <section className="mt-16">
-        <h2 className="text-2xl font-bold text-gray-900 mb-8">Related News</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {newsData.latestNews
-            .filter(
-              (item) =>
-                item.id !== newsItem.id && item.category === newsItem.category
-            )
-            .slice(0, 3)
-            .map((relatedItem) => (
-              <div
-                key={relatedItem.id}
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
-              >
-                <img
-                  src={relatedItem.image}
-                  alt={relatedItem.title}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6">
-                  <div className="flex items-center text-sm text-gray-500 mb-2">
-                    <span>
-                      {new Date(relatedItem.date).toLocaleDateString()}
-                    </span>
-                    <span className="mx-2">•</span>
-                    <span>{relatedItem.readTime}</span>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2 line-clamp-2">
-                    {relatedItem.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 line-clamp-2">
-                    {relatedItem.excerpt}
-                  </p>
-                  <a
-                    href={`/latest-news/${relatedItem.title
-                      .toLowerCase()
-                      .replace(/[^a-z0-9]+/g, "-")
-                      .replace(/^-+|-+$/g, "")}`}
-                    className="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center"
-                  >
-                    Read more
-                    <svg
-                      className="w-4 h-4 ml-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M9 5l7 7-7 7"
-                      ></path>
-                    </svg>
-                  </a>
-                </div>
               </div>
-            ))}
+              <div className="flex items-center">
+                <FaClock className="mr-2" />
+                <span>{newsItem.readTime}</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-8">
+          <a
+            href="/media-and-news"
+            className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
+          >
+            <FaArrowLeft className="mr-2" />
+            Back to all news
+          </a>
+        </div>
+
+        <article className="bg-white rounded-xl shadow-lg overflow-hidden">
+          {/* Featured Image */}
+          <div className="h-96 w-full overflow-hidden">
+            <img
+              src={newsItem.image}
+              alt={newsItem.title}
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+
+          {/* Article Content */}
+          <div className="p-8">
+            {/* Meta Information */}
+            <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-gray-600">
+              <div className="flex items-center">
+                <FaCalendarAlt className="mr-2" />
+                <span>
+                  {getRelativeTime(newsItem.date)}
+                  {/* Show both relative time and full date on hover */}
+                  <span className="hidden md:inline-block ml-2 text-gray-400">
+                    (
+                    {new Date(newsItem.date).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    })}
+                    )
+                  </span>
+                </span>
+              </div>
+              <div className="flex items-center">
+                <FaClock className="mr-2" />
+                <span>{newsItem.readTime}</span>
+              </div>
+              <div className="flex items-center bg-blue-100 px-3 py-1 rounded-full">
+                <IconContext.Provider
+                  value={{ className: "text-blue-600 mr-2" }}
+                >
+                  {React.createElement(iconComponents[newsItem.icon])}
+                </IconContext.Provider>
+                <span className="font-medium text-blue-600">
+                  {newsItem.category}
+                </span>
+              </div>
+            </div>
+
+            {/* Title */}
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              {newsItem.title}
+            </h1>
+
+            {/* Excerpt */}
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              {newsItem.excerpt}
+            </p>
+
+            {/* Content */}
+            <div className="prose max-w-none text-gray-700 space-y-4 mb-10">
+              <p className="mb-6">{newsItem.content}</p>
+              {/* Additional content paragraphs would go here */}
+              <p className="mb-6">{newsItem.para1}</p>
+              <p className="mb-6">{newsItem.para1}</p>
+            </div>
+
+            {/* Tags */}
+            <div className="flex flex-wrap gap-2 mt-8 pt-6 border-t border-gray-200">
+              <FaTag className="text-gray-400 mt-1 mr-1" />
+              {newsItem.tags.map((tag, index) => (
+                <span
+                  key={index}
+                  className="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700 mr-2 mb-2"
+                >
+                  #{tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </article>
+
+        {/* Related Articles Section */}
+        <section className="mt-16">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">
+            Related News
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {newsData.latestNews
+              .filter(
+                (item) =>
+                  item.id !== newsItem.id && item.category === newsItem.category
+              )
+              .slice(0, 3)
+              .map((relatedItem) => (
+                <div
+                  key={relatedItem.id}
+                  className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+                >
+                  <img
+                    src={relatedItem.image}
+                    alt={relatedItem.title}
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-6">
+                    <div className="flex items-center text-sm text-gray-500 mb-2">
+                      <span>
+                        {new Date(relatedItem.date).toLocaleDateString()}
+                      </span>
+                      <span className="mx-2">•</span>
+                      <span>{relatedItem.readTime}</span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2 line-clamp-2">
+                      {relatedItem.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4 line-clamp-2">
+                      {relatedItem.excerpt}
+                    </p>
+                    <a
+                      href={`/media-and-news/${relatedItem.title
+                        .toLowerCase()
+                        .replace(/[^a-z0-9]+/g, "-")
+                        .replace(/^-+|-+$/g, "")}`}
+                      className="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center"
+                    >
+                      Read more
+                      <svg
+                        className="w-4 h-4 ml-1"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M9 5l7 7-7 7"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </section>
+      </div>
     </div>
   );
 };

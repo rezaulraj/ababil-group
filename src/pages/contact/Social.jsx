@@ -55,7 +55,7 @@ const Social = () => {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
           {/* Contact Form */}
           <div className="bg-white p-8 rounded-xl shadow-xl border border-gray-200">
-            <h2 className="text-3xl font-bold text-blue-600 mb-6">
+            <h2 className="text-3xl font-bold text-[#25A69F] mb-6">
               Get in Touch
             </h2>
 
@@ -126,7 +126,7 @@ const Social = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300"
+                className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#25A69F] hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300"
               >
                 <span>Send Message</span>
                 <IoMdSend className="text-lg" />
@@ -136,7 +136,7 @@ const Social = () => {
 
           {/* Social and Contact Info */}
           <div>
-            <h2 className="text-3xl font-bold text-blue-600 mb-6">
+            <h2 className="text-3xl font-bold text-[#25A69F] mb-6">
               Connect With Us
             </h2>
             <p className="text-gray-600 mb-8 max-w-md">
@@ -168,10 +168,7 @@ const Social = () => {
                 Contact Info
               </h3>
               <p className="flex items-center text-gray-700 mb-2">
-                <MdEmail className="text-blue-500 mr-2" /> contact@example.com
-              </p>
-              <p className="flex items-center text-gray-700">
-                <FaPhone className="text-blue-500 mr-2" /> +1 (234) 567-8900
+                <MdEmail className="text-blue-500 mr-2" /> info@ababil.group
               </p>
             </div>
           </div>

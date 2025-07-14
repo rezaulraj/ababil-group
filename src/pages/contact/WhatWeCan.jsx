@@ -29,7 +29,11 @@ const WhatWeCan = () => {
               How Can We Support You?
             </h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Whether you’re seeking details about our services, need assistance, or are exploring partnership opportunities, we’re here to help. Backed by the strength and resources of our parent company, our team is equipped to respond promptly and effectively to your needs.
+              Whether you’re seeking details about our services, need
+              assistance, or are exploring partnership opportunities, we’re here
+              to help. Backed by the strength and resources of our parent
+              company, our team is equipped to respond promptly and effectively
+              to your needs.
             </p>
 
             {/* Contact Options */}
@@ -41,18 +45,7 @@ const WhatWeCan = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900">Email Us</h4>
-                  <p className="text-gray-600">support@yourcompany.com</p>
-                </div>
-              </div>
-
-              {/* Phone */}
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-green-100 rounded-full text-green-600">
-                  <MdPhone className="text-2xl" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Call Us</h4>
-                  <p className="text-gray-600">+1 (123) 456-7890</p>
+                  <p className="text-gray-600">info@ababil.group</p>
                 </div>
               </div>
 

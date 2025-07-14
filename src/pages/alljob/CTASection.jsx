@@ -9,7 +9,7 @@ const CTASection = () => {
       id: 1,
       icon: <FaMapMarkerAlt className="text-3xl text-blue-500" />,
       title: "Our Location",
-      content: "123 Business Avenue\nCity Center, NY 10001",
+      content: "112-116 Whitechapel Road, London, England, E1 1JE",
       buttonText: "Get Directions",
       buttonIcon: <FaMapMarkerAlt className="ml-2" />,
     },
@@ -44,12 +44,12 @@ const CTASection = () => {
         <>
           <div className="flex items-center py-2">
             <MdEmail className="mr-3 text-gray-600" />
-            <span>contact@example.com</span>
+            <span>info@ababil.group</span>
           </div>
-          <div className="flex items-center py-2">
+          {/* <div className="flex items-center py-2">
             <MdPhone className="mr-3 text-gray-600" />
             <span>+1 (212) 555-1234</span>
-          </div>
+          </div> */}
         </>
       ),
       buttonText: "Contact Us",
@@ -98,10 +98,10 @@ const CTASection = () => {
                         card.content
                       )}
                     </div>
-                    <button className="mt-auto px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-300 flex items-center justify-center">
+                    {/* <button className="mt-auto px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-300 flex items-center justify-center">
                       {card.buttonText}
                       {card.buttonIcon}
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               ))}

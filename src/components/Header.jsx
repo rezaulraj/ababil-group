@@ -292,9 +292,9 @@ const Header = () => {
                     <motion.a
                       key={index}
                       href={link.path}
-                      className={`px-3 py-2 rounded-md text-sm lg:text-base font-medium ${
+                      className={`px-3 py-2 rounded-md text-sm lg:text-lg  font-medium ${
                         atTop ? "text-white" : "text-gray-800"
-                      }  hover:text-blue-600 transition-colors`}
+                      }  hover:text-[#25A69F] transition-colors`}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >

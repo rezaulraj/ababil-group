@@ -95,7 +95,7 @@ const HeroContact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105">
+            <button className="px-8 py-3 bg-[#25A69F] hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105">
               Contact Us Today
             </button>
           </motion.div>
