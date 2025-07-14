@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiSearch, FiX, FiMenu } from "react-icons/fi";
 import { FaLayerGroup, FaMapMarkerAlt } from "react-icons/fa";
-import logoBlue from "/logoblue.png";
-import logoWhite from "/logowhite.png";
-import logo1 from "/logo1.png";
+import logo1 from "/Ababil-Group-Logo.png?url";
 
 const Header = () => {
   const [scrollingDown, setScrollingDown] = useState(false);
@@ -208,7 +206,7 @@ const Header = () => {
                         </h3>
                         <p className="text-gray-700">
                           Globex Business Centre, The Gate, Doha, Qatar
-                        </p>  
+                        </p>
                       </div>
                     </div>
                   </ul>
@@ -281,10 +279,14 @@ const Header = () => {
                     <img
                       src={logo1}
                       alt="Logo"
-                      className="h-16 filter brightness-5 invert"
+                      className="h-16 filter brightness-5 invert hover:scale-120 transition-transform duration-300"
                     />
                   ) : (
-                    <img src={logo1} alt="Logo" className="h-16" />
+                    <img
+                      src={logo1}
+                      alt="Logo"
+                      className="h-16 hover:scale-120 transition-transform duration-300"
+                    />
                   )}
                 </a>
                 <nav className="hidden md:flex items-center space-x-1 lg:space-x-4 mx-4">

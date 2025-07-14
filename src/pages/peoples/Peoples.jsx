@@ -188,7 +188,7 @@ const PersonCard = ({ person, index }) => {
             transition: "all 0.6s cubic-bezier(0.16, 0.77, 0.47, 0.97)",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-lg md:rounded-xl" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#25A69F]/60 to-transparent rounded-lg md:rounded-xl" />
       </motion.div>
 
       {/* Info card */}
@@ -242,7 +242,7 @@ const PersonCard = ({ person, index }) => {
         >
           {person.company}
         </motion.p>
-        <motion.div
+        {/* <motion.div
           whileHover={{ x: 5 }}
           className="mt-2 sm:mt-3 text-blue-600 hover:text-blue-700 flex items-center gap-1 sm:gap-2 transition-colors"
           initial={{ opacity: 0 }}
@@ -252,7 +252,7 @@ const PersonCard = ({ person, index }) => {
         >
           <FaLinkedin className="text-sm sm:text-base" />
           <span className="text-xs sm:text-sm">Connect</span>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </motion.div>
   );
