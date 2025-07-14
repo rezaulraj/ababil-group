@@ -77,8 +77,8 @@ const HeroContact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            We're Here and <span className="text-blue-400">Ready</span> to
-            Assist You!
+            We're Here to <span className="text-[#25A69F]"> Help </span> Let’s
+            Connect!
           </motion.h1>
 
           <motion.p
@@ -87,8 +87,7 @@ const HeroContact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Our team is available to answer your questions and help you with any
-            inquiries. Reach out to us today.
+             Have questions or need support? Our team is ready to assist you with any inquiries. Don’t hesitate to reach out, we're just a message away.
           </motion.p>
 
           <motion.div
@@ -97,7 +96,7 @@ const HeroContact = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105">
-              Contact Us Now
+              Contact Us Today
             </button>
           </motion.div>
         </motion.div>

@@ -7,8 +7,7 @@ const Quote = () => {
       <div className="bg-black text-white py-20 px-6 md:px-12 lg:px-24">
         <div className="max-w-5xl mx-auto">
           <blockquote className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight">
-            "We don't just build businesses, we build legacies that stand the
-            test of time."
+            "We don’t just build businesses we build legacies that endure."
           </blockquote>
         </div>
       </div>
@@ -17,11 +16,11 @@ const Quote = () => {
       <div className="bg-gray-950 py-16 px-6 md:px-12 lg:px-24">
         <div className="max-w-5xl mx-auto">
           <p className="text-lg md:text-xl text-gray-100 leading-relaxed">
-            We are proud of living our values across our diverse operations and
-            locations. As a group, we value integrity, initiative, challenge
-            convention, progression, and teamwork. We strive to be an employer
-            of choice and to create an environment where our people can fulfill
-            their personal and professional potential.
+            Across our diverse operations and global footprint, we proudly live
+            out our core values: integrity, initiative, challenging convention,
+            progress, and collaboration. At Ababil Group, we are committed to
+            being an employer of choice fostering a culture where our people are
+            empowered to grow, thrive, and reach their full potential.
           </p>
         </div>
       </div>

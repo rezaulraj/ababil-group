@@ -16,10 +16,10 @@ const ValueHome = () => {
           className="text-4xl md:text-6xl font-bold uppercase tracking-wider"
           animate={{
             backgroundImage: [
-              "linear-gradient(45deg, #ff4d4d, #f9cb28)",
+              "linear-gradient(45deg, #1A9695, #f9cb28)",
               "linear-gradient(45deg, #f9cb28, #ff4d4d)",
               "linear-gradient(45deg, #ff4d4d, #4d79ff)",
-              "linear-gradient(45deg, #4d79ff, #f9cb28)",
+              "linear-gradient(45deg, #1A9695, #f9cb28)",
             ],
           }}
           transition={{

@@ -37,13 +37,15 @@ const BrandLogo = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-violet-500 to-pink-500 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#25A69F] via-[#25A69F]/80 to-[#25A69F] mb-4">
             Ababil SBUs & BRANDS
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-pink-500 mx-auto mb-6 rounded-full"></div>
           <p className="text-gray-300 max-w-xl mx-auto">
-            We take pride in our wide network of SBUs and partner brands, each
-            contributing to our legacy of trust, quality, and performance.
+            Ababil Group brings together a strong network of specialized units
+            ranging from education consultancy and language training to manpower
+            supply and vocational skill development delivering trusted solutions
+            through strategic partnerships and proven expertise.
           </p>
         </motion.div>
 

@@ -26,14 +26,10 @@ const WhatWeCan = () => {
           {/* Right Side - Text Content */}
           <div className="w-full lg:w-1/2">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              What we can do for you?
+              How Can We Support You?
             </h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              We're here to assist you with any inquiries, questions, or
-              feedback. Whether you're looking for more information about our
-              services, need support, or want to explore potential partnerships,
-              feel free to reach out. Our team, backed by the expertise and
-              resources of our mother company, is ready to help.
+              Whether you’re seeking details about our services, need assistance, or are exploring partnership opportunities, we’re here to help. Backed by the strength and resources of our parent company, our team is equipped to respond promptly and effectively to your needs.
             </p>
 
             {/* Contact Options */}

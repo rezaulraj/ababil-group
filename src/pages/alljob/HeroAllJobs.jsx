@@ -79,8 +79,8 @@ const HeroAllJobs = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Build Your Career While{" "}
-            <span className="text-blue-400">Building the Nation</span>
+            Build Your Career.
+            <span className="text-blue-400"> Empower a Nation.</span>
           </motion.h1>
 
           <motion.p
@@ -89,9 +89,9 @@ const HeroAllJobs = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Join our team of dedicated professionals working towards national
-            development. Discover meaningful career opportunities that
-            contribute to economic growth and social progress.
+            Become part of a purpose-driven team committed to national
+            development. Explore fulfilling career opportunities where your
+            skills fuel economic growth and drive lasting social impact.
           </motion.p>
 
           <motion.div

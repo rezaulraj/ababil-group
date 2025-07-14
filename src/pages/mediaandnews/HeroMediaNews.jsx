@@ -79,7 +79,7 @@ const HeroMediaNews = () => {
           >
             Ababil Group
             <br />
-            <span className="text-blue-400">Latest News</span>
+            <span className="text-[#1A9695]">Latest News</span>
           </motion.h1>
         </motion.div>
       </div>

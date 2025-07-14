@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiSearch, FiX, FiMenu } from "react-icons/fi";
-import { FaLayerGroup } from "react-icons/fa";
+import { FaLayerGroup, FaMapMarkerAlt } from "react-icons/fa";
 import logoBlue from "/logoblue.png";
 import logoWhite from "/logowhite.png";
 import logo1 from "/logo1.png";
@@ -170,10 +170,47 @@ const Header = () => {
                 >
                   <h2 className="text-4xl font-bold mb-4">Our Locations</h2>
                   <ul className="space-y-2 text-lg">
-                    <li>Dhaka Headquarters</li>
-                    <li>Chittagong Office</li>
-                    <li>Sylhet Branch</li>
-                    <li>International Offices</li>
+                    {/* Address */}
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="p-3 bg-[#25A69F] rounded-full text-white mt-1">
+                        <FaMapMarkerAlt className="text-xl" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold text-gray-800 mb-1">
+                          Global Headquarters (GHQ)
+                        </h3>
+                        <p className="text-gray-700">
+                          112-116 Whitechapel Road, London, England, E1 1JE
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4 mb-6">
+                      <div className="p-3 bg-[#25A69F] rounded-full text-white mt-1">
+                        <FaMapMarkerAlt className="text-xl" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold text-gray-800 mb-1">
+                          Operations Center :
+                        </h3>
+                        <p className="text-gray-700">
+                          Olaya Towers, Tower B, Intersection of Tahlia Street &
+                          Olaya Street, Riyadh, Saudi Arabia
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4 mb-6">
+                      <div className="p-3 bg-[#25A69F] rounded-full text-white mt-1">
+                        <FaMapMarkerAlt className="text-xl" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold text-gray-800 mb-1">
+                          Global Business Center :
+                        </h3>
+                        <p className="text-gray-700">
+                          Globex Business Centre, The Gate, Doha, Qatar
+                        </p>  
+                      </div>
+                    </div>
                   </ul>
                 </motion.div>
               </div>
@@ -198,12 +235,16 @@ const Header = () => {
               <div className="flex items-center justify-between h-22">
                 <motion.a
                   href="/"
-                  className="flex-shrink-0 bg-gray-800 p-1 rounded"
+                  className="flex-shrink-0 bg-gray-800 p-2 rounded"
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <img src={logo1} alt="Logo" className="h-16 filter brightness-5 invert" />
+                  <img
+                    src={logo1}
+                    alt="Logo"
+                    className="h-8 filter brightness-5 invert"
+                  />
                 </motion.a>
                 <motion.div
                   className="flex items-center space-x-4"
@@ -240,10 +281,10 @@ const Header = () => {
                     <img
                       src={logo1}
                       alt="Logo"
-                      className="h-38 filter brightness-5 invert"
+                      className="h-16 filter brightness-5 invert"
                     />
                   ) : (
-                    <img src={logo1} alt="Logo" className="h-38" />
+                    <img src={logo1} alt="Logo" className="h-16" />
                   )}
                 </a>
                 <nav className="hidden md:flex items-center space-x-1 lg:space-x-4 mx-4">

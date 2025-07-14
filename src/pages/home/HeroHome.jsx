@@ -57,7 +57,11 @@ const HeroHome = () => {
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 text-center">
         {/* Animated Logo */}
         <motion.div style={{ x: logoX, y: logoY }} className="">
-          <img src={logoblue} alt="Ababil Group Logo" className="h-56 w-auto " />
+          <img
+            src={logoblue}
+            alt="Ababil Group Logo"
+            className="h-56 w-auto "
+          />
         </motion.div>
 
         {/* Animated Main Heading */}
@@ -73,8 +77,8 @@ const HeroHome = () => {
           style={{ x: textX, y: textY }}
           className="text-xl md:text-3xl font-medium text-white max-w-2xl mx-auto mb-8"
         >
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600 uppercase">
-            Challenge Convention
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#25A69F] to-[#1A9695] uppercase">
+            Innovating Beyond Boundaries.
           </span>
         </motion.h2>
 

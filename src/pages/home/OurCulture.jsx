@@ -19,20 +19,20 @@ const OurCulture = () => {
           className="col-span-12 md:col-span-5 h-full flex flex-col justify-center"
         >
           <div className="space-y-6 text-center md:text-left w-full">
-            <h3 className="text-blue-500 uppercase tracking-wide text-sm">
+            <h3 className="text-[#1A9695] uppercase tracking-wide text-lg font-medium">
               Our Heritage
             </h3>
             <h2 className="text-4xl md:text-5xl font-bold">OUR CULTURE</h2>
             <p className="text-lg text-gray-300 leading-relaxed">
-              At Ababil, we believe good culture is the foundation of vibrant
-              lives, thriving communities and forward progress.
+              At Ababil Group, we believe a strong culture is the cornerstone of
+              meaningful impact, dynamic communities, and lasting progress.
             </p>
             <div>
               <button
                 onClick={() => setIsOpen(true)}
-                className="inline-block bg-blue-600 hover:bg-blue-700 transition text-white font-semibold px-6 py-3 rounded-lg shadow-lg"
+                className="inline-block bg-[#1A9695] hover:bg-blue-700 transition text-white font-semibold px-6 py-3 rounded-lg shadow-lg"
               >
-                🎬 Watch Video
+                🎬 Watch Our Story
               </button>
             </div>
           </div>

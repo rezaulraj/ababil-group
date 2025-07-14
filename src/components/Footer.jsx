@@ -8,236 +8,180 @@ import {
 } from "react-icons/fa";
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
 import logo from "/logo1.png";
+
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-gray-900 text-white pt-16 pb-8 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-gradient-to-b from-gray-900 to-gray-800 text-white pt-16 pb-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-screen-2xl mx-auto">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-2 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mb-12">
           {/* Company Info */}
-          <div className="space-y-4 lg:col-span-3 ">
-            <a href="/">
+          <div className="space-y-6">
+            <a href="/" className="inline-block">
               <img
                 src={logo}
-                alt="ababil logo"
-                className="h-36 filter brightness-5 invert"
+                alt="Ababil logo"
+                className="h-16 w-auto filter brightness-0 invert hover:opacity-90 transition-opacity"
               />
             </a>
-            <p className="text-gray-300 max-w-[300px]">
-              Building the future with innovative solutions and exceptional
-              service.
+            <p className="text-gray-300 text-sm leading-relaxed">
+              At Ababil Group, we build the future through innovation,
+              exceptional service, and a commitment to progress. With over a
+              decade of experience, we lead change, empower industries, and
+              create lasting value for communities and partners alike.
             </p>
-            <div className="flex space-x-4 pt-2">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-blue-400 transition"
-              >
-                <FaFacebook size={20} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-blue-400 transition"
-              >
-                <FaTwitter size={20} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-blue-400 transition"
-              >
-                <FaInstagram size={20} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-blue-400 transition"
-              >
-                <FaLinkedin size={20} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-blue-400 transition"
-              >
-                <FaYoutube size={20} />
-              </a>
+            <div className="flex space-x-5 pt-1">
+              {[
+                {
+                  icon: <FaFacebook size={18} />,
+                  color: "hover:text-[#1877F2]",
+                },
+                {
+                  icon: <FaTwitter size={18} />,
+                  color: "hover:text-[#1DA1F2]",
+                },
+                {
+                  icon: <FaInstagram size={18} />,
+                  color: "hover:text-[#E4405F]",
+                },
+                {
+                  icon: <FaLinkedin size={18} />,
+                  color: "hover:text-[#0A66C2]",
+                },
+                {
+                  icon: <FaYoutube size={18} />,
+                  color: "hover:text-[#FF0000]",
+                },
+              ].map((social, index) => (
+                <a
+                  key={index}
+                  href="#"
+                  className={`text-gray-400 ${social.color} transition-colors duration-300`}
+                  aria-label={`${social.icon.type.displayName} link`}
+                >
+                  {social.icon}
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4 lg:col-span-2">
-            <h4 className="text-lg font-semibold text-white">Quick Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="/"
-                  className="text-gray-400 hover:text-blue-400 transition"
-                >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/people-at-ababil-group"
-                  className="text-gray-400 hover:text-blue-400 transition"
-                >
-                  People At Ababil
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/media-and-news"
-                  className="text-gray-400 hover:text-blue-400 transition"
-                >
-                  Media & News
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/career"
-                  className="text-gray-400 hover:text-blue-400 transition"
-                >
-                  Career
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/all-jobs"
-                  className="text-gray-400 hover:text-blue-400 transition"
-                >
-                  All Jobs
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/contact"
-                  className="text-gray-400 hover:text-blue-400 transition"
-                >
-                  Contact
-                </a>
-              </li>
+          <div className="space-y-6">
+            <h4 className="text-lg font-semibold text-white border-b border-blue-500 pb-2 inline-block">
+              Quick Links
+            </h4>
+            <ul className="space-y-3">
+              {[
+                { name: "Home", path: "/" },
+                { name: "People At Ababil", path: "/people-at-ababil-group" },
+                { name: "Media & News", path: "/media-and-news" },
+                { name: "Career", path: "/career" },
+                { name: "All Jobs", path: "/all-jobs" },
+                { name: "Contact", path: "/contact" },
+              ].map((link, index) => (
+                <li key={index}>
+                  <a
+                    href={link.path}
+                    className="text-gray-400 hover:text-blue-400 transition-colors duration-300 flex items-start group"
+                  >
+                    <span className="w-1 h-1 bg-blue-400 rounded-full mt-2 mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                    {link.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Services */}
-          <div className="space-y-4 lg:col-span-2">
-            <h4 className="text-lg font-semibold text-white">Services</h4>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-blue-400 transition"
-                >
-                  Construction
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-blue-400 transition"
-                >
-                  Architecture
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-blue-400 transition"
-                >
-                  Interior Design
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-blue-400 transition"
-                >
-                  Consulting
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-blue-400 transition"
-                >
-                  Maintenance
-                </a>
-              </li>
+          <div className="space-y-6">
+            <h4 className="text-lg font-semibold text-white border-b border-blue-500 pb-2 inline-block">
+              Services
+            </h4>
+            <ul className="space-y-3">
+              {[
+                "Construction",
+                "Architecture",
+                "Interior Design",
+                "Consulting",
+                "Maintenance",
+              ].map((service, index) => (
+                <li key={index}>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-blue-400 transition-colors duration-300 flex items-start group"
+                  >
+                    <span className="w-1 h-1 bg-blue-400 rounded-full mt-2 mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                    {service}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-4 lg:col-span-2">
-            <h4 className="text-lg font-semibold text-white">Contact Us</h4>
-            <div className="space-y-3">
-              <div className="flex items-start space-x-3">
+          <div className="space-y-6">
+            <h4 className="text-lg font-semibold text-white border-b border-blue-500 pb-2 inline-block">
+              Contact Us
+            </h4>
+            <div className="space-y-4">
+              <div className="flex items-start">
                 <MdLocationOn
                   className="text-blue-400 mt-1 flex-shrink-0"
-                  size={20}
+                  size={18}
                 />
-                <p className="text-gray-400">
-                  123 Business Avenue, City, Country
-                </p>
+                <div className="ml-3">
+                  <h2 className="text-sm font-medium text-gray-300 mb-1">
+                    Global Headquarters (GHQ)
+                  </h2>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    112-116 Whitechapel Road, London, England, E1 1JE
+                  </p>
+                </div>
               </div>
-              <div className="flex items-center space-x-3">
-                <MdPhone className="text-blue-400" size={20} />
-                <p className="text-gray-400">+1 (123) 456-7890</p>
+              <div className="flex items-center">
+                <MdPhone className="text-blue-400 flex-shrink-0" size={18} />
+                <a
+                  href="tel:+11234567890"
+                  className="text-gray-400 hover:text-blue-400 transition-colors duration-300 ml-3 text-sm"
+                >
+                  +1 (123) 456-7890
+                </a>
               </div>
-              <div className="flex items-center space-x-3">
-                <MdEmail className="text-blue-400" size={20} />
-                <p className="text-gray-400">info@rancon.com</p>
+              <div className="flex items-center">
+                <MdEmail className="text-blue-400 flex-shrink-0" size={18} />
+                <a
+                  href="mailto:info@rancon.com"
+                  className="text-gray-400 hover:text-blue-400 transition-colors duration-300 ml-3 text-sm"
+                >
+                  info@rancon.com
+                </a>
               </div>
-            </div>
-          </div>
-
-          <div className="space-y-4 lg:col-span-3">
-            <h4 className="text-lg font-semibold text-white">Follow Us</h4>
-            <div className="shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
-              <iframe
-                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100066224514696&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1387842505640830"
-                // width="300"
-                height="350"
-                style={{
-                  border: "none",
-                  overflow: "hidden",
-                  scrollBehavior: "smooth",
-                  borderBlockColor: "#fff",
-                }}
-                scrolling="no"
-                frameBorder="0"
-                allowFullScreen={true}
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                className="w-auto h-[350px] rounded-2xl p-2 bg-amber-50"
-                title="Facebook Page Plugin"
-              ></iframe>
             </div>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-800 my-8"></div>
+        <div className="border-t border-gray-700 my-8 opacity-50"></div>
 
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Rancon. All rights reserved.
+          <p className="text-gray-400 text-xs mb-4 md:mb-0">
+            &copy; {currentYear} Ababil Group. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <a
-              href="#"
-              className="text-gray-400 hover:text-blue-400 text-sm transition"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="#"
-              className="text-gray-400 hover:text-blue-400 text-sm transition"
-            >
-              Terms of Service
-            </a>
-            <a
-              href="#"
-              className="text-gray-400 hover:text-blue-400 text-sm transition"
-            >
-              Sitemap
-            </a>
+            {["Privacy Policy", "Terms of Service", "Sitemap"].map(
+              (item, index) => (
+                <a
+                  key={index}
+                  href="#"
+                  className="text-gray-400 hover:text-blue-400 text-xs transition-colors duration-300"
+                >
+                  {item}
+                </a>
+              )
+            )}
           </div>
         </div>
       </div>

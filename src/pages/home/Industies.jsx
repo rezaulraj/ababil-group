@@ -44,14 +44,14 @@ const Industries = () => {
       <div className="max-w-screen-xl mx-auto">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h1 className="text-blue-600 uppercase tracking-widest text-4xl font-semibold">
+          <h1 className="text-[#1A9695] uppercase tracking-widest text-4xl font-semibold">
             INDUSTRIES WE SERVE
           </h1>
 
           <p className="mt-4 text-gray-600">
-            For over 30 years, Ababil Group has maintained a tradition of
-            quality and innovation. Learn about the industries that our company
-            operates on.
+            For over a decade, Ababil Group has upheld a legacy of quality,
+            innovation, and excellence. Explore the diverse industries where we
+            continue to make a lasting impact.
           </p>
         </div>
 

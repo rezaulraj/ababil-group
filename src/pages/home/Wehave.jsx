@@ -5,10 +5,10 @@ import bgimage from "../../assets/home/movedo-bw-bg.jpg";
 const Wehave = () => {
   const containerRef = useRef(null);
   const cards = [
-    { number: 32, name: "Business Units" },
-    { number: 64, name: "Districts" },
-    { number: "500+", name: "Offices / Showrooms" },
-    { number: "4000+", name: "People" },
+    { number: 30, name: "Business Units" },
+    { number: 6, name: "Geographical Regions" },
+    { number: "70+", name: "Offices & Showrooms" },
+    { number: "1000+", name: "Team Members" },
   ];
 
   // Track scroll progress through the entire section

@@ -77,8 +77,8 @@ const HeroCareer = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Build Your Career While{" "}
-            <span className="text-blue-400">Building the Nation</span>
+            Shape Your Future,
+            <span className="text-blue-400"> Strengthen the Nation</span>
           </motion.h1>
 
           <motion.p
@@ -87,8 +87,7 @@ const HeroCareer = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Be the Change and Become a Part of the Movement to Build a Stronger
-            Nation
+            Join the movement driving progress and purpose.
           </motion.p>
         </motion.div>
       </div>

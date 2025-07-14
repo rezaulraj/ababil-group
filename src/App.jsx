@@ -9,6 +9,7 @@ import Alljobs from "./pages/alljob/Alljobs";
 import HeroCareer from "./pages/career/HeroCareer";
 import CareerPage from "./pages/career/CareerPage";
 import MediaNews from "./pages/mediaandnews/MediaNews";
+import LatestNewsDetails from "./pages/mediaandnews/LatestNewsDetails";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/all-jobs" element={<Alljobs />} />
           <Route path="/career" element={<CareerPage />} />
           <Route path="/media-and-news" element={<MediaNews />} />
+          <Route path="/media-and-news/:slug" element={<LatestNewsDetails />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
