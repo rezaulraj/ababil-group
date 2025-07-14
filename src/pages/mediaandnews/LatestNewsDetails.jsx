@@ -157,7 +157,11 @@ const LatestNewsDetails = () => {
         readTime: "5 min read",
         icon: "FaBriefcaseMedical",
         category: "Recruitment",
-        tags: ["digital marketing", "virtual recruitment", "international jobs"],
+        tags: [
+          "digital marketing",
+          "virtual recruitment",
+          "international jobs",
+        ],
       },
       {
         id: 6,
@@ -373,7 +377,7 @@ const LatestNewsDetails = () => {
         <div className="mb-8">
           <a
             href="/media-and-news"
-            className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
+            className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors relative z-40"
           >
             <FaArrowLeft className="mr-2" />
             Back to all news
