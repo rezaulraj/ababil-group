@@ -5,9 +5,12 @@ import {
   FaInstagram,
   FaLinkedin,
   FaYoutube,
+  FaPinterest,
+  FaTiktok,
 } from "react-icons/fa";
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
 import logo from "/logo1.png";
+import { FaX } from "react-icons/fa6";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -36,29 +39,44 @@ const Footer = () => {
               {[
                 {
                   icon: <FaFacebook size={18} />,
-                  color: "hover:text-[#1877F2]",
+                  color: "hover:text-[#25A69F]",
+                  link: "https://www.facebook.com/ababilgroup0/",
                 },
                 {
-                  icon: <FaTwitter size={18} />,
-                  color: "hover:text-[#1DA1F2]",
+                  icon: <FaX size={18} />,
+                  color: "hover:text-[#25A69F]",
+                  link: "https://x.com/ababilgroup0",
                 },
                 {
                   icon: <FaInstagram size={18} />,
-                  color: "hover:text-[#E4405F]",
+                  color: "hover:text-[#25A69F]",
+                  link: "https://www.instagram.com/ababil.group0/",
                 },
                 {
                   icon: <FaLinkedin size={18} />,
-                  color: "hover:text-[#0A66C2]",
+                  color: "hover:text-[#25A69F]",
+                  link: "https://www.linkedin.com/company/107995554/admin/dashboard/",
                 },
                 {
                   icon: <FaYoutube size={18} />,
-                  color: "hover:text-[#FF0000]",
+                  color: "hover:text-[#25A69F]",
+                  link: "https://www.youtube.com/channel/UC0GpetTVeP01QoP7KtVe6LA",
+                },
+                {
+                  icon: <FaPinterest size={18} />,
+                  color: "hover:text-[#25A69F]",
+                  link: "https://www.pinterest.com/diziababilgroup/",
+                },
+                {
+                  icon: <FaTiktok size={18} />,
+                  color: "hover:text-[#25A69F]",
+                  link: "https://www.tiktok.com/@ababil.group0",
                 },
               ].map((social, index) => (
                 <a
                   key={index}
-                  href="#"
-                  className={`text-gray-400 ${social.color} transition-colors duration-300`}
+                  href={social.link}
+                  className={`text-gray-400 ${social.color} hover:-translate-y-2 transition-transform duration-300`}
                   aria-label={`${social.icon.type.displayName} link`}
                 >
                   {social.icon}

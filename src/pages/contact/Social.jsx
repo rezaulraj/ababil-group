@@ -7,9 +7,11 @@ import {
   FaYoutube,
   FaPaperPlane,
   FaPhone,
+  FaTiktok,
 } from "react-icons/fa";
 import { MdEmail, MdPerson, MdSubject } from "react-icons/md";
 import { IoMdSend } from "react-icons/io";
+import { FaX } from "react-icons/fa6";
 
 const Social = () => {
   const [formData, setFormData] = useState({
@@ -146,11 +148,42 @@ const Social = () => {
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-10">
               {[
-                { icon: FaFacebook, label: "Facebook", color: "bg-blue-600" },
-                { icon: FaTwitter, label: "Twitter", color: "bg-sky-500" },
-                { icon: FaLinkedin, label: "LinkedIn", color: "bg-blue-700" },
-                { icon: FaInstagram, label: "Instagram", color: "bg-pink-500" },
-                { icon: FaYoutube, label: "YouTube", color: "bg-red-600" },
+                {
+                  icon: FaFacebook,
+                  label: "Facebook",
+                  color: "bg-blue-600",
+                  link: "https://www.facebook.com/ababilgroup0/",
+                },
+                {
+                  icon: FaX,
+                  label: "Twitter",
+                  color: "bg-sky-500",
+                  link: "https://x.com/ababilgroup0",
+                },
+                {
+                  icon: FaLinkedin,
+                  label: "LinkedIn",
+                  color: "bg-blue-700",
+                  link: "https://www.linkedin.com/company/107995554/admin/dashboard/",
+                },
+                {
+                  icon: FaInstagram,
+                  label: "Instagram",
+                  color: "bg-pink-500",
+                  link: "https://www.instagram.com/ababil.group0/",
+                },
+                {
+                  icon: FaYoutube,
+                  label: "YouTube",
+                  color: "bg-red-600",
+                  link: "https://www.youtube.com/channel/UC0GpetTVeP01QoP7KtVe6LA",
+                },
+                {
+                  icon: FaTiktok,
+                  label: "YouTube",
+                  color: "bg-gray-600",
+                  link: "https://www.tiktok.com/@ababil.group0",
+                },
               ].map(({ icon: Icon, label, color }, i) => (
                 <a
                   key={i}

@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiSearch, FiX, FiMenu } from "react-icons/fi";
+import {
+  FiSearch,
+  FiX,
+  FiMenu,
+  FiHome,
+  FiUsers,
+  FiBook,
+  FiBriefcase,
+  FiFileText,
+  FiMail,
+} from "react-icons/fi";
 import { FaLayerGroup, FaMapMarkerAlt } from "react-icons/fa";
 import logo1 from "/Ababil-Group-Logo.png?url";
 
@@ -16,12 +26,28 @@ const Header = () => {
   const [showPopup, setShowPopup] = useState(false);
 
   const navLinks = [
-    { label: "Home", path: "/" },
-    { label: "People At Ababil", path: "/people-at-ababil-group" },
-    { label: "Media & News", path: "/media-and-news" },
-    { label: "Career", path: "/career" },
-    { label: "All Jobs", path: "/all-jobs" },
-    { label: "Contact", path: "/contact" },
+    { label: "Home", path: "/", icon: <FiHome className="mr-2" /> },
+    {
+      label: "People At Ababil",
+      path: "/people-at-ababil-group",
+      icon: <FiUsers className="mr-2" />,
+    },
+    {
+      label: "Media & News",
+      path: "/media-and-news",
+      icon: <FiBook className="mr-2" />,
+    },
+    {
+      label: "Career",
+      path: "/career",
+      icon: <FiBriefcase className="mr-2" />,
+    },
+    {
+      label: "All Jobs",
+      path: "/all-jobs",
+      icon: <FiFileText className="mr-2" />,
+    },
+    { label: "Contact", path: "/contact", icon: <FiMail className="mr-2" /> },
   ];
 
   const colors = [
@@ -289,17 +315,18 @@ const Header = () => {
                     />
                   )}
                 </a>
-                <nav className="hidden md:flex items-center space-x-1 lg:space-x-4 mx-4">
+                <nav className="hidden md:flex items-center space-x-1 lg:space-x-2 mx-4">
                   {navLinks.map((link, index) => (
                     <motion.a
                       key={index}
                       href={link.path}
-                      className={`px-3 py-2 rounded-md text-sm lg:text-lg  font-medium ${
+                      className={`px-3 py-2 rounded-md text-sm lg:text-lg font-medium flex items-center ${
                         atTop ? "text-white" : "text-gray-800"
-                      }  hover:text-[#25A69F] transition-colors`}
+                      } hover:text-[#25A69F] transition-colors`}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
+                      {link.icon}
                       {link.label}
                     </motion.a>
                   ))}
@@ -352,10 +379,11 @@ const Header = () => {
                         <motion.a
                           key={index}
                           href={link.path}
-                          className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
+                          className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100 flex items-center"
                           whileHover={{ x: 5 }}
                           onClick={() => setMobileMenuOpen(false)}
                         >
+                          {link.icon}
                           {link.label}
                         </motion.a>
                       ))}
