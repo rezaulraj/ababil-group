@@ -9,14 +9,14 @@ import {
 import { FaLinkedin } from "react-icons/fa";
 
 // IMAGES
-import people1 from "../../assets/ababil/people1.jpg?url";
-import people2 from "../../assets/ababil/people2.jpg?url";
-import people3 from "../../assets/ababil/people3.jpg?url";
-import people4 from "../../assets/ababil/people4.jpg?url";
-import people5 from "../../assets/ababil/people5.jpg?url";
-import people6 from "../../assets/ababil/people6.jpg?url";
-import people7 from "../../assets/ababil/people7.jpg?url";
-import people8 from "../../assets/ababil/people8.jpg?url";
+import people1 from "../../assets/AbabilGroup/PeopleatAbabil/CHAIRMAN.jpeg?url";
+import people2 from "../../assets/AbabilGroup/PeopleatAbabil/GROUPManagingDirector.jpeg?url";
+import people3 from "../../assets/AbabilGroup/PeopleatAbabil/DIRECTOR.jpeg?url";
+import people4 from "../../assets/AbabilGroup/PeopleatAbabil/MANAGINGDIRECTOR.jpeg?url";
+import people5 from "../../assets/AbabilGroup/PeopleatAbabil/Director.jpg?url";
+import people6 from "../../assets/AbabilGroup/PeopleatAbabil/HEADOFOPERATIONS.jpeg?url";
+import people7 from "../../assets/AbabilGroup/PeopleatAbabil/ChiefTechnologyOfficer.jpeg?url";
+import people8 from "../../assets/AbabilGroup/PeopleatAbabil/ChiefFinancialOfficer.jpeg?url";
 
 const peoples = [
   {

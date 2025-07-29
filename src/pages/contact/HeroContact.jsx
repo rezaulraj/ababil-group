@@ -6,7 +6,7 @@ import {
   useMotionValue,
   animate,
 } from "framer-motion";
-import bgimage from "../../assets/contact/herocontact.jpg?url";
+import bgimage from "../../assets/AbabilGroup/Career/heropage.jpg?url";
 const HeroContact = () => {
   const containerRef = useRef(null);
 
@@ -68,37 +68,17 @@ const HeroContact = () => {
       {/* Content */}
       <div className="relative z-10 h-full flex items-center">
         <motion.div
-          className="max-w-4xl px-8 lg:px-16"
+          className="max-w-2xl px-8 lg:px-16"
           style={{ x: textX, y: textY }}
         >
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold font-lato tracking-wider text-white leading-tight mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            We're Here to <span className="text-[#25A69F]"> Help </span> Let’s
-            Connect!
+            We're Here to Help Let’s Connect!
           </motion.h1>
-
-          <motion.p
-            className="text-lg md:text-xl text-gray-200 max-w-2xl mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-             Have questions or need support? Our team is ready to assist you with any inquiries. Don’t hesitate to reach out, we're just a message away.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <button className="px-8 py-3 bg-[#25A69F] hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105">
-              Contact Us Today
-            </button>
-          </motion.div>
         </motion.div>
       </div>
 

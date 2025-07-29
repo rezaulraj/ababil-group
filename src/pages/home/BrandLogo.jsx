@@ -1,28 +1,28 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import brandLogo1 from "../../assets/home/client/mercedes-benz.jpg?url";
-import brandLogo2 from "../../assets/home/client/mitsubishi-motors.png?url";
-import brandLogo3 from "../../assets/home/client/rangs-properties.jpg?url";
-import brandLogo4 from "../../assets/home/client/mercedes-benz.jpg?url";
-import brandLogo5 from "../../assets/home/client/suzuki.jpg?url";
-import brandLogo6 from "../../assets/home/client/motul.jpg?url";
-import brandLogo7 from "../../assets/home/client/ranksnet.jpg?url";
-import brandLogo8 from "../../assets/home/client/ritt.jpg?url";
-import brandLogo9 from "../../assets/home/client/workshop.jpg?url";
-import brandLogo10 from "../../assets/home/client/softex.jpg?url";
+import brandLogo1 from "../../assets/AbabilGroup/Home/ababilbrand/1.png?url";
+import brandLogo2 from "../../assets/AbabilGroup/Home/ababilbrand/2.png?url";
+import brandLogo3 from "../../assets/AbabilGroup/Home/ababilbrand/3.png?url";
+import brandLogo4 from "../../assets/AbabilGroup/Home/ababilbrand/4.png?url";
+import brandLogo5 from "../../assets/AbabilGroup/Home/ababilbrand/5.png?url";
+import brandLogo6 from "../../assets/AbabilGroup/Home/ababilbrand/6.png?url";
+import brandLogo7 from "../../assets/AbabilGroup/Home/ababilbrand/7.png?url";
+import brandLogo8 from "../../assets/AbabilGroup/Home/ababilbrand/8.png?url";
+import brandLogo9 from "../../assets/AbabilGroup/Home/ababilbrand/9.png?url";
+import brandLogo10 from "../../assets/AbabilGroup/Home/ababilbrand/10.png?url";
 
 const brands = [
-  { logo: brandLogo1, name: "Mercedes-Benz" },
-  { logo: brandLogo2, name: "Mitsubishi Motors" },
-  { logo: brandLogo3, name: "Rangs Properties" },
-  { logo: brandLogo4, name: "Mercedes-Benz" },
-  { logo: brandLogo5, name: "Suzuki" },
-  { logo: brandLogo6, name: "Motul" },
-  { logo: brandLogo7, name: "Ranksnet" },
-  { logo: brandLogo8, name: "Ritt" },
+  { logo: brandLogo1, name: "BEB TRANS" },
+  { logo: brandLogo2, name: "Auto Services Gherta Mica" },
+  { logo: brandLogo3, name: "SIDICOM" },
+  { logo: brandLogo4, name: "VIREVO" },
+  { logo: brandLogo5, name: "AQUA MEISTER" },
+  { logo: brandLogo6, name: "R" },
+  { logo: brandLogo7, name: "SUPPER EGGS" },
+  { logo: brandLogo8, name: "THE ESENTIAL DAIRY" },
   { logo: brandLogo9, name: "Workshop" },
-  { logo: brandLogo10, name: "Softex" },
+  { logo: brandLogo10, name: "AUTO COM" },
 ];
 
 const BrandLogo = () => {

@@ -11,7 +11,7 @@ import CareerPage from "./pages/career/CareerPage";
 import MediaNews from "./pages/mediaandnews/MediaNews";
 import LatestNewsDetails from "./pages/mediaandnews/LatestNewsDetails";
 import ScrollToTop from "./components/ScrollToTop";
-
+import "./App.css"
 function App() {
   return (
     <>

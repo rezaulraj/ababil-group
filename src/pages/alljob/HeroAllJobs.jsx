@@ -6,7 +6,7 @@ import {
   useMotionValue,
   animate,
 } from "framer-motion";
-import bgimage from "../../assets/contact/herocontact.jpg?url";
+import bgimage from "../../assets/AbabilGroup/Career/heropage.jpg?url";
 import { FaSearch } from "react-icons/fa";
 
 const HeroAllJobs = () => {
@@ -70,46 +70,17 @@ const HeroAllJobs = () => {
       {/* Content */}
       <div className="relative z-10 h-full flex items-center">
         <motion.div
-          className="max-w-5xl px-8 lg:px-16"
+          className="max-w-2xl px-8 lg:px-16"
           style={{ x: textX, y: textY }}
         >
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+            className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Build Your Career.
-            <span className="text-blue-400"> Empower a Nation.</span>
+            Be the Change and Become a Part of the Movement to Build a Stronger Nation
           </motion.h1>
-
-          <motion.p
-            className="text-lg md:text-xl text-gray-200 max-w-3xl mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Become part of a purpose-driven team committed to national
-            development. Explore fulfilling career opportunities where your
-            skills fuel economic growth and drive lasting social impact.
-          </motion.p>
-
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <button className="flex items-center justify-center px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105 group">
-              <span className="group-hover:mr-2 transition-all">
-                Browse All Jobs
-              </span>
-              <FaSearch className="opacity-0 group-hover:opacity-100 transition-all" />
-            </button>
-            <button className="px-8 py-3 bg-transparent border-2 border-white hover:bg-white/10 text-white font-medium rounded-lg transition-all duration-300">
-              Learn About Our Mission
-            </button>
-          </motion.div>
         </motion.div>
       </div>
 

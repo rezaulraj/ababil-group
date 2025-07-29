@@ -6,7 +6,7 @@ import {
   useMotionValue,
   animate,
 } from "framer-motion";
-import bgimage from "../../assets/contact/herocontact.jpg?url";
+import bgimage from "../../assets/AbabilGroup/Career/heropage.jpg?url";
 const HeroCareer = () => {
   const containerRef = useRef(null);
 
@@ -68,7 +68,7 @@ const HeroCareer = () => {
       {/* Content */}
       <div className="relative z-10 h-full flex items-center">
         <motion.div
-          className="max-w-5xl px-8 lg:px-16"
+          className="max-w-2xl px-8 lg:px-16"
           style={{ x: textX, y: textY }}
         >
           <motion.h1
@@ -80,15 +80,6 @@ const HeroCareer = () => {
             Shape Your Future,
             <span className="text-blue-400"> Strengthen the Nation</span>
           </motion.h1>
-
-          <motion.p
-            className="text-lg md:text-xl text-gray-200 max-w-3xl mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Join the movement driving progress and purpose.
-          </motion.p>
         </motion.div>
       </div>
 

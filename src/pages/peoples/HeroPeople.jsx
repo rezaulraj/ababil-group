@@ -6,7 +6,7 @@ import {
   useMotionValue,
   animate,
 } from "framer-motion";
-import heroimage from "../../assets/ababil/chairman.png";
+import heroimage from "../../assets/AbabilGroup/PeopleatAbabil/CHAIRMAN.jpeg?url";
 
 const HeroPeople = () => {
   const containerRef = useRef(null);
