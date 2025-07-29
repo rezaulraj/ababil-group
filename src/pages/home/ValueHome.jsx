@@ -4,7 +4,7 @@ import ourValue from "../../assets/home/our_values.gif?url";
 
 const ValueHome = () => {
   return (
-    <div className="relative flex flex-col items-center justify-center py-10">
+    <div className="relative flex flex-col items-center justify-center py-10 overflow-hidden">
       {/* Animated Header Text */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
