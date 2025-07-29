@@ -112,22 +112,26 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* INDUSTRIES  */}
           <div className="space-y-6">
             <h4 className="text-lg font-semibold text-white border-b border-blue-500 pb-2 inline-block">
-              Services
+              Industries
             </h4>
             <ul className="space-y-3">
               {[
+                "Automobile",
+                "Manufacturing",
+                "Agriculture",
+                "Beautician",
+                "Chef",
+                "Cleaner",
                 "Construction",
-                "Architecture",
-                "Interior Design",
-                "Consulting",
-                "Maintenance",
+                "Garments",
+                "Heavy Truck Driver",
               ].map((service, index) => (
                 <li key={index}>
                   <a
-                    href="#"
+                    href="/"
                     className="text-gray-400 hover:text-blue-400 transition-colors duration-300 flex items-start group"
                   >
                     <span className="w-1 h-1 bg-blue-400 rounded-full mt-2 mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
