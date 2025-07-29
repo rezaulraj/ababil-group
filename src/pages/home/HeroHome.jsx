@@ -4,7 +4,7 @@ import logoblue from "/logo1.png";
 
 const HeroHome = () => {
   const videoLink =
-    "https://rancon.com.bd/storage/2024/10/Rancon-AV-Small-Size.mp4";
+    "https://res.cloudinary.com/dykdbtzsn/video/upload/v1753791386/Ababil_Group_fppvvf.mp4";
 
   // Track cursor position
   const mouseX = useMotionValue(0);

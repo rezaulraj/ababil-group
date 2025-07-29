@@ -6,7 +6,7 @@ const OurCulture = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const videoUrl =
-    "https://rancon.com.bd/storage/2024/10/Rancon-AV-Small-Size.mp4";
+    "https://res.cloudinary.com/dykdbtzsn/video/upload/v1753791386/Ababil_Group_fppvvf.mp4";
 
   return (
     <section className="w-full min-h-screen bg-gray-900 text-white flex items-center justify-center px-6 py-20">
