@@ -133,10 +133,10 @@ const Location = () => {
               <div className="flex items-center gap-3">
                 <FaEnvelope className="text-blue-400" />
                 <a
-                  href="mailto:info@example.com"
+                  href="mailto:info@ababil.group"
                   className="text-gray-300 hover:text-blue-400 transition"
                 >
-                  info@example.com
+                  info@ababil.group
                 </a>
               </div>
             </div>
