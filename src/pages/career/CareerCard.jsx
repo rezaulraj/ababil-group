@@ -27,9 +27,12 @@ const CareerCard = () => {
                 We Are Here
               </h3>
               <p className="text-gray-600 mb-4">Find our office location</p>
-              <button className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors">
+              <a
+                href="/contact"
+                className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors"
+              >
                 Click here to find us
-              </button>
+              </a>
             </div>
           </div>
 
@@ -57,9 +60,7 @@ const CareerCard = () => {
                 Say Hello
               </h3>
               <p className="text-gray-600">What can we do for you?</p>
-              <button className="mt-4 px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600 transition-colors">
-                Contact Us
-              </button>
+              <p className="bg-yellow-100 px-6 py-2 rounded-full">info@ababil.group</p>
             </div>
           </div>
         </div>

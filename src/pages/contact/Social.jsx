@@ -53,7 +53,10 @@ const Social = () => {
         </div>
       )}
 
-      <section className="py-20 px-4 sm:px-8 bg-white text-gray-800">
+      <section
+        id="contact-form"
+        className="py-20 px-4 sm:px-8 bg-white text-gray-800"
+      >
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
           {/* Contact Form */}
           <div className="bg-white p-8 rounded-xl shadow-xl border border-gray-200">
@@ -184,10 +187,11 @@ const Social = () => {
                   color: "bg-gray-600",
                   link: "https://www.tiktok.com/@ababil.group0",
                 },
-              ].map(({ icon: Icon, label, color }, i) => (
+              ].map(({ icon: Icon, label, color, link }, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={link}
+                  target="_blank"
                   className={`flex flex-col items-center justify-center h-24 rounded-xl text-white ${color} hover:brightness-110 transition shadow-md`}
                 >
                   <Icon className="text-2xl mb-1" />

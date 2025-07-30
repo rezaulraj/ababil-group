@@ -18,9 +18,9 @@ const SalesMarketingJobs = () => {
       category: "Sales",
       icon: <FaSearchDollar className="text-blue-500 text-2xl" />,
       location: "New York, NY",
-      salary: "$65,000 - $85,000/yr + commission",
+      salary: "$15000 - $20,000/yr + commission",
       experience: "3+ years",
-      posted: "2 days ago",
+      posted: "10 days ago",
       description:
         "Drive revenue growth by identifying new business opportunities and maintaining client relationships.",
       requirements: [
@@ -37,7 +37,7 @@ const SalesMarketingJobs = () => {
       category: "Marketing",
       icon: <FaChartLine className="text-purple-500 text-2xl" />,
       location: "Remote",
-      salary: "$60,000 - $80,000/yr",
+      salary: "$18,000 - $22,000/yr",
       experience: "2+ years",
       posted: "1 week ago",
       description:
@@ -56,7 +56,7 @@ const SalesMarketingJobs = () => {
       category: "Marketing",
       icon: <MdDesignServices className="text-green-500 text-2xl" />,
       location: "Chicago, IL",
-      salary: "$75,000 - $95,000/yr",
+      salary: "$22,000 - $28,000/yr",
       experience: "4+ years",
       posted: "5 days ago",
       description:
@@ -75,9 +75,9 @@ const SalesMarketingJobs = () => {
       category: "Sales",
       icon: <FaSearchDollar className="text-blue-500 text-2xl" />,
       location: "Boston, MA",
-      salary: "$50,000 - $65,000/yr + bonus",
+      salary: "$30,000 - $40,000/yr + bonus",
       experience: "1+ year",
-      posted: "3 days ago",
+      posted: "2 Year ago",
       description:
         "Identify leads, conduct outreach, and support pipeline growth through strategic partnerships.",
       requirements: [
@@ -204,9 +204,12 @@ const SalesMarketingJobs = () => {
                       </div>
                     </div>
                   </div>
-                  <button className="px-5 py-2 cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-300 whitespace-nowrap w-full sm:w-auto text-center">
-                    Full Details
-                  </button>
+                  <a
+                    href="/career"
+                    className="px-5 py-2 cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-300 whitespace-nowrap w-full sm:w-auto text-center"
+                  >
+                    Apply Now
+                  </a>
                 </div>
 
                 <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">

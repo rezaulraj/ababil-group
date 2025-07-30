@@ -209,23 +209,10 @@ const Footer = () => {
         <div className="border-t border-gray-700 my-8 opacity-50"></div>
 
         {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="text-center ">
           <p className="text-gray-400 text-xs mb-4 md:mb-0">
             &copy; {currentYear} Ababil Group. All rights reserved.
           </p>
-          <div className="flex space-x-6">
-            {["Privacy Policy", "Terms of Service", "Sitemap"].map(
-              (item, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="text-gray-400 hover:text-blue-400 text-xs transition-colors duration-300"
-                >
-                  {item}
-                </a>
-              )
-            )}
-          </div>
         </div>
       </div>
     </footer>

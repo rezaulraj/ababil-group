@@ -50,7 +50,13 @@ const WhatWeCan = () => {
               </div>
 
               {/* Get in Touch Button */}
-              <button className="mt-6 flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105">
+              <button
+                onClick={() => {
+                  const section = document.querySelector("#contact-form");
+                  section?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="mt-6 cursor-pointer flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105"
+              >
                 <MdChat className="text-xl" />
                 Get in Touch
               </button>
