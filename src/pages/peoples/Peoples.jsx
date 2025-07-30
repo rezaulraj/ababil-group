@@ -22,19 +22,19 @@ const peoples = [
   {
     image: people1,
     degination: "CHAIRMAN",
-    name: "Alejandro Ruiz",
+    name: "George Mitchell",
     company: "Ababil Group",
   },
   {
     image: people2,
     degination: "GROUP Managing Director",
-    name: "Romo Rouf Chowdhury",
+    name: "Thomas Wright",
     company: "Ababil Group",
   },
   {
     image: people3,
     degination: "Director",
-    name: "Luca Moretti",
+    name: "Amelia Turner",
     company: "Ababil Group",
   },
   {
@@ -46,13 +46,13 @@ const peoples = [
   {
     image: people5,
     degination: "DIRECTOR",
-    name: "Theo Dubois",
+    name: "Yasmin Al-Mutairi",
     company: "Ababil Group",
   },
   {
     image: people6,
     degination: "HEAD OF OPERATIONS",
-    name: "Freya Nilsson",
+    name: "Edward Bennett",
     company: "Ababil Group",
   },
   {

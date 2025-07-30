@@ -73,8 +73,7 @@ const HeroPeople = () => {
             style={{ x: textX, y: textY }}
             className="text-4xl md:text-5xl lg:text-7xl font-semibold font-lato text-white leading-relaxed tracking-widest select-none"
           >
-            Abdul Rouf <br />
-            Chowdhury
+           George Mitchell
           </motion.h1>
           <motion.p
             style={{ x: textX, y: textY }}

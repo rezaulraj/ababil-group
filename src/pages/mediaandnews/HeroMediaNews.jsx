@@ -6,7 +6,7 @@ import {
   useMotionValue,
   animate,
 } from "framer-motion";
-import bgimage from "../../assets/AbabilGroup/Career/heropage.jpg?";
+import bgimage from "../../assets/AbabilGroup/Career/heropage.jpg?url";
 const HeroMediaNews = () => {
   const containerRef = useRef(null);
 
