@@ -1,17 +1,13 @@
 import React, { useRef, useState } from "react";
 import {
   FaFacebook,
-  FaTwitter,
   FaLinkedin,
   FaInstagram,
   FaYoutube,
-  FaPaperPlane,
-  FaPhone,
   FaTiktok,
   FaCheckCircle,
 } from "react-icons/fa";
 import { MdEmail, MdPerson, MdSubject } from "react-icons/md";
-import { IoMdSend } from "react-icons/io";
 import { FaX } from "react-icons/fa6";
 import emailjs from "@emailjs/browser";
 import { TbLoader } from "react-icons/tb";
