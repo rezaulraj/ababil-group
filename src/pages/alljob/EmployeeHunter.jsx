@@ -273,7 +273,7 @@ const EmployeeHunter = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 flex items-center justify-center bg-black opacity-50 z-50"
+            className="fixed inset-0 flex items-center justify-center bg-black/50 z-50"
           >
             <motion.div
               initial={{ scale: 0.8, y: 50 }}

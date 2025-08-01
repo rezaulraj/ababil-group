@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   FaUser,
   FaEnvelope,
@@ -9,44 +9,36 @@ import {
 } from "react-icons/fa";
 import { MdSubject } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";
-
+import emailjs from "@emailjs/browser";
+import { TbLoader } from "react-icons/tb";
 const CareerForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-    cv: null,
-  });
-
+  const [submitRign, setSubmitRing] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: files ? files[0] : value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
+  const form = useRef();
+  const publicKey = "vqs8cPefiJoNphzzB";
+  const serviceId = "service_55ubscz";
+  const templeteId = "template_be7y4a9";
+  const sendEmail = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setShowPopup(true);
-
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-      cv: null,
-    });
-
-    // Hide popup after 3 seconds
-    setTimeout(() => setShowPopup(false), 3000);
+    setSubmitRing(true);
+    emailjs
+      .sendForm(serviceId, templeteId, form.current, {
+        publicKey: publicKey,
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          setShowPopup(true);
+          setSubmitRing(false);
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+          alert(
+            "Someting is error sending data do not panic we will resolve soon. Please Email us"
+          );
+          setSubmitRing(false);
+        }
+      );
   };
 
   return (
@@ -62,7 +54,7 @@ const CareerForm = () => {
         <p className="mt-3 text-gray-600">We're excited to hear from you!</p>
       </div>
 
-      <form className="space-y-6" onSubmit={handleSubmit}>
+      <form ref={form} onSubmit={sendEmail} className="space-y-6">
         {/* Name Field */}
         <div className="relative group">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -71,8 +63,6 @@ const CareerForm = () => {
           <input
             type="text"
             name="name"
-            value={formData.name}
-            onChange={handleChange}
             className="bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-indigo-300 focus:border-indigo-500 block w-full pl-10 p-3 transition-all duration-200 shadow-sm"
             placeholder="Full Name"
             required
@@ -87,8 +77,6 @@ const CareerForm = () => {
           <input
             type="email"
             name="email"
-            value={formData.email}
-            onChange={handleChange}
             className="bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-indigo-300 focus:border-indigo-500 block w-full pl-10 p-3 transition-all duration-200 shadow-sm"
             placeholder="Email Address"
             required
@@ -102,9 +90,7 @@ const CareerForm = () => {
           </div>
           <input
             type="tel"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
+            name="company_name"
             className="bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-indigo-300 focus:border-indigo-500 block w-full pl-10 p-3 transition-all duration-200 shadow-sm"
             placeholder="Phone Number"
             required
@@ -118,9 +104,7 @@ const CareerForm = () => {
           </div>
           <input
             type="text"
-            name="subject"
-            value={formData.subject}
-            onChange={handleChange}
+            name="need"
             className="bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-indigo-300 focus:border-indigo-500 block w-full pl-10 p-3 transition-all duration-200 shadow-sm"
             placeholder="Subject"
             required
@@ -135,8 +119,6 @@ const CareerForm = () => {
           <textarea
             rows="5"
             name="message"
-            value={formData.message}
-            onChange={handleChange}
             className="bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-indigo-300 focus:border-indigo-500 block w-full pl-10 p-3 transition-all duration-200 shadow-sm"
             placeholder="Tell us about yourself and why you'd be a great fit..."
             required
@@ -151,8 +133,7 @@ const CareerForm = () => {
           <div className="flex items-center">
             <input
               type="file"
-              name="cv"
-              onChange={handleChange}
+              // name="cv"
               className="block w-full text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-indigo-100 file:text-indigo-700 hover:file:bg-indigo-200 transition-colors file:cursor-pointer file:shadow-sm pl-10"
               accept=".pdf,.doc,.docx,.txt"
               required
@@ -168,8 +149,11 @@ const CareerForm = () => {
           type="submit"
           className="flex items-center justify-center w-full px-6 py-3.5 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white font-semibold rounded-lg hover:from-indigo-700 hover:to-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 transition-all duration-200 shadow-lg hover:shadow-indigo-200"
         >
-          <FaPaperPlane className="mr-3" />
-          Submit Application
+          {submitRign ? (
+            <TbLoader className="animate-spin w-4 h-4" />
+          ) : (
+            "Submit Application"
+          )}
         </button>
       </form>
 
@@ -185,7 +169,7 @@ const CareerForm = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 flex items-center justify-center bg-black opacity-50 z-50"
+            className="fixed inset-0 flex items-center justify-center bg-black/50 z-50"
           >
             <motion.div
               initial={{ scale: 0.8, y: 50 }}

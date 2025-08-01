@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   FaFacebook,
   FaTwitter,
@@ -8,51 +8,46 @@ import {
   FaPaperPlane,
   FaPhone,
   FaTiktok,
+  FaCheckCircle,
 } from "react-icons/fa";
 import { MdEmail, MdPerson, MdSubject } from "react-icons/md";
 import { IoMdSend } from "react-icons/io";
 import { FaX } from "react-icons/fa6";
+import emailjs from "@emailjs/browser";
+import { TbLoader } from "react-icons/tb";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Social = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
+  const [submitRign, setSubmitRing] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const form = useRef();
+  const publicKey = "vqs8cPefiJoNphzzB";
+  const serviceId = "service_55ubscz";
+  const templeteId = "template_be7y4a9";
+  const sendEmail = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setSubmitRing(true);
+    emailjs
+      .sendForm(serviceId, templeteId, form.current, {
+        publicKey: publicKey,
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          setShowPopup(true);
+          setSubmitRing(false);
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+          alert(
+            "Someting is error sending data do not panic we will resolve soon. Please Email us"
+          );
+          setSubmitRing(false);
+        }
+      );
   };
-
   return (
     <>
-      {/* Popup Message */}
-      {submitted && (
-        <div className="fixed top-5 right-5 z-50 animate-fade-in-up">
-          <div className="bg-green-100 border border-green-300 text-green-800 px-6 py-4 rounded-lg shadow-lg flex items-center gap-3">
-            <FaPaperPlane className="text-green-500 text-xl" />
-            <div>
-              <strong className="block">Thank you!</strong>
-              <span>Your message has been sent.</span>
-            </div>
-          </div>
-        </div>
-      )}
-
       <section
         id="contact-form"
         className="py-20 px-4 sm:px-8 bg-white text-gray-800"
@@ -64,7 +59,7 @@ const Social = () => {
               Get in Touch
             </h2>
 
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form ref={form} onSubmit={sendEmail} className="space-y-5">
               {/* Name */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
@@ -74,8 +69,6 @@ const Social = () => {
                 <input
                   type="text"
                   name="name"
-                  value={formData.name}
-                  onChange={handleChange}
                   required
                   className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                 />
@@ -90,8 +83,6 @@ const Social = () => {
                 <input
                   type="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
                   required
                   className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                 />
@@ -105,9 +96,7 @@ const Social = () => {
                 </label>
                 <input
                   type="text"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
+                  name="need"
                   required
                   className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                 />
@@ -121,8 +110,6 @@ const Social = () => {
                 <textarea
                   name="message"
                   rows="4"
-                  value={formData.message}
-                  onChange={handleChange}
                   required
                   className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                 ></textarea>
@@ -133,8 +120,11 @@ const Social = () => {
                 type="submit"
                 className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#25A69F] hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300"
               >
-                <span>Send Message</span>
-                <IoMdSend className="text-lg" />
+                {submitRign ? (
+                  <TbLoader className="animate-spin w-4 h-4" />
+                ) : (
+                  "Send Message"
+                )}
               </button>
             </form>
           </div>
@@ -211,7 +201,40 @@ const Social = () => {
           </div>
         </div>
       </section>
-
+      <AnimatePresence>
+        {showPopup && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 flex items-center justify-center bg-black/50 z-50"
+          >
+            <motion.div
+              initial={{ scale: 0.8, y: 50 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.8, y: 50 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="bg-white rounded-xl p-8 max-w-sm mx-4 text-center shadow-2xl"
+            >
+              <div className="flex justify-center mb-4">
+                <FaCheckCircle className="text-6xl text-green-500" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">
+                Thank You!
+              </h3>
+              <p className="text-gray-600 mb-6">
+                We've received your application and will contact you shortly.
+              </p>
+              <button
+                onClick={() => setShowPopup(false)}
+                className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+              >
+                Close
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       {/* Inline Style for Animation */}
       <style>{`
         @keyframes fade-in-up {
