@@ -11,6 +11,8 @@ import {
   FiFileText,
   FiMail,
 } from "react-icons/fi";
+import { FaUsersViewfinder } from "react-icons/fa6";
+
 import { FaLayerGroup, FaMapMarkerAlt } from "react-icons/fa";
 import logo1 from "/Ababil-Group-Logo.png?url";
 
@@ -43,9 +45,9 @@ const Header = () => {
       icon: <FiBriefcase className="mr-2" />,
     },
     {
-      label: "All Jobs",
-      path: "/all-jobs",
-      icon: <FiFileText className="mr-2" />,
+      label: "For Employers",
+      path: "/for-employers",
+      icon: <FaUsersViewfinder className="mr-2" />,
     },
     { label: "Contact", path: "/contact", icon: <FiMail className="mr-2" /> },
   ];
@@ -333,14 +335,14 @@ const Header = () => {
                 </nav>
 
                 <div className="flex items-center space-x-4">
-                  <motion.button
+                  {/* <motion.button
                     onClick={toggleSearch}
                     className="p-2 text-[#06334C] hover:bg-gray-300 hover:text-[#06334C] rounded-full"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
                     {searchOpen ? <FiX size={20} /> : <FiSearch size={20} />}
-                  </motion.button>
+                  </motion.button> */}
 
                   <motion.button
                     className="p-2 text-[#06334C] bg-gray-200 hover:bg-gray-300 hover:text-[#06334C] rounded-full"

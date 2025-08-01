@@ -11,7 +11,7 @@ import CareerPage from "./pages/career/CareerPage";
 import MediaNews from "./pages/mediaandnews/MediaNews";
 import LatestNewsDetails from "./pages/mediaandnews/LatestNewsDetails";
 import ScrollToTop from "./components/ScrollToTop";
-import "./App.css"
+import "./App.css";
 function App() {
   return (
     <>
@@ -21,7 +21,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/people-at-ababil-group" element={<PeopleAbabil />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/all-jobs" element={<Alljobs />} />
+          <Route path="/for-employers" element={<Alljobs />} />
           <Route path="/career" element={<CareerPage />} />
           <Route path="/media-and-news" element={<MediaNews />} />
           <Route path="/media-and-news/:slug" element={<LatestNewsDetails />} />

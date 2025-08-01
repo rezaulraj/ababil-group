@@ -60,7 +60,9 @@ const CareerCard = () => {
                 Say Hello
               </h3>
               <p className="text-gray-600">What can we do for you?</p>
-              <p className="bg-yellow-100 px-6 py-2 rounded-full">info@ababil.group</p>
+              <p className="bg-yellow-100 px-6 py-2 rounded-full
+              
+              ">info@ababil.group</p>
             </div>
           </div>
         </div>
