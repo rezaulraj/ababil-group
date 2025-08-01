@@ -77,7 +77,7 @@ const HeroHome = () => {
           style={{ x: textX, y: textY }}
           className="text-xl md:text-3xl font-medium text-white max-w-2xl mx-auto mb-8"
         >
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#25A69F] to-[#1A9695] uppercase">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#25A69F] to-[#1A9695]/90 uppercase">
             Innovating Beyond Boundaries.
           </span>
         </motion.h2>
