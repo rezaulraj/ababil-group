@@ -32,11 +32,7 @@ const CareerForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Here you would typically send the form data to your backend
     console.log("Form submitted:", formData);
-
-    // Show thank you popup
     setShowPopup(true);
 
     // Reset form
