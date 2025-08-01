@@ -79,7 +79,8 @@ const HeroAllJobs = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Be the Change and Become a Part of the Movement to Build a Stronger Nation
+            Be the Change and Become a Part of the Movement to Build a Stronger
+            Nation
           </motion.h1>
         </motion.div>
       </div>

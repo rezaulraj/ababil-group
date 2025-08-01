@@ -38,7 +38,11 @@ const BrandLogo = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#25A69F] via-[#25A69F]/80 to-[#25A69F] mb-4">
+<<<<<<< HEAD
             Clients Who Trust Ababil Group
+=======
+            Trustable Ababil Client
+>>>>>>> 882f7281a4343856a264aa8bd7dbb3927524dced
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-pink-500 mx-auto mb-6 rounded-full"></div>
           <p className="text-gray-300 max-w-xl mx-auto">
