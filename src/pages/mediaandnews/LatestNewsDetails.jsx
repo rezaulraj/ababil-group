@@ -334,7 +334,7 @@ const LatestNewsDetails = () => {
   }
 
   return (
-    <div className="">
+    <div className="pb-10">
       <div
         className="relative h-[75vh] w-full mb-12 overflow-hidden"
         style={{

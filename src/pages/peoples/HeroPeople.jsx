@@ -73,23 +73,51 @@ const HeroPeople = () => {
             style={{ x: textX, y: textY }}
             className="text-4xl md:text-5xl lg:text-7xl font-semibold font-lato text-white leading-relaxed tracking-widest select-none"
           >
-           George Mitchell
+            George Mitchell
           </motion.h1>
-          <motion.p
-            style={{ x: textX, y: textY }}
-            className="text-sm text-white/80 mt-4 font-semibold select-none"
+
+          {/* White Position Text with Animation */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="mt-4"
           >
-            (22 September, 1937 – 18 February, 2023)
+            <p className="text-xl md:text-2xl text-white font-light mb-2">
+              Chairman of
+            </p>
+            <motion.div
+              className="text-3xl md:text-4xl font-bold text-white bg-[#1A9695] px-4 py-2 inline-block"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              ABABIL GROUP
+            </motion.div>
+          </motion.div>
+
+          {/* Optional Description */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            className="mt-8 text-lg text-white/90 max-w-lg"
+          >
+            Leading the company with vision and innovation to deliver
+            exceptional workforce solutions globally.
           </motion.p>
         </div>
       </div>
 
       {/* Scroll Down Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <div className="animate-bounce w-6 h-10 border-2 border-white rounded-full flex justify-center">
+      <motion.div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+      >
+        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
           <div className="w-1 h-2 bg-white mt-2 rounded-full"></div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -7,7 +7,13 @@ import {
   FaTiktok,
   FaCheckCircle,
 } from "react-icons/fa";
-import { MdEmail, MdPerson, MdSubject } from "react-icons/md";
+import {
+  MdEmail,
+  MdOutlineMessage,
+  MdPerson,
+  MdPhone,
+  MdSubject,
+} from "react-icons/md";
 import { FaX } from "react-icons/fa6";
 import emailjs from "@emailjs/browser";
 import { TbLoader } from "react-icons/tb";
@@ -59,7 +65,7 @@ const Social = () => {
               {/* Name */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
-                  <MdPerson className="text-blue-500" />
+                  <MdPerson className="text-[#25A69F] text-2xl" />
                   Name
                 </label>
                 <input
@@ -73,7 +79,7 @@ const Social = () => {
               {/* Email */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
-                  <MdEmail className="text-blue-500" />
+                  <MdEmail className="text-[#25A69F] text-2xl" />
                   Email
                 </label>
                 <input
@@ -83,11 +89,23 @@ const Social = () => {
                   className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
+                  <MdPhone className="text-[#25A69F] text-2xl" />
+                  Phone
+                </label>
+                <input
+                  type="tel"
+                  name="number"
+                  required
+                  className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                />
+              </div>
 
               {/* Subject */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
-                  <MdSubject className="text-blue-500" />
+                  <MdSubject className="text-[#25A69F] text-2xl" />
                   Subject
                 </label>
                 <input
@@ -100,7 +118,8 @@ const Social = () => {
 
               {/* Message */}
               <div>
-                <label className="block text-sm font-medium text-gray-700">
+                <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
+                  <MdOutlineMessage className="text-[#25A69F] text-2xl" />{" "}
                   Message
                 </label>
                 <textarea
@@ -114,7 +133,7 @@ const Social = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#25A69F] hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300"
+                className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#25A69F] hover:bg-[#25A69F]/90 text-white font-medium rounded-lg transition-all duration-300"
               >
                 {submitRign ? (
                   <TbLoader className="animate-spin w-4 h-4" />
@@ -169,7 +188,7 @@ const Social = () => {
                 },
                 {
                   icon: FaTiktok,
-                  label: "YouTube",
+                  label: "Tiktok",
                   color: "bg-gray-600",
                   link: "https://www.tiktok.com/@ababil.group0",
                 },

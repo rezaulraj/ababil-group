@@ -42,7 +42,10 @@ const CareerForm = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-8 mb-10 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-2xl border border-gray-100 relative">
+    <div
+      id="apply-form"
+      className="max-w-2xl mx-auto p-8 mb-10 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-2xl border border-gray-100 relative"
+    >
       {/* Header with decorative elements */}
       <div className="text-center my-10">
         <div className="relative inline-block">

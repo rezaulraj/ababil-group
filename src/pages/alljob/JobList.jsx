@@ -204,12 +204,15 @@ const SalesMarketingJobs = () => {
                       </div>
                     </div>
                   </div>
-                  <a
-                    href="/career"
+                  <button
+                    onClick={() => {
+                      const section = document.querySelector("#apply-form");
+                      section?.scrollIntoView({ behavior: "smooth" });
+                    }}
                     className="px-5 py-2 cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-300 whitespace-nowrap w-full sm:w-auto text-center"
                   >
                     Apply Now
-                  </a>
+                  </button>
                 </div>
 
                 <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
