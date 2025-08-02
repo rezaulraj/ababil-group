@@ -7,9 +7,7 @@ import {
   animate,
 } from "framer-motion";
 import bgimage from "../../assets/AbabilGroup/Career/heropage.jpg?url";
-import { FaSearch } from "react-icons/fa";
-
-const HeroAllJobs = () => {
+const HeroIndustries = () => {
   const containerRef = useRef(null);
 
   // Scroll tracking
@@ -79,7 +77,7 @@ const HeroAllJobs = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Partner with us in our mission to shape a stronger tomorrow.
+            We Serve Large Number of Industries
           </motion.h1>
         </motion.div>
       </div>
@@ -101,4 +99,4 @@ const HeroAllJobs = () => {
   );
 };
 
-export default HeroAllJobs;
+export default HeroIndustries;

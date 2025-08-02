@@ -13,7 +13,7 @@ import {
 } from "react-icons/fi";
 import { FaUsersViewfinder } from "react-icons/fa6";
 
-import { FaLayerGroup, FaMapMarkerAlt } from "react-icons/fa";
+import { FaLayerGroup, FaMapMarkerAlt, FaRegBuilding } from "react-icons/fa";
 import logo1 from "/Ababil-Group-Logo.png?url";
 
 const Header = () => {
@@ -29,6 +29,11 @@ const Header = () => {
 
   const navLinks = [
     { label: "Home", path: "/", icon: <FiHome className="mr-2" /> },
+    {
+      label: "Industries",
+      path: "/industries",
+      icon: <FaRegBuilding className="mr-2" />,
+    },
     {
       label: "People At Ababil",
       path: "/people-at-ababil-group",
@@ -322,7 +327,7 @@ const Header = () => {
                     <motion.a
                       key={index}
                       href={link.path}
-                      className={`px-3 py-2 rounded-md text-sm lg:text-lg font-medium flex items-center ${
+                      className={`px-2 py-2 rounded-md text-sm lg:text-lg font-medium flex items-center ${
                         atTop ? "text-white" : "text-gray-800"
                       } hover:text-[#25A69F] transition-colors`}
                       whileHover={{ scale: 1.05 }}
