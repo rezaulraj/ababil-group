@@ -290,9 +290,13 @@ const ProgressIndustrice = () => {
             solutions for your business needs across any industry.
           </p>
           <motion.button
+            onClick={() => {
+              const section = document.querySelector("#work-force");
+              section?.scrollIntoView({ behavior: "smooth" });
+            }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-white text-blue-600 font-bold rounded-lg shadow-lg hover:shadow-xl transition"
+            className="px-8 py-3 bg-white text-blue-600 font-bold rounded-lg shadow-lg hover:shadow-xl transition cursor-pointer"
           >
             Get Started Now
           </motion.button>

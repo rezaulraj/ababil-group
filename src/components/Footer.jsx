@@ -131,7 +131,7 @@ const Footer = () => {
               ].map((service, index) => (
                 <li key={index}>
                   <a
-                    href="/"
+                    href="/industries"
                     className="text-gray-400 hover:text-blue-400 transition-colors duration-300 flex items-start group"
                   >
                     <span className="w-1 h-1 bg-blue-400 rounded-full mt-2 mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>

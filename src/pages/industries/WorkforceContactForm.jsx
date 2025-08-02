@@ -63,7 +63,10 @@ const WorkforceContactForm = () => {
   };
 
   return (
-    <div className="py-16 bg-gradient-to-b from-blue-50 to-gray-100">
+    <div
+      id="work-force"
+      className="py-16 bg-gradient-to-b from-blue-50 to-gray-100"
+    >
       <div className="container mx-auto px-4 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -150,7 +153,7 @@ const WorkforceContactForm = () => {
                 variants={formVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true }}
+                viewport={{ once: false }}
               >
                 <motion.div variants={itemVariants} className="mb-6">
                   <label
