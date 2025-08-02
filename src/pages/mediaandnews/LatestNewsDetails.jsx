@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { FaCalendarAlt, FaClock, FaTag, FaArrowLeft } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import {
@@ -499,8 +499,8 @@ const LatestNewsDetails = () => {
                     <p className="text-gray-600 mb-4 line-clamp-2">
                       {relatedItem.excerpt}
                     </p>
-                    <a
-                      href={`/media-and-news/${relatedItem.title
+                    <Link
+                      to={`/media-and-news/${relatedItem.title
                         .toLowerCase()
                         .replace(/[^a-z0-9]+/g, "-")
                         .replace(/^-+|-+$/g, "")}`}
@@ -521,7 +521,7 @@ const LatestNewsDetails = () => {
                           d="M9 5l7 7-7 7"
                         ></path>
                       </svg>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               ))}
