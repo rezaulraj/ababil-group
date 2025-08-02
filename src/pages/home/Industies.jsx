@@ -10,6 +10,10 @@ import {
   FaHardHat,
   FaTshirt,
   FaTruck,
+  FaUserFriends,
+  FaChalkboardTeacher,
+  FaLanguage,
+  FaGraduationCap,
 } from "react-icons/fa";
 
 import ind1 from "../../assets/AbabilGroup/Home/ababilindustris/AutoMechanic.jpg?url";
@@ -21,7 +25,10 @@ import ind6 from "../../assets/AbabilGroup/Home/ababilindustris/Cleaner.jpeg?url
 import ind7 from "../../assets/AbabilGroup/Home/ababilindustris/Construciton.jpg?url";
 import ind8 from "../../assets/AbabilGroup/Home/ababilindustris/Germents.jpg?url";
 import ind9 from "../../assets/AbabilGroup/Home/ababilindustris/HeavyTruckDriver.jpg?url";
-
+import ind10 from "../../assets/AbabilGroup/Industries/EducationConsultancy.jpg?url";
+import ind11 from "../../assets/AbabilGroup/Industries/LanguageSchool.jpg?url";
+import ind12 from "../../assets/AbabilGroup/Industries/Manpower.jpg?url";
+import ind13 from "../../assets/AbabilGroup/Industries/SkilltraningSchool.jpg?url";
 const industries = [
   {
     src: ind1,
@@ -76,6 +83,34 @@ const industries = [
     title: "Heavy Truck Driver",
     icon: <FaTruck className="text-4xl mb-4 text-white" />,
     description: "Licensed operators for heavy vehicle transportation",
+  },
+  {
+    src: ind10,
+    title: "Education Consultancy",
+    icon: <FaGraduationCap className="text-4xl mb-4 text-white" />,
+    description:
+      "Our education consultants provide expert guidance on international study opportunities, visa processes, and career planning.",
+  },
+  {
+    src: ind11,
+    title: "Language School",
+    icon: <FaLanguage className="text-4xl mb-4 text-white" />,
+    description:
+      "Specialized language training programs designed to enhance communication skills for professional and academic purposes.",
+  },
+  {
+    src: ind12,
+    title: "Manpower Solutions",
+    icon: <FaUserFriends className="text-4xl mb-4 text-white" />,
+    description:
+      "Comprehensive workforce recruitment and management services tailored to your business needs.",
+  },
+  {
+    src: ind13,
+    title: "Skill Training School",
+    icon: <FaChalkboardTeacher className="text-4xl mb-4 text-white" />,
+    description:
+      "Vocational training programs that equip individuals with market-relevant skills for immediate employment.",
   },
 ];
 

@@ -4,7 +4,7 @@ import logoblue from "/logo1.png";
 
 const HeroHome = () => {
   const videoLink =
-    "https://res.cloudinary.com/dykdbtzsn/video/upload/v1753791386/Ababil_Group_fppvvf.mp4";
+    "https://res.cloudinary.com/dtw7qhd69/video/upload/v1754136484/Ababil_vpad1r.mp4";
 
   // Track cursor position
   const mouseX = useMotionValue(0);

@@ -6,7 +6,7 @@ const OurCulture = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const videoUrl =
-    "https://res.cloudinary.com/dykdbtzsn/video/upload/v1753791386/Ababil_Group_fppvvf.mp4";
+    "https://res.cloudinary.com/dtw7qhd69/video/upload/v1754136484/Ababil_vpad1r.mp4";
 
   return (
     <section className="w-full min-h-screen bg-gray-900 text-white flex items-center justify-center px-6 py-20">
@@ -16,7 +16,7 @@ const OurCulture = () => {
           initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="col-span-12 md:col-span-5 h-full flex flex-col justify-center"
+          className="md:col-span-5 h-full flex flex-col justify-center"
         >
           <div className="space-y-6 text-center md:text-left w-full">
             <h3 className="text-[#1A9695] uppercase tracking-wide text-lg font-medium">
@@ -43,7 +43,7 @@ const OurCulture = () => {
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="col-span-12 md:col-span-7 h-full flex items-center"
+          className="md:col-span-7 h-full flex items-center"
         >
           <div className="w-full overflow-hidden ">
             <video

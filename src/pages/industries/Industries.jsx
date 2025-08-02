@@ -5,7 +5,7 @@ import WorkforceContactForm from "./WorkforceContactForm";
 
 const Industries = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-hidden">
       <HeroIndustries />
       <ProgressIndustries />
       <WorkforceContactForm />

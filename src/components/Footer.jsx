@@ -122,12 +122,12 @@ const Footer = () => {
                 "Automobile",
                 "Manufacturing",
                 "Agriculture",
-                "Beautician",
-                "Chef",
-                "Cleaner",
+                "Education Consultancy",
+                "Manpower Solutions",
+                "Language School",
                 "Construction",
                 "Garments",
-                "Heavy Truck Driver",
+                "More Service",
               ].map((service, index) => (
                 <li key={index}>
                   <a

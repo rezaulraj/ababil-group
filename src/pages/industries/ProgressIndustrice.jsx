@@ -10,6 +10,10 @@ import {
   FaHardHat,
   FaTshirt,
   FaTruck,
+  FaGraduationCap,
+  FaLanguage,
+  FaUserFriends,
+  FaChalkboardTeacher,
 } from "react-icons/fa";
 
 import ind1 from "../../assets/AbabilGroup/Home/ababilindustris/AutoMechanic.jpg?url";
@@ -21,6 +25,10 @@ import ind6 from "../../assets/AbabilGroup/Home/ababilindustris/Cleaner.jpeg?url
 import ind7 from "../../assets/AbabilGroup/Home/ababilindustris/Construciton.jpg?url";
 import ind8 from "../../assets/AbabilGroup/Home/ababilindustris/Germents.jpg?url";
 import ind9 from "../../assets/AbabilGroup/Home/ababilindustris/HeavyTruckDriver.jpg?url";
+import ind10 from "../../assets/AbabilGroup/Industries/EducationConsultancy.jpg?url";
+import ind11 from "../../assets/AbabilGroup/Industries/LanguageSchool.jpg?url";
+import ind12 from "../../assets/AbabilGroup/Industries/Manpower.jpg?url";
+import ind13 from "../../assets/AbabilGroup/Industries/SkilltraningSchool.jpg?url";
 
 const ProgressIndustrice = () => {
   const containerRef = useRef(null);
@@ -147,11 +155,64 @@ const ProgressIndustrice = () => {
         "Cargo insurance",
       ],
     },
+    // Newly added industries
+    {
+      src: ind10,
+      title: "Education Consultancy",
+      icon: <FaGraduationCap className="text-4xl mb-4 text-white" />,
+      description:
+        "Our education consultants provide expert guidance on international study opportunities, visa processes, and career planning. We help students navigate the complex world of global education to find the best institutions matching their academic goals and aspirations.",
+      benefits: [
+        "Global university partnerships",
+        "Visa application assistance",
+        "Scholarship guidance",
+        "Career counseling",
+      ],
+    },
+    {
+      src: ind11,
+      title: "Language School",
+      icon: <FaLanguage className="text-4xl mb-4 text-white" />,
+      description:
+        "Specialized language training programs designed to enhance communication skills for professional and academic purposes. Our certified instructors use immersive techniques to help students achieve fluency in English and other languages quickly and effectively.",
+      benefits: [
+        "IELTS/TOEFL preparation",
+        "Business communication",
+        "Native-speaking instructors",
+        "Flexible scheduling",
+      ],
+    },
+    {
+      src: ind12,
+      title: "Manpower Solutions",
+      icon: <FaUserFriends className="text-4xl mb-4 text-white" />,
+      description:
+        "Comprehensive workforce recruitment and management services tailored to your business needs. We source, screen, and supply qualified professionals across all industries, handling all aspects of human resource management for seamless operations.",
+      benefits: [
+        "Talent acquisition",
+        "Background verification",
+        "Payroll management",
+        "Labor law compliance",
+      ],
+    },
+    {
+      src: ind13,
+      title: "Skill Training School",
+      icon: <FaChalkboardTeacher className="text-4xl mb-4 text-white" />,
+      description:
+        "Vocational training programs that equip individuals with market-relevant skills for immediate employment. Our hands-on courses in various trades are designed to bridge the skills gap and create job-ready professionals for today's competitive market.",
+      benefits: [
+        "Industry-aligned curriculum",
+        "Certified trainers",
+        "Practical workshops",
+        "Job placement assistance",
+      ],
+    },
   ];
 
   return (
     <div
-      className="py-16 bg-gradient-to-b from-gray-50 to-gray-100 overflow-hidden"
+      className="py-16 bg-gradient-to-b from-gray-50 to-gray-100"
       ref={containerRef}
     >
       <div className="container mx-auto px-4">
@@ -280,7 +341,7 @@ const ProgressIndustrice = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mt-24 text-center bg-gradient-to-r from-[#1A9695] to-[#1A9695]/90 rounded-2xl p-8 shadow-xl"
+          className="mt-44 text-center bg-gradient-to-r from-[#1A9695] to-[#1A9695]/90 rounded-2xl p-8 shadow-xl"
         >
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Ready to Transform Your Workforce?
