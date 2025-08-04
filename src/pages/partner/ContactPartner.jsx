@@ -61,7 +61,7 @@ const ContactPartner = () => {
           {/* Contact Form */}
           <div className="bg-white p-8 rounded-xl shadow-xl border border-gray-200">
             <h2 className="text-3xl font-bold text-center text-[#25A69F] mb-6">
-              Pathner Contact Form
+              Partner Contact Form
             </h2>
 
             <form ref={form} onSubmit={sendEmail} className="space-y-5">
