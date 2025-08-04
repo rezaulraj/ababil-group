@@ -13,6 +13,7 @@ import LatestNewsDetails from "./pages/mediaandnews/LatestNewsDetails";
 import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
 import Industries from "./pages/industries/Industries";
+import Partner from "./pages/partner/Partner";
 function App() {
   return (
     <>
@@ -20,11 +21,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<HomePage />} />
-          <Route path="/industries" element={<Industries />} />
+          <Route path="/industry-focus" element={<Industries />} />
           <Route path="/people-at-ababil-group" element={<PeopleAbabil />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/for-employers" element={<Alljobs />} />
-          <Route path="/career" element={<CareerPage />} />
+          <Route path="/employer-services" element={<Alljobs />} />
+          <Route path="/partner-with-us" element={<Partner />} />
+          <Route path="/careers" element={<CareerPage />} />
           <Route path="/media-and-news" element={<MediaNews />} />
           <Route path="/media-and-news/:slug" element={<LatestNewsDetails />} />
           <Route path="*" element={<NotFound />} />

@@ -16,6 +16,7 @@ import { FaUsersViewfinder } from "react-icons/fa6";
 import { FaLayerGroup, FaMapMarkerAlt, FaRegBuilding } from "react-icons/fa";
 import logo1 from "/Ababil-Group-Logo.png?url";
 import InfinityTextSlider from "./InfinityTextSlider";
+import { RiServiceLine } from "react-icons/ri";
 
 const Header = () => {
   const [scrollingDown, setScrollingDown] = useState(false);
@@ -29,10 +30,10 @@ const Header = () => {
   const [showPopup, setShowPopup] = useState(false);
 
   const navLinks = [
-    { label: "Home", path: "/", icon: <FiHome className="mr-2" /> },
+    // { label: "Home", path: "/", icon: <FiHome className="mr-2" /> },
     {
-      label: "Industries",
-      path: "/industries",
+      label: "Industry Focus",
+      path: "/industry-focus",
       icon: <FaRegBuilding className="mr-2" />,
     },
     {
@@ -40,20 +41,21 @@ const Header = () => {
       path: "/people-at-ababil-group",
       icon: <FiUsers className="mr-2" />,
     },
+
     {
-      label: "Media & News",
-      path: "/media-and-news",
-      icon: <FiBook className="mr-2" />,
-    },
-    {
-      label: "Career",
-      path: "/career",
+      label: "Careers",
+      path: "/careers",
       icon: <FiBriefcase className="mr-2" />,
     },
     {
-      label: "For Employers",
-      path: "/for-employers",
+      label: "Employer Services",
+      path: "/employer-services",
       icon: <FaUsersViewfinder className="mr-2" />,
+    },
+    {
+      label: "Partner with Us",
+      path: "/partner-with-us",
+      icon: <RiServiceLine className="mr-2" />,
     },
     { label: "Contact", path: "/contact", icon: <FiMail className="mr-2" /> },
   ];

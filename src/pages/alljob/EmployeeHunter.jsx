@@ -15,6 +15,7 @@ import emailjs from "@emailjs/browser";
 import { TbLoader } from "react-icons/tb";
 import employeeImage from "../../assets/AbabilGroup/Contact.jpg?url";
 import { AnimatePresence, motion } from "framer-motion";
+import WorkforceContactForm from "../industries/WorkforceContactForm";
 const EmployeeHunter = () => {
   const [submitRign, setSubmitRing] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
@@ -80,7 +81,7 @@ const EmployeeHunter = () => {
       {/* Benefits Section */}
       <div className="mb-20">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
-          Why Partner With Ababil Group?
+          Why Ababil Group?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="bg-gray-50 p-6 rounded-xl text-center hover:shadow-lg transition duration-300">
@@ -122,7 +123,7 @@ const EmployeeHunter = () => {
       </div>
 
       {/* Contact Form Section */}
-      <div id="contact-staf" className="bg-blue-50 rounded-xl p-8 md:p-12">
+      {/* <div id="contact-staf" className="bg-blue-50 rounded-xl p-8 md:p-12">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">
           Get Your Staffing Solution
         </h2>
@@ -256,7 +257,8 @@ const EmployeeHunter = () => {
             </button>
           </div>
         </form>
-      </div>
+      </div> */}
+      <WorkforceContactForm />
 
       {/* Final CTA */}
       <div className="text-center mt-16">
