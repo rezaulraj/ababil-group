@@ -429,12 +429,12 @@ const Header = () => {
                 )}
               </AnimatePresence>
             </div>
+            <div className="bg-blue-dark w-full">
+              <InfinityTextSlider atTop={atTop} />
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
-      <div className="bg-blue-dark w-full">
-        <InfinityTextSlider />
-      </div>
     </header>
   );
 };

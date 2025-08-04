@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import ContactModel from "../models/ContactModel";
+import ContactUsModel from "./ContactUsModel";
 import { TfiAnnouncement } from "react-icons/tfi";
 
-const InfinityTextSlider = () => {
+const InfinityTextSlider = ({ atTop }) => {
   const [contactOpen, setContactOpen] = useState(false);
   const slides = [
     {
@@ -24,7 +24,11 @@ const InfinityTextSlider = () => {
     setContactOpen((open) => !open);
   };
   return (
-    <div className="relative overflow-hidden bg-[#25A69F]">
+    <div
+      className={`relative overflow-hidden ${
+        atTop ? "bg-[#25A69F]/50" : "bg-white"
+      } `}
+    >
       <div
         className="hidden sm:block sm:absolute w-52 -left-1 z-10 h-full bg-red-900 text-gray-100 font-medium font-poppins p-2"
         style={{
@@ -46,10 +50,10 @@ const InfinityTextSlider = () => {
             <li>
               <Link
                 onClick={IsContactButtonOpen}
-                className="flex items-center gap-5 text-white border-r px-4 font-semibold font-poppins cursor-pointer"
+                className={`flex items-center gap-5 ${atTop? "text-white":"text-gray-800"}  border-r px-4 font-medium cursor-pointer`}
               >
                 <p>{text.text}</p>
-                <button className="text-blue-900 cursor-pointer">
+                <button className={`${atTop?"text-yellow-300":"text-blue-500"} cursor-pointer`}>
                   {text.button}
                 </button>
               </Link>
@@ -58,7 +62,7 @@ const InfinityTextSlider = () => {
         ))}
       </div>
 
-      {/* {contactOpen && <ContactModel setContactOpen={setContactOpen} />} */}
+      {contactOpen && <ContactUsModel setContactOpen={setContactOpen} />}
     </div>
   );
 };
