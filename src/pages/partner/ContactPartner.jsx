@@ -66,55 +66,59 @@ const ContactPartner = () => {
 
             <form ref={form} onSubmit={sendEmail} className="space-y-5">
               {/* Name */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
-                  <MdPerson className="text-[#25A69F] text-2xl" />
-                  Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
-                />
-              </div>
+              <div className="flex gap-3">
+                <div className="w-full">
+                  <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
+                    <MdPerson className="text-[#25A69F] text-2xl" />
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                  />
+                </div>
 
-              {/* Email */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
-                  <MdEmail className="text-[#25A69F] text-2xl" />
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
-                />
+                {/* Email */}
+                <div className="w-full">
+                  <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
+                    <MdEmail className="text-[#25A69F] text-2xl" />
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                  />
+                </div>
               </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
-                  <MdPhone className="text-[#25A69F] text-2xl" />
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  name="number"
-                  required
-                  className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
-                  <FaBuilding className="text-[#25A69F] text-2xl" />
-                  Company Name
-                </label>
-                <input
-                  type="company"
-                  name="company"
-                  required
-                  className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
-                />
+              <div className="flex gap-3">
+                <div className="w-full">
+                  <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
+                    <MdPhone className="text-[#25A69F] text-2xl" />
+                    Phone
+                  </label>
+                  <input
+                    type="tel"
+                    name="number"
+                    required
+                    className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                  />
+                </div>
+                <div className="w-full">
+                  <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
+                    <FaBuilding className="text-[#25A69F] text-2xl" />
+                    Company Name
+                  </label>
+                  <input
+                    type="company"
+                    name="company"
+                    required
+                    className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                  />
+                </div>
               </div>
 
               {/* Subject */}
