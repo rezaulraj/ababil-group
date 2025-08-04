@@ -30,7 +30,7 @@ const OurCulture = () => {
             <div>
               <button
                 onClick={() => setIsOpen(true)}
-                className="inline-block bg-[#1A9695] hover:bg-blue-700 transition text-white font-semibold px-6 py-3 rounded-lg shadow-lg"
+                className="inline-block bg-[#1A9695] hover:bg-blue-700 transition text-white font-semibold px-6 py-3 rounded-lg shadow-lg cursor-pointer"
               >
                 🎬 Watch Our Story
               </button>

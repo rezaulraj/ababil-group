@@ -15,6 +15,7 @@ import { FaUsersViewfinder } from "react-icons/fa6";
 
 import { FaLayerGroup, FaMapMarkerAlt, FaRegBuilding } from "react-icons/fa";
 import logo1 from "/Ababil-Group-Logo.png?url";
+import InfinityTextSlider from "./InfinityTextSlider";
 
 const Header = () => {
   const [scrollingDown, setScrollingDown] = useState(false);
@@ -431,6 +432,9 @@ const Header = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      <div className="bg-blue-dark w-full">
+        <InfinityTextSlider />
+      </div>
     </header>
   );
 };
