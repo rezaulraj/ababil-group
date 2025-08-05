@@ -11,17 +11,14 @@ const Wehave = () => {
     { number: "1000+", name: "Team Members" },
   ];
 
-  // Track scroll progress through the entire section
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
   });
 
-  // More pronounced vertical movement (25% up/down)
   const cardYUp = useTransform(scrollYProgress, [0, 1], ["0%", "-25%"]);
   const cardYDown = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
 
-  // Horizontal movement for depth (optional)
   const cardX = useTransform(scrollYProgress, [0, 1], ["0%", "5%"]);
 
   return (
@@ -35,9 +32,7 @@ const Wehave = () => {
         backgroundAttachment: "fixed",
       }}
     >
-      {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 z-0" />
-
       <div className="relative z-10 h-full flex flex-col justify-center">
         <motion.div
           style={{ cardX }}

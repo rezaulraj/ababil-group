@@ -30,7 +30,7 @@ const InfinityTextSlider = ({ atTop }) => {
       } `}
     >
       <div
-        className="hidden sm:block sm:absolute w-52 -left-1 z-10 h-full bg-red-900 text-gray-100 font-medium font-poppins p-2"
+        className="hidden sm:block sm:absolute w-52 -left-1 z-10 h-full bg-[#06334C] text-gray-100 font-medium font-poppins p-2"
         style={{
           clipPath:
             "polygon(1% 100%,0% 0%,96% 0%,96% 34%,100% 50%,96% 67%,96% 100%)",
@@ -50,10 +50,16 @@ const InfinityTextSlider = ({ atTop }) => {
             <li>
               <Link
                 onClick={IsContactButtonOpen}
-                className={`flex items-center gap-5 ${atTop? "text-white":"text-gray-800"}  border-r px-4 font-medium cursor-pointer`}
+                className={`flex items-center gap-5 ${
+                  atTop ? "text-white" : "text-gray-800"
+                }  border-r px-4 font-medium cursor-pointer`}
               >
                 <p>{text.text}</p>
-                <button className={`${atTop?"text-yellow-300":"text-blue-500"} cursor-pointer`}>
+                <button
+                  className={`${
+                    atTop ? "text-yellow-300" : "text-blue-500"
+                  } cursor-pointer`}
+                >
                   {text.button}
                 </button>
               </Link>

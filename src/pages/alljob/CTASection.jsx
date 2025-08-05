@@ -42,9 +42,14 @@ const CTASection = () => {
       title: "Say Hello",
       content: (
         <>
-          <div className="flex items-center py-2">
-            <MdEmail className="mr-3 text-gray-600" />
-            <span>info@ababil.group</span>
+          <div className="flex items-center">
+            <MdEmail className="text-purple-500 flex-shrink-0" size={18} />
+            <a
+              href="mailto:info@rancon.com"
+              className="text-gray-700 hover:text-blue-400 transition-colors duration-300 ml-3 text-sm"
+            >
+              info@ababil.group
+            </a>
           </div>
           {/* <div className="flex items-center py-2">
             <MdPhone className="mr-3 text-gray-600" />

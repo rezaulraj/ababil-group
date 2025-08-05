@@ -97,7 +97,7 @@ const Footer = () => {
                 { name: "People At Ababil", path: "/people-at-ababil-group" },
                 { name: "Media & News", path: "/media-and-news" },
                 { name: "Careers", path: "/careers" },
-                { name: "Employer Services", path: "/employer-services" },
+                { name: "Workforce Solutions", path: "/workforce-solutions" },
                 { name: "Contact", path: "/contact" },
               ].map((link, index) => (
                 <li key={index}>

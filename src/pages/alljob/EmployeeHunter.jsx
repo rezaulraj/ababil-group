@@ -46,7 +46,10 @@ const EmployeeHunter = () => {
       );
   };
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div
+      id="workforce-solution"
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
+    >
       {/* Hero Section */}
       <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 mb-16">
         <div className="lg:w-1/2">
@@ -61,7 +64,7 @@ const EmployeeHunter = () => {
           </p>
           <button
             onClick={() => {
-              const section = document.querySelector("#contact-staf");
+              const section = document.querySelector("#work-force");
               section?.scrollIntoView({ behavior: "smooth" });
             }}
             className="bg-[#06334C] hover:bg-[#06334C]/90 text-white font-bold py-3 px-6 rounded-lg flex items-center gap-2 transition duration-300"
@@ -80,8 +83,8 @@ const EmployeeHunter = () => {
 
       {/* Benefits Section */}
       <div className="mb-20">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
-          Why Ababil Group?
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
+          Why Workforce Solutions With Ababil Group?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="bg-gray-50 p-6 rounded-xl text-center hover:shadow-lg transition duration-300">

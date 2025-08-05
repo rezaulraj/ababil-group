@@ -48,8 +48,8 @@ const Header = () => {
       icon: <FiBriefcase className="mr-2" />,
     },
     {
-      label: "Employer Services",
-      path: "/employer-services",
+      label: "Workforce Solutions",
+      path: "/workforce-solutions",
       icon: <FaUsersViewfinder className="mr-2" />,
     },
     {
@@ -124,6 +124,12 @@ const Header = () => {
 
   return (
     <header className="fixed w-full z-50 top-0">
+      {atTop && (
+        <div className="bg-blue-dark w-full">
+          <InfinityTextSlider atTop={atTop} />
+        </div>
+      )}
+
       {/* Page Flip Animation */}
       <AnimatePresence>
         {showPageFlip && (
@@ -330,7 +336,7 @@ const Header = () => {
                     <motion.a
                       key={index}
                       href={link.path}
-                      className={`px-2 py-2 rounded-md text-sm lg:text-lg font-medium flex items-center ${
+                      className={`px-2 pb-2 rounded-md text-sm lg:text-lg font-medium flex items-center ${
                         atTop ? "text-white" : "text-gray-800"
                       } hover:text-[#25A69F] transition-colors`}
                       whileHover={{ scale: 1.05 }}
@@ -430,9 +436,6 @@ const Header = () => {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
-            <div className="bg-blue-dark w-full">
-              <InfinityTextSlider atTop={atTop} />
             </div>
           </motion.div>
         )}
