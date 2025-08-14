@@ -243,10 +243,10 @@ const OurProcess = () => {
         </div>
 
         <motion.div
-          //   initial={{ opacity: 0, y: 20 }}
-          //   whileInView={{ opacity: 1, y: 0 }}
-          //   transition={{ delay: 1.8 }}
-          //   viewport={{ once: true, margin: "-100px" }}
+          // initial={{ opacity: 0, y: 20 }}
+          // whileInView={{ opacity: 1, y: 0 }}
+          // transition={{ delay: 0.4 }}
+          // viewport={{ once: false, margin: "-100px" }}
           className="mt-16 text-center"
         >
           <button
@@ -254,7 +254,7 @@ const OurProcess = () => {
               const section = document.querySelector("#partner-with-us");
               section?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
+            className="bg-[#1A9695] hover:bg-[#1A9695] text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
           >
             Join Our Recuitment Partner
           </button>

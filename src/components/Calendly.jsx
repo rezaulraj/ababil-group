@@ -15,7 +15,7 @@ const Calendly = ({ show, onClose }) => {
       script.onload = () => {
         if (window.Calendly) {
           window.Calendly.initInlineWidget({
-            url: "https://calendly.com/rezaul-coderpro/partner-meeting",
+            url: "https://calendly.com/divinerecruitment-meeting/30min",
             parentElement: document.querySelector(".calendly-inline-widget"),
             prefill: {},
             utm: {},
@@ -73,7 +73,7 @@ const Calendly = ({ show, onClose }) => {
 
               <div
                 className="calendly-inline-widget flex-1"
-                data-url="https://calendly.com/rezaul-coderpro/partner-meeting"
+                data-url="https://calendly.com/divinerecruitment-meeting/30min"
                 style={{
                   width: "100%",
                   height: "100%",
