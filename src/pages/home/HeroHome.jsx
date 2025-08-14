@@ -61,7 +61,7 @@ const HeroHome = () => {
         {/* Animated Main Heading */}
         <motion.h1
           style={{ x: textX, y: textY }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tight"
+          className="text-4xl md:text-6xl lg:text-7xl font-bold bg-[#1A9695]/90 px-4 py-2 text-white mb-4 tracking-tight"
         >
           <span className="uppercase">Ababil Group</span>
         </motion.h1>
