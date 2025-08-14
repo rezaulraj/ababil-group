@@ -179,7 +179,7 @@ const Header = () => {
           >
             <button
               onClick={closePopup}
-              className="absolute top-4 right-4 p-2 text-gray-600 hover:bg-gray-100 rounded-full"
+              className="absolute top-4 right-4 p-2 text-gray-600 hover:bg-gray-100 rounded-full cursor-pointer"
             >
               <FiX size={24} />
             </button>
