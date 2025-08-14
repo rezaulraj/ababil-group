@@ -122,21 +122,21 @@ const industries = [
   {
     src: ind14,
     title: "Electrician",
-    icon: <FaBolt className="text-4xl mb-4 text-white" />, // Using lightning bolt icon for electrician
+    icon: <FaBolt className="text-4xl mb-4 text-white" />,
     description:
       "Certified electrical technicians for installation and maintenance",
   },
   {
     src: ind15,
     title: "Plumber",
-    icon: <FaFaucet className="text-4xl mb-4 text-white" />, // Using faucet icon for plumber
+    icon: <FaFaucet className="text-4xl mb-4 text-white" />, 
     description:
       "Skilled plumbing professionals for residential and commercial services",
   },
   {
     src: ind16,
     title: "Food Processing",
-    icon: <FaBlender className="text-4xl mb-4 text-white" />, // Using blender icon for food processing
+    icon: <FaBlender className="text-4xl mb-4 text-white" />, 
     description: "Workers trained in food safety and processing techniques",
   },
 ];
