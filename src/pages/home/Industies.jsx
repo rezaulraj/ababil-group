@@ -15,6 +15,9 @@ import {
   FaLanguage,
   FaGraduationCap,
   FaArrowRight,
+  FaBolt,
+  FaFaucet,
+  FaBlender,
 } from "react-icons/fa";
 
 import ind1 from "../../assets/AbabilGroup/Home/ababilindustris/AutoMechanic.jpg?url";
@@ -30,6 +33,9 @@ import ind10 from "../../assets/AbabilGroup/Industries/EducationConsultancy.jpg?
 import ind11 from "../../assets/AbabilGroup/Industries/LanguageSchool.jpg?url";
 import ind12 from "../../assets/AbabilGroup/Industries/Manpower.jpg?url";
 import ind13 from "../../assets/AbabilGroup/Industries/SkilltraningSchool.jpg?url";
+import ind14 from "../../assets/AbabilGroup/Industries/electriean.avif?url";
+import ind15 from "../../assets/AbabilGroup/Industries/plumber.avif?url";
+import ind16 from "../../assets/AbabilGroup/Industries/foodProcessing.avif?url";
 const industries = [
   {
     src: ind1,
@@ -112,6 +118,26 @@ const industries = [
     icon: <FaChalkboardTeacher className="text-4xl mb-4 text-white" />,
     description:
       "Vocational training programs that equip individuals with market-relevant skills for immediate employment.",
+  },
+  {
+    src: ind14,
+    title: "Electrician",
+    icon: <FaBolt className="text-4xl mb-4 text-white" />, // Using lightning bolt icon for electrician
+    description:
+      "Certified electrical technicians for installation and maintenance",
+  },
+  {
+    src: ind15,
+    title: "Plumber",
+    icon: <FaFaucet className="text-4xl mb-4 text-white" />, // Using faucet icon for plumber
+    description:
+      "Skilled plumbing professionals for residential and commercial services",
+  },
+  {
+    src: ind16,
+    title: "Food Processing",
+    icon: <FaBlender className="text-4xl mb-4 text-white" />, // Using blender icon for food processing
+    description: "Workers trained in food safety and processing techniques",
   },
 ];
 
@@ -202,7 +228,7 @@ const Industries = () => {
           ))}
         </motion.div>
       </div>
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center mt-10">
         <a
           href="/industry-focus"
           className="px-6 py-3 bg-[#1A9695] text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-all duration-300 hover:bg-teal-500 hover:shadow-md hover:scale-[1.03] border border-blue-400/30 cursor-pointer"
