@@ -81,7 +81,6 @@ const ContactUsModel = ({ setContactOpen }) => {
           </div>
 
           <form ref={form} onSubmit={sendEmail} className="space-y-3 p-3">
-            {/* Name */}
             <div className="flex gap-3">
               <div className="w-full">
                 <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
@@ -96,7 +95,6 @@ const ContactUsModel = ({ setContactOpen }) => {
                 />
               </div>
 
-              {/* Email */}
               <div className="w-full">
                 <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
                   <MdEmail className="text-[#25A69F] text-2xl" />
@@ -124,7 +122,6 @@ const ContactUsModel = ({ setContactOpen }) => {
               />
             </div>
 
-            {/* Subject */}
             <div>
               <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
                 <MdSubject className="text-[#25A69F] text-2xl" />
@@ -138,7 +135,6 @@ const ContactUsModel = ({ setContactOpen }) => {
               />
             </div>
 
-            {/* Message */}
             <div>
               <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
                 <MdOutlineMessage className="text-[#25A69F] text-2xl" /> Message
@@ -151,7 +147,6 @@ const ContactUsModel = ({ setContactOpen }) => {
               ></textarea>
             </div>
 
-            {/* Submit Button */}
             <button
               type="submit"
               className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#25A69F] hover:bg-[#25A69F]/90 text-white font-medium rounded-lg transition-all duration-300"

@@ -6,18 +6,15 @@ const HeroHome = () => {
   const videoLink =
     "https://res.cloudinary.com/dtw7qhd69/video/upload/v1754136484/Ababil_vpad1r.mp4";
 
-  // Track cursor position
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  // Transform the motion values to create smooth movement
   const logoX = useTransform(mouseX, [0, window.innerWidth], [-40, 40]);
   const logoY = useTransform(mouseY, [0, window.innerHeight], [-20, 20]);
 
   const textX = useTransform(mouseX, [0, window.innerWidth], [-20, 20]);
   const textY = useTransform(mouseY, [0, window.innerHeight], [-10, 10]);
 
-  // Update mouse position on move
   useEffect(() => {
     const handleMouseMove = (e) => {
       animate(mouseX, e.clientX, {
@@ -38,7 +35,6 @@ const HeroHome = () => {
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-      {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
           autoPlay
@@ -53,9 +49,7 @@ const HeroHome = () => {
         <div className="absolute inset-0 bg-black opacity-80"></div>
       </div>
 
-      {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 text-center">
-        {/* Animated Logo */}
         {/* <motion.div style={{ x: logoX, y: logoY }} className="">
           <img
             src={logoblue}
@@ -72,7 +66,6 @@ const HeroHome = () => {
           <span className="uppercase">Ababil Group</span>
         </motion.h1>
 
-        {/* Animated Subheading */}
         <motion.h2
           style={{ x: textX, y: textY }}
           className="text-xl md:text-3xl font-medium text-white max-w-2xl mx-auto mb-8"

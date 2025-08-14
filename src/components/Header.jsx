@@ -133,7 +133,6 @@ const Header = () => {
         </div>
       )}
 
-      {/* Page Flip Animation */}
       <AnimatePresence>
         {showPageFlip && (
           <motion.div
@@ -168,7 +167,6 @@ const Header = () => {
         )}
       </AnimatePresence>
 
-      {/* Full Screen Popup */}
       <AnimatePresence>
         {showPopup && (
           <motion.div
@@ -196,7 +194,7 @@ const Header = () => {
                 <motion.div
                   initial={{ scale: 0.8 }}
                   animate={{ scale: 1 }}
-                  transition={{ delay: 0.5, duration: 0.5 }} 
+                  transition={{ delay: 0.5, duration: 0.5 }}
                   className="space-y-4"
                 >
                   <h2 className="text-4xl font-bold mb-4">Ababil Group</h2>
@@ -220,7 +218,6 @@ const Header = () => {
                 >
                   <h2 className="text-4xl font-bold mb-4">Our Locations</h2>
                   <ul className="space-y-2 text-lg">
-                    {/* Address */}
                     <div className="flex items-center gap-4 mb-6">
                       <div className="p-3 bg-[#25A69F] rounded-full text-white mt-1">
                         <FaMapMarkerAlt className="text-xl" />
@@ -269,10 +266,8 @@ const Header = () => {
         )}
       </AnimatePresence>
 
-      {/* Header Content */}
       <AnimatePresence mode="wait">
         {scrollingDown ? (
-          // Minimal Header (scrolling down)
           <motion.div
             key="minimal-header"
             initial={{ opacity: 0, y: -20 }}
@@ -315,7 +310,6 @@ const Header = () => {
             </div>
           </motion.div>
         ) : (
-          // Full Header (top or scrolling up)
           <motion.div
             key="full-header"
             initial={{ opacity: 0, y: -20 }}
@@ -390,7 +384,6 @@ const Header = () => {
                 </div>
               </div>
 
-              {/* Mobile Menu */}
               <AnimatePresence>
                 {mobileMenuOpen && (
                   <motion.div
@@ -418,7 +411,6 @@ const Header = () => {
                 )}
               </AnimatePresence>
 
-              {/* Search Bar */}
               <AnimatePresence>
                 {searchOpen && (
                   <motion.div

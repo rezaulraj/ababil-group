@@ -58,14 +58,12 @@ const ContactPartner = () => {
           <div className="absolute inset-0 bg-indigo-900/70 mix-blend-multiply" />
         </div>
         <div className="max-w-3xl mx-auto relative z-20">
-          {/* Contact Form */}
           <div className="bg-white p-8 rounded-xl shadow-xl border border-gray-200">
             <h2 className="text-3xl font-bold text-center text-[#25A69F] mb-6">
               Partner Contact Form
             </h2>
 
             <form ref={form} onSubmit={sendEmail} className="space-y-5">
-              {/* Name */}
               <div className="flex gap-3">
                 <div className="w-full">
                   <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
@@ -80,7 +78,6 @@ const ContactPartner = () => {
                   />
                 </div>
 
-                {/* Email */}
                 <div className="w-full">
                   <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
                     <MdEmail className="text-[#25A69F] text-2xl" />
@@ -121,7 +118,6 @@ const ContactPartner = () => {
                 </div>
               </div>
 
-              {/* Subject */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
                   <MdSubject className="text-[#25A69F] text-2xl" />
@@ -135,7 +131,6 @@ const ContactPartner = () => {
                 />
               </div>
 
-              {/* Message */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
                   <MdOutlineMessage className="text-[#25A69F] text-2xl" />{" "}
@@ -149,7 +144,6 @@ const ContactPartner = () => {
                 ></textarea>
               </div>
 
-              {/* Submit Button */}
               <button
                 type="submit"
                 className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#25A69F] hover:bg-[#25A69F]/90 text-white font-medium rounded-lg transition-all duration-300"
@@ -198,7 +192,7 @@ const ContactPartner = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      {/* Inline Style for Animation */}
+
       <style>{`
         @keyframes fade-in-up {
           0% {

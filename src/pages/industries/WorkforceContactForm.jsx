@@ -92,7 +92,7 @@ const WorkforceContactForm = () => {
           viewport={{ once: true }}
         >
           <div className="md:flex">
-            {/* Form Illustration */}
+           
             <div className="hidden md:block md:w-2/5 bg-gradient-to-br from-[#1A9695] to-[#1A9695]/90 p-8">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -145,7 +145,7 @@ const WorkforceContactForm = () => {
               </motion.div>
             </div>
 
-            {/* Form Content */}
+          
             <div className="md:w-3/5 p-8 md:p-10">
               <motion.form
                 ref={form}

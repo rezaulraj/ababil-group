@@ -5,7 +5,6 @@ import ourValue from "../../assets/home/our_values.gif?url";
 const ValueHome = () => {
   return (
     <div className="relative flex flex-col items-center justify-center py-10 overflow-hidden">
-      {/* Animated Header Text */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -39,7 +38,6 @@ const ValueHome = () => {
         </motion.h1>
       </motion.div>
 
-      {/* Centered animated element */}
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{

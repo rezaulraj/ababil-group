@@ -18,9 +18,7 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-b from-gray-900 to-gray-800 text-white pt-16 pb-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-screen-2xl mx-auto">
-        {/* Main Footer Content */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mb-12">
-          {/* Company Info */}
           <div className="space-y-6">
             <a href="/" className="inline-block">
               <img
@@ -85,7 +83,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div className="space-y-6">
             <h4 className="text-lg font-semibold text-white border-b border-blue-500 pb-2 inline-block">
               Quick Links
@@ -113,7 +110,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* INDUSTRIES  */}
           <div className="space-y-6">
             <h4 className="text-lg font-semibold text-white border-b border-blue-500 pb-2 inline-block">
               Industries
@@ -143,7 +139,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div className="space-y-6">
             <h4 className="text-lg font-semibold text-white border-b border-blue-500 pb-2 inline-block">
               Contact Us
@@ -206,10 +201,8 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Divider */}
         <div className="border-t border-gray-700 my-8 opacity-50"></div>
 
-        {/* Bottom Footer */}
         <div className="text-center ">
           <p className="text-gray-400 text-xs mb-4 md:mb-0">
             &copy; {currentYear} Ababil Group. All rights reserved.

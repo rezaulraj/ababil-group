@@ -385,7 +385,6 @@ const LatestNewsDetails = () => {
         </div>
 
         <article className="bg-white rounded-xl shadow-lg overflow-hidden">
-          {/* Featured Image */}
           <div className="h-96 w-full overflow-hidden">
             <img
               src={newsItem.image}
@@ -394,15 +393,13 @@ const LatestNewsDetails = () => {
             />
           </div>
 
-          {/* Article Content */}
           <div className="p-8">
-            {/* Meta Information */}
             <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-gray-600">
               <div className="flex items-center">
                 <FaCalendarAlt className="mr-2" />
                 <span>
                   {getRelativeTime(newsItem.date)}
-                  {/* Show both relative time and full date on hover */}
+
                   <span className="hidden md:inline-block ml-2 text-gray-400">
                     (
                     {new Date(newsItem.date).toLocaleDateString("en-US", {
@@ -430,25 +427,21 @@ const LatestNewsDetails = () => {
               </div>
             </div>
 
-            {/* Title */}
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               {newsItem.title}
             </h1>
 
-            {/* Excerpt */}
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
               {newsItem.excerpt}
             </p>
 
-            {/* Content */}
             <div className="prose max-w-none text-gray-700 space-y-4 mb-10">
               <p className="mb-6">{newsItem.content}</p>
-              {/* Additional content paragraphs would go here */}
+
               <p className="mb-6">{newsItem.para1}</p>
               <p className="mb-6">{newsItem.para1}</p>
             </div>
 
-            {/* Tags */}
             <div className="flex flex-wrap gap-2 mt-8 pt-6 border-t border-gray-200">
               <FaTag className="text-gray-400 mt-1 mr-1" />
               {newsItem.tags.map((tag, index) => (
@@ -463,7 +456,6 @@ const LatestNewsDetails = () => {
           </div>
         </article>
 
-        {/* Related Articles Section */}
         <section className="mt-16">
           <h2 className="text-2xl font-bold text-gray-900 mb-8">
             Related News

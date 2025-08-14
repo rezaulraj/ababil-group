@@ -13,7 +13,6 @@ const PartnerSolution = () => {
   return (
     <div className="bg-gradient-to-br from-blue-50 to-indigo-50 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-2 bg-white text-[#1A9695] rounded-full font-medium mb-4 shadow-sm">
             Partnership Solutions
@@ -28,9 +27,7 @@ const PartnerSolution = () => {
           </p>
         </div>
 
-        {/* Partnership Benefits */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {/* Benefit 1 */}
           <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
             <div className="flex items-center justify-center w-14 h-14 mb-6 rounded-full bg-indigo-100 text-indigo-600">
               <LuHeartHandshake className="w-6 h-6" />
@@ -44,7 +41,6 @@ const PartnerSolution = () => {
             </p>
           </div>
 
-          {/* Benefit 2 */}
           <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
             <div className="flex items-center justify-center w-14 h-14 mb-6 rounded-full bg-blue-100 text-blue-600">
               <FiUsers className="w-6 h-6" />
@@ -58,7 +54,6 @@ const PartnerSolution = () => {
             </p>
           </div>
 
-          {/* Benefit 3 */}
           <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
             <div className="flex items-center justify-center w-14 h-14 mb-6 rounded-full bg-purple-100 text-purple-600">
               <FiBriefcase className="w-6 h-6" />
@@ -72,7 +67,6 @@ const PartnerSolution = () => {
             </p>
           </div>
 
-          {/* Benefit 4 */}
           <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
             <div className="flex items-center justify-center w-14 h-14 mb-6 rounded-full bg-green-100 text-green-600">
               <FiCheckCircle className="w-6 h-6" />
@@ -87,7 +81,6 @@ const PartnerSolution = () => {
           </div>
         </div>
 
-        {/* Partnership CTA */}
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="p-12 bg-gradient-to-br from-[#1A9695] to-teal-600 text-white">
@@ -140,7 +133,6 @@ const PartnerSolution = () => {
           </div>
         </div>
 
-        {/* Testimonial */}
         <div className="mt-16 bg-white rounded-xl shadow-md p-8 max-w-4xl mx-auto">
           <blockquote className="text-center">
             <p className="text-xl text-gray-700 italic mb-6">

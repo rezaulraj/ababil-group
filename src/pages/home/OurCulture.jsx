@@ -11,7 +11,6 @@ const OurCulture = () => {
   return (
     <section className="w-full min-h-screen bg-gray-900 text-white flex items-center justify-center px-6 py-20">
       <div className="max-w-screen-xl w-full grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-        {/* LEFT: TEXT */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
@@ -38,7 +37,6 @@ const OurCulture = () => {
           </div>
         </motion.div>
 
-        {/* RIGHT: AUTOPLAY VIDEO */}
         <motion.div
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
@@ -58,7 +56,6 @@ const OurCulture = () => {
         </motion.div>
       </div>
 
-      {/* MODAL POPUP */}
       {isOpen &&
         createPortal(
           <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-6">

@@ -55,14 +55,12 @@ const Social = () => {
         className="py-20 px-4 sm:px-8 bg-white text-gray-800"
       >
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
-          {/* Contact Form */}
           <div className="bg-white p-8 rounded-xl shadow-xl border border-gray-200">
             <h2 className="text-3xl font-bold text-[#25A69F] mb-6">
               Get in Touch
             </h2>
 
             <form ref={form} onSubmit={sendEmail} className="space-y-5">
-              {/* Name */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
                   <MdPerson className="text-[#25A69F] text-2xl" />
@@ -76,7 +74,6 @@ const Social = () => {
                 />
               </div>
 
-              {/* Email */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
                   <MdEmail className="text-[#25A69F] text-2xl" />
@@ -102,7 +99,6 @@ const Social = () => {
                 />
               </div>
 
-              {/* Subject */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
                   <MdSubject className="text-[#25A69F] text-2xl" />
@@ -116,7 +112,6 @@ const Social = () => {
                 />
               </div>
 
-              {/* Message */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
                   <MdOutlineMessage className="text-[#25A69F] text-2xl" />{" "}
@@ -130,7 +125,6 @@ const Social = () => {
                 ></textarea>
               </div>
 
-              {/* Submit Button */}
               <button
                 type="submit"
                 className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#25A69F] hover:bg-[#25A69F]/90 text-white font-medium rounded-lg transition-all duration-300"
@@ -144,7 +138,6 @@ const Social = () => {
             </form>
           </div>
 
-          {/* Social and Contact Info */}
           <div>
             <h2 className="text-3xl font-bold text-[#25A69F] mb-6">
               Connect With Us
@@ -250,7 +243,7 @@ const Social = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      {/* Inline Style for Animation */}
+
       <style>{`
         @keyframes fade-in-up {
           0% {

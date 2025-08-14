@@ -14,6 +14,7 @@ import {
   FaChalkboardTeacher,
   FaLanguage,
   FaGraduationCap,
+  FaArrowRight,
 } from "react-icons/fa";
 
 import ind1 from "../../assets/AbabilGroup/Home/ababilindustris/AutoMechanic.jpg?url";
@@ -114,7 +115,6 @@ const industries = [
   },
 ];
 
-// Animation variants
 const container = {
   hidden: {},
   show: {
@@ -145,7 +145,6 @@ const Industries = () => {
   return (
     <section className="bg-gray-100 py-16 px-4 md:px-8">
       <div className="max-w-screen-xl mx-auto">
-        {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h1 className="text-[#1A9695] uppercase tracking-widest text-4xl font-semibold">
             INDUSTRIES WE SERVE
@@ -158,7 +157,6 @@ const Industries = () => {
           </p>
         </div>
 
-        {/* Animated Grid */}
         <motion.div
           variants={container}
           initial="hidden"
@@ -175,7 +173,6 @@ const Industries = () => {
             >
               <div className="relative perspective-1000 group">
                 <div className="relative w-full h-96 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-                  {/* Front side */}
                   <div className="absolute w-full h-full backface-hidden bg-white rounded-xl shadow-lg overflow-hidden">
                     <img
                       src={industry.src}
@@ -190,7 +187,6 @@ const Industries = () => {
                     </div>
                   </div>
 
-                  {/* Back side */}
                   <div className="absolute w-full h-full backface-hidden bg-[#1A9695] rounded-xl shadow-lg p-6 flex flex-col items-center justify-center text-center rotate-y-180">
                     {industry.icon}
                     <h3 className="text-white text-xl font-semibold mb-2">
@@ -205,6 +201,15 @@ const Industries = () => {
             </motion.div>
           ))}
         </motion.div>
+      </div>
+      <div className="flex items-center justify-center">
+        <a
+          href="/industry-focus"
+          className="px-6 py-3 bg-[#1A9695] text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-all duration-300 hover:bg-teal-500 hover:shadow-md hover:scale-[1.03] border border-blue-400/30 cursor-pointer"
+        >
+          Full Info Details
+          <FaArrowRight className="w-5 h-5" />
+        </a>
       </div>
     </section>
   );

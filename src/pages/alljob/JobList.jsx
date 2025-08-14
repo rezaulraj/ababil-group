@@ -122,7 +122,6 @@ const SalesMarketingJobs = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 mb-12">
-          {/* Sales Jobs Summary */}
           <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500">
             <div className="flex items-center mb-4">
               <FaSearchDollar className="text-blue-500 text-3xl mr-3" />
@@ -145,7 +144,6 @@ const SalesMarketingJobs = () => {
             </div>
           </div>
 
-          {/* Marketing Jobs Summary */}
           <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-purple-500">
             <div className="flex items-center mb-4">
               <FaChartLine className="text-purple-500 text-3xl mr-3" />

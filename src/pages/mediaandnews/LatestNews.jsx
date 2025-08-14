@@ -3,12 +3,11 @@ import { motion } from "framer-motion";
 import { FiClock, FiCalendar, FiArrowRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-// Helper function to generate slug from title
 const generateSlug = (title) => {
   return title
     .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-") // Replace non-alphanumeric with dashes
-    .replace(/^-+|-+$/g, ""); // Remove leading/trailing dashes
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 };
 
 const LatestNews = () => {
@@ -180,7 +179,6 @@ const LatestNews = () => {
   return (
     <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="flex items-center justify-between mb-10">
           <div>
             <h2 className="text-3xl font-bold text-[#1A9695]">
@@ -207,7 +205,6 @@ const LatestNews = () => {
           </div>
         </div>
 
-        {/* Auto Sliding Cards */}
         <motion.div
           initial="hidden"
           animate="visible"
@@ -264,7 +261,6 @@ const LatestNews = () => {
           ))}
         </motion.div>
 
-        {/* All News Section */}
         <div className="mt-8">
           <h3 className="text-2xl font-semibold text-gray-800 mb-6">
             All News

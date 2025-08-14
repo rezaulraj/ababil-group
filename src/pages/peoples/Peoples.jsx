@@ -8,7 +8,6 @@ import {
 } from "framer-motion";
 import { FaLinkedin } from "react-icons/fa";
 
-// IMAGES
 import people1 from "../../assets/AbabilGroup/PeopleatAbabil/CHAIRMAN.jpeg?url";
 import people2 from "../../assets/AbabilGroup/PeopleatAbabil/GROUPManagingDirector.jpeg?url";
 import people3 from "../../assets/AbabilGroup/PeopleatAbabil/DIRECTOR.jpeg?url";
@@ -77,7 +76,6 @@ const Peoples = () => {
     offset: ["start start", "end end"],
   });
 
-  // Animation for the entire container
   const containerY = useTransform(scrollYProgress, [0, 1], [0, -50]);
   const containerOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1]);
 
@@ -133,13 +131,11 @@ const PersonCard = ({ person, index }) => {
   const sectionRef = useRef(null);
   const cardRef = useRef(null);
 
-  // Scroll animations
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
   });
 
-  // Parallax effects
   const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
   const x = useTransform(
     scrollYProgress,
@@ -153,7 +149,6 @@ const PersonCard = ({ person, index }) => {
   );
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.03]);
 
-  // Background image parallax
   const bgY = useTransform(scrollYProgress, [0, 1], [30, -30]);
 
   return (
@@ -172,7 +167,6 @@ const PersonCard = ({ person, index }) => {
         },
       }}
     >
-      {/* Background image with offset */}
       <motion.div
         className={`relative w-full h-full ${
           isRight ? "pr-0 md:pr-[30%]" : "pl-0 md:pl-[30%]"
@@ -191,7 +185,6 @@ const PersonCard = ({ person, index }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-[#25A69F]/60 to-transparent rounded-lg md:rounded-xl" />
       </motion.div>
 
-      {/* Info card */}
       <motion.div
         ref={cardRef}
         className={`

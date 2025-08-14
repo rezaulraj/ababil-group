@@ -79,7 +79,6 @@ const CTASection = () => {
         </p>
 
         <div className="relative">
-          {/* Cards Container with Horizontal Scroll */}
           <div className="flex items-center justify-center overflow-x-auto pb-8 -mx-4 px-4 scrollbar-hide">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-center justify-center space-x-6">
               {cards.map((card) => (

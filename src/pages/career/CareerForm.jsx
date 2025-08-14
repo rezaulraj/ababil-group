@@ -46,7 +46,6 @@ const CareerForm = () => {
       id="apply-form"
       className="max-w-2xl mx-auto p-8 mb-10 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-2xl border border-gray-100 relative"
     >
-      {/* Header with decorative elements */}
       <div className="text-center my-10">
         <div className="relative inline-block">
           <div className="absolute -inset-2 bg-indigo-100 rounded-lg blur opacity-75"></div>
@@ -58,7 +57,6 @@ const CareerForm = () => {
       </div>
 
       <form ref={form} onSubmit={sendEmail} className="space-y-6">
-        {/* Name Field */}
         <div className="relative group">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <FaUser className="text-gray-400 group-focus-within:text-indigo-500 transition-colors" />
@@ -72,7 +70,6 @@ const CareerForm = () => {
           />
         </div>
 
-        {/* Email Field */}
         <div className="relative group">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <FaEnvelope className="text-gray-400 group-focus-within:text-indigo-500 transition-colors" />
@@ -86,7 +83,6 @@ const CareerForm = () => {
           />
         </div>
 
-        {/* Phone Field */}
         <div className="relative group">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <FaPhone className="text-gray-400 group-focus-within:text-indigo-500 transition-colors" />
@@ -100,7 +96,6 @@ const CareerForm = () => {
           />
         </div>
 
-        {/* Subject Field */}
         <div className="relative group">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <MdSubject className="text-gray-400 group-focus-within:text-indigo-500 transition-colors" />
@@ -114,7 +109,6 @@ const CareerForm = () => {
           />
         </div>
 
-        {/* Message Field */}
         <div className="relative group">
           <div className="absolute top-3 left-3 pointer-events-none">
             <FaFileAlt className="text-gray-400 group-focus-within:text-indigo-500 transition-colors" />
@@ -128,7 +122,6 @@ const CareerForm = () => {
           ></textarea>
         </div>
 
-        {/* CV Upload */}
         <div className="relative group">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <FaFileAlt className="text-gray-400 group-focus-within:text-indigo-500 transition-colors" />
@@ -147,7 +140,6 @@ const CareerForm = () => {
           </p>
         </div>
 
-        {/* Submit Button */}
         <button
           type="submit"
           className="flex items-center justify-center w-full px-6 py-3.5 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white font-semibold rounded-lg hover:from-indigo-700 hover:to-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 transition-all duration-200 shadow-lg hover:shadow-indigo-200"
@@ -160,12 +152,10 @@ const CareerForm = () => {
         </button>
       </form>
 
-      {/* Footer note */}
       <p className="mt-6 text-xs text-center text-gray-500">
         We'll get back to you within 2 business days
       </p>
 
-      {/* Thank You Popup */}
       <AnimatePresence>
         {showPopup && (
           <motion.div

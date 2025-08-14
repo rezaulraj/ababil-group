@@ -71,7 +71,6 @@ const Calendly = ({ show, onClose }) => {
                 </div>
               )}
 
-              {/* Calendly Widget */}
               <div
                 className="calendly-inline-widget flex-1"
                 data-url="https://calendly.com/rezaul-coderpro/partner-meeting"

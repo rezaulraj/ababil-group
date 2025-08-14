@@ -50,7 +50,6 @@ const EmployeeHunter = () => {
       id="workforce-solution"
       className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
     >
-      {/* Hero Section */}
       <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 mb-16">
         <div className="lg:w-1/2">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
@@ -81,7 +80,6 @@ const EmployeeHunter = () => {
         </div>
       </div>
 
-      {/* Benefits Section */}
       <div className="mb-20">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
           Why Workforce Solutions With Ababil Group?
@@ -125,7 +123,6 @@ const EmployeeHunter = () => {
         </div>
       </div>
 
-      {/* Contact Form Section */}
       {/* <div id="contact-staf" className="bg-blue-50 rounded-xl p-8 md:p-12">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">
           Get Your Staffing Solution
@@ -263,7 +260,6 @@ const EmployeeHunter = () => {
       </div> */}
       <WorkforceContactForm />
 
-      {/* Final CTA */}
       <div className="text-center mt-16">
         <h2 className="text-3xl font-bold text-gray-800 mb-4">
           Don't Let Staffing Shortages Slow You Down

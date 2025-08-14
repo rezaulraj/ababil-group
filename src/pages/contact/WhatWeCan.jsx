@@ -7,7 +7,6 @@ const WhatWeCan = () => {
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-12">
-          {/* Left Side - Image */}
           <div className="w-full lg:w-1/2">
             <div className="relative rounded-xl overflow-hidden shadow-2xl">
               <img
@@ -23,7 +22,6 @@ const WhatWeCan = () => {
             </div>
           </div>
 
-          {/* Right Side - Text Content */}
           <div className="w-full lg:w-1/2">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               How Can We Support You?
@@ -36,9 +34,7 @@ const WhatWeCan = () => {
               to your needs.
             </p>
 
-            {/* Contact Options */}
             <div className="space-y-6">
-              {/* Email */}
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-blue-100 rounded-full text-blue-600">
                   <MdEmail className="text-2xl" />
@@ -49,7 +45,6 @@ const WhatWeCan = () => {
                 </div>
               </div>
 
-              {/* Get in Touch Button */}
               <button
                 onClick={() => {
                   const section = document.querySelector("#contact-form");

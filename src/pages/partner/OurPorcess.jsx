@@ -10,7 +10,6 @@ import {
 import { motion } from "framer-motion";
 
 const OurProcess = () => {
-  // Animation variants
   const container = {
     hidden: { opacity: 0 },
     visible: {
@@ -51,8 +50,7 @@ const OurProcess = () => {
   };
 
   return (
-    <section className="py-16 bg-white" >
-        
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -69,7 +67,6 @@ const OurProcess = () => {
         </motion.div>
 
         <div className="relative">
-          {/* Timeline bar with animation */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -79,7 +76,6 @@ const OurProcess = () => {
             className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-blue-400 to-indigo-600"
           />
 
-          {/* Process Steps */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -87,7 +83,6 @@ const OurProcess = () => {
             viewport={{ once: true, margin: "-100px" }}
             className="space-y-12 md:space-y-0"
           >
-            {/* Step 1 */}
             <div className="relative md:flex items-center justify-between mb-12">
               <div className="md:w-5/12 md:pr-12 mb-8 md:mb-0 text-right">
                 <motion.div variants={item}>
@@ -114,7 +109,6 @@ const OurProcess = () => {
               <div className="md:w-5/12"></div>
             </div>
 
-            {/* Step 2 */}
             <div className="relative md:flex items-center justify-between mb-12">
               <div className="md:w-5/12"></div>
               <div className="hidden md:block md:w-2/12 flex justify-center relative">
@@ -142,7 +136,6 @@ const OurProcess = () => {
               </div>
             </div>
 
-            {/* Step 3 */}
             <div className="relative md:flex items-center justify-between mb-12">
               <div className="md:w-5/12 md:pr-12 mb-8 md:mb-0 text-right">
                 <motion.div variants={item}>
@@ -169,7 +162,6 @@ const OurProcess = () => {
               <div className="md:w-5/12"></div>
             </div>
 
-            {/* Step 4 */}
             <div className="relative md:flex items-center justify-between mb-12">
               <div className="md:w-5/12"></div>
               <div className="hidden md:block md:w-2/12 flex justify-center relative">
@@ -196,7 +188,6 @@ const OurProcess = () => {
               </div>
             </div>
 
-            {/* Step 5 */}
             <div className="relative md:flex items-center justify-between mb-12">
               <div className="md:w-5/12 md:pr-12 mb-8 md:mb-0 text-right">
                 <motion.div variants={item}>
@@ -223,7 +214,6 @@ const OurProcess = () => {
               <div className="md:w-5/12"></div>
             </div>
 
-            {/* Step 6 */}
             <div className="relative md:flex items-center justify-between">
               <div className="md:w-5/12"></div>
               <div className="hidden md:block md:w-2/12 flex justify-center relative">
@@ -253,10 +243,10 @@ const OurProcess = () => {
         </div>
 
         <motion.div
-        //   initial={{ opacity: 0, y: 20 }}
-        //   whileInView={{ opacity: 1, y: 0 }}
-        //   transition={{ delay: 1.8 }}
-        //   viewport={{ once: true, margin: "-100px" }}
+          //   initial={{ opacity: 0, y: 20 }}
+          //   whileInView={{ opacity: 1, y: 0 }}
+          //   transition={{ delay: 1.8 }}
+          //   viewport={{ once: true, margin: "-100px" }}
           className="mt-16 text-center"
         >
           <button

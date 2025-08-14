@@ -9,7 +9,6 @@ import {
 import { motion } from "framer-motion";
 
 const WhyPartner = () => {
-  // Animation variants
   const container = {
     hidden: { opacity: 0 },
     visible: {
@@ -76,7 +75,6 @@ const WhyPartner = () => {
           viewport={{ once: false, margin: "-100px" }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {/* Card 1 */}
           <motion.div
             variants={cardItem}
             whileHover={hoverEffect}
@@ -94,7 +92,6 @@ const WhyPartner = () => {
             </p>
           </motion.div>
 
-          {/* Card 2 */}
           <motion.div
             variants={cardItem}
             whileHover={hoverEffect}
@@ -112,7 +109,6 @@ const WhyPartner = () => {
             </p>
           </motion.div>
 
-          {/* Card 3 */}
           <motion.div
             variants={cardItem}
             whileHover={hoverEffect}
@@ -130,7 +126,6 @@ const WhyPartner = () => {
             </p>
           </motion.div>
 
-          {/* Card 4 */}
           <motion.div
             variants={cardItem}
             whileHover={hoverEffect}
@@ -148,7 +143,6 @@ const WhyPartner = () => {
             </p>
           </motion.div>
 
-          {/* Card 5 */}
           <motion.div
             variants={cardItem}
             whileHover={hoverEffect}
@@ -166,7 +160,6 @@ const WhyPartner = () => {
             </p>
           </motion.div>
 
-          {/* Card 6 */}
           <motion.div
             variants={cardItem}
             whileHover={hoverEffect}

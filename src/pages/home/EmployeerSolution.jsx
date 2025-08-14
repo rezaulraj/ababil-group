@@ -14,10 +14,9 @@ const EmployerSolution = () => {
   return (
     <div className="bg-gray-900 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Transform Your Workplace with{" "}
+            Transform Your Workforce with{" "}
             <span className="text-[#1A9695]">Smart Solutions</span>
           </h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">

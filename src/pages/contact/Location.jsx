@@ -12,7 +12,6 @@ const Location = () => {
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900 text-gray-100">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Left Side - Google Maps Iframe */}
           <div className="w-full lg:w-1/2 h-96 lg:h-auto">
             <div className="rounded-xl overflow-hidden shadow-xl h-full border-2 border-blue-500/30">
               <iframe
@@ -29,13 +28,11 @@ const Location = () => {
             </div>
           </div>
 
-          {/* Right Side - Location Info */}
           <div className="w-full lg:w-1/2">
             <h2 className="text-3xl font-bold text-[#25A69F] mb-6">
               Our Location
             </h2>
 
-            {/* Address */}
             <div className="flex items-start gap-4 mb-6">
               <div className="p-3 bg-[#25A69F]/50 rounded-full text-blue-200 mt-1">
                 <FaMapMarkerAlt className="text-xl" />
@@ -77,7 +74,6 @@ const Location = () => {
               </div>
             </div>
 
-            {/* Working Hours */}
             <div className="flex items-start gap-4 mb-6">
               <div className="p-3 bg-emerald-900/50 rounded-full text-emerald-400 mt-1">
                 <FaClock className="text-xl" />
@@ -103,7 +99,6 @@ const Location = () => {
               </div>
             </div>
 
-            {/* Business Days */}
             <div className="flex items-start gap-4 mb-6">
               <div className="p-3 bg-purple-900/50 rounded-full text-purple-400 mt-1">
                 <FaCalendarAlt className="text-xl" />
@@ -119,7 +114,6 @@ const Location = () => {
               </div>
             </div>
 
-            {/* Contact Info */}
             <div className="mt-8 space-y-4">
               {/* <div className="flex items-center gap-3">
                 <FaPhone className="text-blue-400" />

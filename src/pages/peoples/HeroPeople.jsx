@@ -11,25 +11,20 @@ import heroimage from "../../assets/AbabilGroup/PeopleatAbabil/CHAIRMAN.jpeg?url
 const HeroPeople = () => {
   const containerRef = useRef(null);
 
-  // Scroll tracking
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
   });
 
-  // Parallax background transforms
   const bgScaleX = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
 
-  // Mouse tracking motion values
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  // Transform movement for text based on cursor
   const textX = useTransform(mouseX, [0, window.innerWidth], [-20, 20]);
   const textY = useTransform(mouseY, [0, window.innerHeight], [-10, 10]);
 
-  // Smooth cursor animation
   useEffect(() => {
     const handleMouseMove = (e) => {
       animate(mouseX, e.clientX, {
@@ -53,7 +48,6 @@ const HeroPeople = () => {
       ref={containerRef}
       className="relative h-screen w-full overflow-hidden"
     >
-      {/* Background Image Parallax */}
       <motion.div
         className="absolute inset-0 bg-cover bg-center origin-left"
         style={{
@@ -63,10 +57,8 @@ const HeroPeople = () => {
         }}
       />
 
-      {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/60 z-0" />
 
-      {/* Animated Content */}
       <div className="relative z-10 h-full flex items-center">
         <div className="max-w-2xl px-6 lg:px-12 py-32 text-left">
           <motion.h1
@@ -76,7 +68,6 @@ const HeroPeople = () => {
             George Mitchell
           </motion.h1>
 
-          {/* White Position Text with Animation */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -95,7 +86,6 @@ const HeroPeople = () => {
             </motion.div>
           </motion.div>
 
-          {/* Optional Description */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -108,7 +98,6 @@ const HeroPeople = () => {
         </div>
       </div>
 
-      {/* Scroll Down Indicator */}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
         animate={{ y: [0, 10, 0] }}

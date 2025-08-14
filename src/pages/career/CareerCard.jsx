@@ -8,7 +8,6 @@ const CareerCard = () => {
       className="relative py-16 px-4 sm:px-6 lg:px-8 bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${bgimage})` }}
     >
-      {/* Overlay */}
       <div className="absolute inset-0 bg-black opacity-50"></div>
 
       <div className="relative max-w-7xl mx-auto">
@@ -17,7 +16,6 @@ const CareerCard = () => {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Location Card */}
           <div className="bg-white rounded-lg shadow-xl p-6 transform transition-all hover:scale-105 hover:shadow-2xl">
             <div className="flex flex-col items-center text-center">
               <div className="bg-indigo-100 p-4 rounded-full mb-4">
@@ -36,7 +34,6 @@ const CareerCard = () => {
             </div>
           </div>
 
-          {/* Hours Card */}
           <div className="bg-white rounded-lg shadow-xl p-6 transform transition-all hover:scale-105 hover:shadow-2xl">
             <div className="flex flex-col items-center text-center">
               <div className="bg-green-100 p-4 rounded-full mb-4">
@@ -50,7 +47,6 @@ const CareerCard = () => {
             </div>
           </div>
 
-          {/* Contact Card */}
           <div className="bg-white rounded-lg shadow-xl p-6 transform transition-all hover:scale-105 hover:shadow-2xl">
             <div className="flex flex-col items-center text-center">
               <div className="bg-yellow-100 p-4 rounded-full mb-4">
@@ -60,9 +56,13 @@ const CareerCard = () => {
                 Say Hello
               </h3>
               <p className="text-gray-600">What can we do for you?</p>
-              <p className="bg-yellow-100 px-6 py-2 rounded-full
+              <p
+                className="bg-yellow-100 px-6 py-2 rounded-full
               
-              ">info@ababil.group</p>
+              "
+              >
+                info@ababil.group
+              </p>
             </div>
           </div>
         </div>

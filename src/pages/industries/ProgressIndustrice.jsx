@@ -222,7 +222,7 @@ const ProgressIndustrice = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: false }}
-            className="text-4xl md:text-5xl font-bold text-blue-900 mb-6"
+            className="text-4xl md:text-5xl font-bold text-[#06334C] mb-6"
           >
             Ababil Group's Comprehensive Industry Solutions
           </motion.h2>
@@ -261,7 +261,6 @@ const ProgressIndustrice = () => {
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 } items-center gap-8 md:gap-12`}
               >
-                {/* Image Section with Parallax Effect */}
                 <motion.div
                   className="w-full md:w-1/2 relative overflow-hidden rounded-2xl shadow-2xl"
                   whileInView={{
@@ -286,7 +285,6 @@ const ProgressIndustrice = () => {
                   </div>
                 </motion.div>
 
-                {/* Content Section with Staggered Animation */}
                 <motion.div
                   className="w-full md:w-1/2"
                   whileInView={{
@@ -335,7 +333,6 @@ const ProgressIndustrice = () => {
           })}
         </div>
 
-        {/* Call to Action */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
