@@ -5,6 +5,8 @@ import OurCulture from "./OurCulture";
 import Industries from "./Industies";
 import BrandLogo from "./BrandLogo";
 import WeHave from "./Wehave";
+import EmployerSolution from "./EmployeerSolution";
+import PartnerSolution from "./PartnerSolution";
 
 const HomePage = () => {
   return (
@@ -13,6 +15,8 @@ const HomePage = () => {
       <ValueHome />
       <OurCulture />
       <Industries />
+      <EmployerSolution />
+      <PartnerSolution />
       <BrandLogo />
       <WeHave />
     </div>

@@ -10,6 +10,7 @@ import {
   FiBriefcase,
   FiFileText,
   FiMail,
+  FiArrowRight,
 } from "react-icons/fi";
 import { FaUsersViewfinder } from "react-icons/fa6";
 
@@ -17,8 +18,10 @@ import { FaLayerGroup, FaMapMarkerAlt, FaRegBuilding } from "react-icons/fa";
 import logo1 from "/Ababil-Group-Logo.png?url";
 import InfinityTextSlider from "./InfinityTextSlider";
 import { RiServiceLine } from "react-icons/ri";
+import Calendly from "./Calendly";
 
 const Header = () => {
+  const [showCalendly, setShowCalendly] = useState(false);
   const [scrollingDown, setScrollingDown] = useState(false);
   const [atTop, setAtTop] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -193,12 +196,19 @@ const Header = () => {
                 <motion.div
                   initial={{ scale: 0.8 }}
                   animate={{ scale: 1 }}
-                  transition={{ delay: 0.5, duration: 0.5 }}
+                  transition={{ delay: 0.5, duration: 0.5 }} 
+                  className="space-y-4"
                 >
                   <h2 className="text-4xl font-bold mb-4">Ababil Group</h2>
                   <p className="text-lg">
                     Leading the way in innovation and excellence
                   </p>
+                  <button
+                    onClick={() => setShowCalendly(true)}
+                    className="px-6 py-3 bg-[#1A9695] text-white rounded-lg font-medium flex items-center justify-center transition-all duration-300 hover:bg-teal-700 hover:shadow-md hover:scale-105 cursor-pointer"
+                  >
+                    Meet Our Team <FiArrowRight className="ml-2" />
+                  </button>
                 </motion.div>
               </div>
 
@@ -293,7 +303,7 @@ const Header = () => {
                   transition={{ duration: 0.5 }}
                 >
                   <motion.button
-                    className="p-2 text-white bg-gray-800 hover:bg-gray-800 rounded"
+                    className="p-2 text-white bg-gray-800 hover:bg-gray-800 rounded cursor-pointer"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={handleFaLayerClick}
@@ -359,7 +369,7 @@ const Header = () => {
                   </motion.button> */}
 
                   <motion.button
-                    className="p-2 text-[#06334C] bg-gray-200 hover:bg-gray-300 hover:text-[#06334C] rounded-full"
+                    className="p-2 text-[#06334C] bg-gray-200 hover:bg-gray-300 hover:text-[#06334C] rounded-full cursor-pointer"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={handleFaLayerClick}
@@ -440,6 +450,7 @@ const Header = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      <Calendly show={showCalendly} onClose={() => setShowCalendly(false)} />
     </header>
   );
 };
