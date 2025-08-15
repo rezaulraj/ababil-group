@@ -1,7 +1,10 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FiX } from "react-icons/fi";
-
+// <!-- Calendly inline widget begin -->
+// <div class="calendly-inline-widget" data-url="https://calendly.com/ababilgroup-meetting/30min" style="min-width:320px;height:700px;"></div>
+// <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+// <!-- Calendly inline widget end -->
 const Calendly = ({ show, onClose }) => {
   const [loading, setLoading] = useState(true);
 
@@ -15,7 +18,7 @@ const Calendly = ({ show, onClose }) => {
       script.onload = () => {
         if (window.Calendly) {
           window.Calendly.initInlineWidget({
-            url: "https://calendly.com/divinerecruitment-meeting/30min",
+            url: "https://calendly.com/ababilgroup-meetting/30min",
             parentElement: document.querySelector(".calendly-inline-widget"),
             prefill: {},
             utm: {},
@@ -73,7 +76,7 @@ const Calendly = ({ show, onClose }) => {
 
               <div
                 className="calendly-inline-widget flex-1"
-                data-url="https://calendly.com/divinerecruitment-meeting/30min"
+                data-url="https://calendly.com/ababilgroup-meetting/30min"
                 style={{
                   width: "100%",
                   height: "100%",
