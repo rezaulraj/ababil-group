@@ -6,6 +6,7 @@ import {
   FaYoutube,
   FaTiktok,
   FaCheckCircle,
+  FaBuilding,
 } from "react-icons/fa";
 import {
   MdEmail,
@@ -97,6 +98,18 @@ const Social = () => {
                 <input
                   type="tel"
                   name="number"
+                  required
+                  className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
+                  <FaBuilding className="text-[#25A69F] text-2xl" />
+                  Company
+                </label>
+                <input
+                  type="text"
+                  name="company"
                   required
                   className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                 />
