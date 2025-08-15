@@ -15,6 +15,7 @@ import "./App.css";
 import Industries from "./pages/industries/Industries";
 import Partner from "./pages/partner/Partner";
 import { FaArrowUpFromBracket } from "react-icons/fa6";
+import ThankYouPage from "./components/ThankYouPage";
 
 function App() {
   const handleScrollToTop = () => {
@@ -36,6 +37,7 @@ function App() {
           <Route path="/partner-with-us" element={<Partner />} />
           <Route path="/careers" element={<CareerPage />} />
           <Route path="/media-and-news" element={<MediaNews />} />
+          <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="/media-and-news/:slug" element={<LatestNewsDetails />} />
           <Route path="*" element={<NotFound />} />
         </Route>
