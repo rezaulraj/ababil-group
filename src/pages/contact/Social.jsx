@@ -18,8 +18,11 @@ import { FaX } from "react-icons/fa6";
 import emailjs from "@emailjs/browser";
 import { TbLoader } from "react-icons/tb";
 import { AnimatePresence, motion } from "framer-motion";
+import { FiArrowRight } from "react-icons/fi";
+import Calendly from "../../components/Calendly";
 
 const Social = () => {
+  const [showCalendly, setShowCalendly] = useState(false);
   const [submitRign, setSubmitRing] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const form = useRef();
@@ -206,6 +209,15 @@ const Social = () => {
                 <MdEmail className="text-blue-500 mr-2" /> info@ababil.group
               </p>
             </div>
+
+            <div className="bg-white p-6 mt-10 rounded-xl shadow border border-gray-200 max-w-md">
+              <button
+                onClick={() => setShowCalendly(true)}
+                className="px-6 py-3 bg-[#1A9695] text-white rounded-lg font-medium flex items-center justify-center transition-all duration-300 hover:bg-teal-700 hover:shadow-md hover:scale-105 cursor-pointer"
+              >
+                Book A Call <FiArrowRight className="ml-2" />
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -243,7 +255,7 @@ const Social = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
+      <Calendly show={showCalendly} onClose={() => setShowCalendly(false)} />
       <style>{`
         @keyframes fade-in-up {
           0% {

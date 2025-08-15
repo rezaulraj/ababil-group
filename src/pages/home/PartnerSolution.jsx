@@ -6,10 +6,8 @@ import {
   FiArrowRight,
 } from "react-icons/fi";
 import { LuHeartHandshake } from "react-icons/lu";
-import Calendly from "../../components/Calendly";
 
 const PartnerSolution = () => {
-  const [showCalendly, setShowCalendly] = useState(false);
   return (
     <div className="bg-gradient-to-br from-blue-50 to-indigo-50 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -115,12 +113,12 @@ const PartnerSolution = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button
-                  onClick={() => setShowCalendly(true)}
+                <a
+                  href="/contact"
                   className="px-6 py-3 bg-[#1A9695] text-white rounded-lg font-medium flex items-center justify-center transition-all duration-300 hover:bg-teal-700 hover:shadow-md hover:scale-105 cursor-pointer"
                 >
-                  Meet Our Team <FiArrowRight className="ml-2" />
-                </button>
+                  Contact Our Team <FiArrowRight className="ml-2" />
+                </a>
 
                 <a
                   href="/partner-with-us"
@@ -146,7 +144,6 @@ const PartnerSolution = () => {
           </blockquote>
         </div>
       </div>
-      <Calendly show={showCalendly} onClose={() => setShowCalendly(false)} />
     </div>
   );
 };
