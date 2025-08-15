@@ -9,7 +9,7 @@ import {
   FaTiktok,
 } from "react-icons/fa";
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
-import logo from "/logo1.png";
+import logo from "/Ababil-Group-Logo.png?url";
 import { FaX } from "react-icons/fa6";
 
 const Footer = () => {
@@ -24,7 +24,7 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="Ababil logo"
-                className="h-16 w-auto filter brightness-0 invert hover:opacity-90 transition-opacity"
+                className="h-28 w-auto filter brightness-0 invert hover:opacity-90 transition-opacity"
               />
             </a>
             <p className="text-gray-300 text-sm leading-relaxed">

@@ -1,5 +1,5 @@
 import React from "react";
-import { MdEmail, MdPhone, MdChat } from "react-icons/md";
+import { MdEmail, MdChat } from "react-icons/md";
 import ladyImage from "../../assets/AbabilGroup/Contact.jpg?url";
 
 const WhatWeCan = () => {
