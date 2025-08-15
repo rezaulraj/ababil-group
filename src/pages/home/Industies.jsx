@@ -129,14 +129,14 @@ const industries = [
   {
     src: ind15,
     title: "Plumber",
-    icon: <FaFaucet className="text-4xl mb-4 text-white" />, 
+    icon: <FaFaucet className="text-4xl mb-4 text-white" />,
     description:
       "Skilled plumbing professionals for residential and commercial services",
   },
   {
     src: ind16,
     title: "Food Processing",
-    icon: <FaBlender className="text-4xl mb-4 text-white" />, 
+    icon: <FaBlender className="text-4xl mb-4 text-white" />,
     description: "Workers trained in food safety and processing techniques",
   },
 ];

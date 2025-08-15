@@ -19,8 +19,10 @@ import logo1 from "/Ababil-Group-Logo.png?url";
 import InfinityTextSlider from "./InfinityTextSlider";
 import { RiServiceLine } from "react-icons/ri";
 import Calendly from "./Calendly";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
+  const location = useLocation();
   const [showCalendly, setShowCalendly] = useState(false);
   const [scrollingDown, setScrollingDown] = useState(false);
   const [atTop, setAtTop] = useState(true);
@@ -62,6 +64,10 @@ const Header = () => {
     },
     { label: "Contact", path: "/contact", icon: <FiMail className="mr-2" /> },
   ];
+
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
 
   const colors = [
     "bg-blue-500",
@@ -341,8 +347,14 @@ const Header = () => {
                       key={index}
                       href={link.path}
                       className={`px-2 pb-2 rounded-md text-sm lg:text-lg font-medium flex items-center ${
-                        atTop ? "text-white" : "text-gray-800"
-                      } hover:text-[#25A69F] transition-colors`}
+                        atTop
+                          ? isActive(link.path)
+                            ? "text-[#25A69F]"
+                            : "text-white hover:text-[#25A69F]"
+                          : isActive(link.path)
+                          ? "text-[#25A69F]"
+                          : "text-gray-800 hover:text-[#25A69F]"
+                      } transition-colors`}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -398,7 +410,11 @@ const Header = () => {
                         <motion.a
                           key={index}
                           href={link.path}
-                          className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100 flex items-center"
+                          className={`block px-3 py-2 rounded-md text-base font-medium flex items-center ${
+                            isActive(link.path)
+                              ? "bg-[#25A69F] text-white"
+                              : "text-gray-700 hover:bg-gray-100"
+                          }`}
                           whileHover={{ x: 5 }}
                           onClick={() => setMobileMenuOpen(false)}
                         >

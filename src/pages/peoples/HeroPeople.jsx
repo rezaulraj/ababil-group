@@ -63,7 +63,7 @@ const HeroPeople = () => {
         <div className="max-w-2xl px-6 lg:px-12 py-32 text-left">
           <motion.h1
             style={{ x: textX, y: textY }}
-            className="text-4xl md:text-5xl lg:text-7xl font-semibold font-lato text-white leading-relaxed tracking-widest select-none"
+            className="text-4xl md:text-5xl lg:text-7xl font-semibold font-lato text-white leading-tight tracking-widest select-none"
           >
             George Mitchell
           </motion.h1>
