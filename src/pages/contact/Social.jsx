@@ -1,4 +1,5 @@
-import React, { useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 import {
   FaFacebook,
   FaLinkedin,
@@ -16,42 +17,73 @@ import {
   MdSubject,
 } from "react-icons/md";
 import { FaX } from "react-icons/fa6";
-import emailjs from "@emailjs/browser";
 import { TbLoader } from "react-icons/tb";
-import { AnimatePresence, motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 import Calendly from "../../components/Calendly";
 
 const Social = () => {
   const [showCalendly, setShowCalendly] = useState(false);
-  const [submitRign, setSubmitRing] = useState(false);
-  const [showPopup, setShowPopup] = useState(false);
-  const form = useRef();
-  const publicKey = "vqs8cPefiJoNphzzB";
-  const serviceId = "service_55ubscz";
-  const templeteId = "template_be7y4a9";
-  const sendEmail = (e) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitRing(true);
-    emailjs
-      .sendForm(serviceId, templeteId, form.current, {
-        publicKey: publicKey,
-      })
-      .then(
-        () => {
-          console.log("SUCCESS!");
-          setShowPopup(true);
-          setSubmitRing(false);
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-          alert(
-            "Someting is error sending data do not panic we will resolve soon. Please Email us"
-          );
-          setSubmitRing(false);
+    setIsLoading(true);
+    try {
+      await fetch(
+        "https://formsubmit.co/ajax/800386826fd1b74ec1bab79279390a7c",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            company: formData.company,
+            subject: formData.subject,
+            message: formData.message,
+            _captcha: false,
+            // _next: "https://cloudconektion.com/thank-you",
+          }),
         }
       );
+
+      setFormSubmitted(true);
+
+      setTimeout(() => {
+        setFormSubmitted(false);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          subject: "",
+          message: "",
+        });
+      }, 3000);
+      setIsLoading(false);
+    } catch (error) {
+      console.error("Error sending form:", error);
+      setIsLoading(false);
+    }
   };
+
   return (
     <>
       <section
@@ -64,7 +96,7 @@ const Social = () => {
               Get in Touch
             </h2>
 
-            <form ref={form} onSubmit={sendEmail} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
                   <MdPerson className="text-[#25A69F] text-2xl" />
@@ -73,6 +105,8 @@ const Social = () => {
                 <input
                   type="text"
                   name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
                   required
                   className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                 />
@@ -86,6 +120,8 @@ const Social = () => {
                 <input
                   type="email"
                   name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
                   required
                   className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                 />
@@ -97,7 +133,9 @@ const Social = () => {
                 </label>
                 <input
                   type="tel"
-                  name="number"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
                   required
                   className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                 />
@@ -110,6 +148,8 @@ const Social = () => {
                 <input
                   type="text"
                   name="company"
+                  value={formData.company}
+                  onChange={handleInputChange}
                   required
                   className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                 />
@@ -122,7 +162,9 @@ const Social = () => {
                 </label>
                 <input
                   type="text"
-                  name="need"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleInputChange}
                   required
                   className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                 />
@@ -135,6 +177,8 @@ const Social = () => {
                 </label>
                 <textarea
                   name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
                   rows="4"
                   required
                   className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
@@ -145,8 +189,8 @@ const Social = () => {
                 type="submit"
                 className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#25A69F] hover:bg-[#25A69F]/90 text-white font-medium rounded-lg transition-all duration-300"
               >
-                {submitRign ? (
-                  <TbLoader className="animate-spin w-4 h-4" />
+                {isLoading ? (
+                  <TbLoader className="animate-spin w-6 h-6" />
                 ) : (
                   "Send Message"
                 )}
@@ -206,6 +250,7 @@ const Social = () => {
                   key={i}
                   href={link}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className={`flex flex-col items-center justify-center h-24 rounded-xl text-white ${color} hover:brightness-110 transition shadow-md`}
                 >
                   <Icon className="text-2xl mb-1" />
@@ -234,8 +279,9 @@ const Social = () => {
           </div>
         </div>
       </section>
+
       <AnimatePresence>
-        {showPopup && (
+        {formSubmitted && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -256,10 +302,10 @@ const Social = () => {
                 Thank You!
               </h3>
               <p className="text-gray-600 mb-6">
-                We've received your application and will contact you shortly.
+                We've received your message and will contact you shortly.
               </p>
               <button
-                onClick={() => setShowPopup(false)}
+                onClick={() => setFormSubmitted(false)}
                 className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
               >
                 Close
@@ -268,22 +314,8 @@ const Social = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
       <Calendly show={showCalendly} onClose={() => setShowCalendly(false)} />
-      <style>{`
-        @keyframes fade-in-up {
-          0% {
-            opacity: 0;
-            transform: translateY(10px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fade-in-up {
-          animation: fade-in-up 0.3s ease-out forwards;
-        }
-      `}</style>
     </>
   );
 };

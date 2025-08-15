@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   FaUser,
   FaEnvelope,
@@ -9,36 +9,48 @@ import {
 } from "react-icons/fa";
 import { MdSubject } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";
-import emailjs from "@emailjs/browser";
 import { TbLoader } from "react-icons/tb";
+
 const CareerForm = () => {
-  const [submitRign, setSubmitRing] = useState(false);
-  const [showPopup, setShowPopup] = useState(false);
-  const form = useRef();
-  const publicKey = "vqs8cPefiJoNphzzB";
-  const serviceId = "service_55ubscz";
-  const templeteId = "template_be7y4a9";
-  const sendEmail = (e) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+    cv: null,
+  });
+  const formRef = useRef(null);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleFileChange = (e) => {
+    const { name, files } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: files[0] }));
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitRing(true);
-    emailjs
-      .sendForm(serviceId, templeteId, form.current, {
-        publicKey: publicKey,
-      })
-      .then(
-        () => {
-          console.log("SUCCESS!");
-          setShowPopup(true);
-          setSubmitRing(false);
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-          alert(
-            "Someting is error sending data do not panic we will resolve soon. Please Email us"
-          );
-          setSubmitRing(false);
-        }
-      );
+    setIsLoading(true);
+
+    const formDataObj = new FormData();
+    formDataObj.append("name", formData.name);
+    formDataObj.append("email", formData.email);
+    formDataObj.append("phone", formData.phone);
+    formDataObj.append("subject", formData.subject);
+    formDataObj.append("message", formData.message);
+    if (formData.cv) {
+      formDataObj.append("cv", formData.cv);
+    }
+
+    if (formRef.current) {
+      formRef.current.submit();
+    }
   };
 
   return (
@@ -56,7 +68,22 @@ const CareerForm = () => {
         <p className="mt-3 text-gray-600">We're excited to hear from you!</p>
       </div>
 
-      <form ref={form} onSubmit={sendEmail} className="space-y-6">
+      <form
+        ref={formRef}
+        action="https://formsubmit.co/800386826fd1b74ec1bab79279390a7c"
+        method="POST"
+        encType="multipart/form-data"
+        onSubmit={handleSubmit}
+        className="space-y-6"
+      >
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <input
+          type="hidden"
+          name="_next"
+          value="https://ababil-group.netlify.app/thank-you"
+        />
+
         <div className="relative group">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <FaUser className="text-gray-400 group-focus-within:text-indigo-500 transition-colors" />
@@ -64,6 +91,8 @@ const CareerForm = () => {
           <input
             type="text"
             name="name"
+            value={formData.name}
+            onChange={handleInputChange}
             className="bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-indigo-300 focus:border-indigo-500 block w-full pl-10 p-3 transition-all duration-200 shadow-sm"
             placeholder="Full Name"
             required
@@ -77,6 +106,8 @@ const CareerForm = () => {
           <input
             type="email"
             name="email"
+            value={formData.email}
+            onChange={handleInputChange}
             className="bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-indigo-300 focus:border-indigo-500 block w-full pl-10 p-3 transition-all duration-200 shadow-sm"
             placeholder="Email Address"
             required
@@ -89,7 +120,9 @@ const CareerForm = () => {
           </div>
           <input
             type="tel"
-            name="company_name"
+            name="phone"
+            value={formData.phone}
+            onChange={handleInputChange}
             className="bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-indigo-300 focus:border-indigo-500 block w-full pl-10 p-3 transition-all duration-200 shadow-sm"
             placeholder="Phone Number"
             required
@@ -102,7 +135,9 @@ const CareerForm = () => {
           </div>
           <input
             type="text"
-            name="need"
+            name="subject"
+            value={formData.subject}
+            onChange={handleInputChange}
             className="bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-indigo-300 focus:border-indigo-500 block w-full pl-10 p-3 transition-all duration-200 shadow-sm"
             placeholder="Subject"
             required
@@ -116,6 +151,8 @@ const CareerForm = () => {
           <textarea
             rows="5"
             name="message"
+            value={formData.message}
+            onChange={handleInputChange}
             className="bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-indigo-300 focus:border-indigo-500 block w-full pl-10 p-3 transition-all duration-200 shadow-sm"
             placeholder="Tell us about yourself and why you'd be a great fit..."
             required
@@ -127,13 +164,24 @@ const CareerForm = () => {
             <FaFileAlt className="text-gray-400 group-focus-within:text-indigo-500 transition-colors" />
           </div>
           <div className="flex items-center">
-            <input
-              type="file"
-              // name="cv"
-              className="block w-full text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-indigo-100 file:text-indigo-700 hover:file:bg-indigo-200 transition-colors file:cursor-pointer file:shadow-sm pl-10"
-              accept=".pdf,.doc,.docx,.txt"
-              required
-            />
+            <label className="block w-full cursor-pointer">
+              <input
+                type="file"
+                name="cv"
+                onChange={handleFileChange}
+                className="hidden"
+                accept=".pdf,.doc,.docx,.txt"
+                required
+              />
+              <div className="flex items-center justify-between w-full px-4 py-2.5 bg-white border border-gray-200 rounded-lg text-gray-500 hover:bg-gray-50 transition-colors">
+                <span className="truncate mr-2">
+                  {formData.cv ? formData.cv.name : "Upload your CV"}
+                </span>
+                <span className="text-xs font-semibold bg-indigo-100 text-indigo-700 px-2.5 py-1 rounded">
+                  Browse
+                </span>
+              </div>
+            </label>
           </div>
           <p className="mt-2 text-xs text-gray-500">
             Supported formats: PDF, DOC, DOCX (Max 5MB)
@@ -142,12 +190,16 @@ const CareerForm = () => {
 
         <button
           type="submit"
+          disabled={isLoading}
           className="flex items-center justify-center w-full px-6 py-3.5 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white font-semibold rounded-lg hover:from-indigo-700 hover:to-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 transition-all duration-200 shadow-lg hover:shadow-indigo-200"
         >
-          {submitRign ? (
-            <TbLoader className="animate-spin w-4 h-4" />
+          {isLoading ? (
+            <TbLoader className="animate-spin w-6 h-6" />
           ) : (
-            "Submit Application"
+            <>
+              <FaPaperPlane className="mr-2" />
+              Submit Application
+            </>
           )}
         </button>
       </form>
@@ -157,7 +209,7 @@ const CareerForm = () => {
       </p>
 
       <AnimatePresence>
-        {showPopup && (
+        {formSubmitted && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -181,7 +233,7 @@ const CareerForm = () => {
                 We've received your application and will contact you shortly.
               </p>
               <button
-                onClick={() => setShowPopup(false)}
+                onClick={() => setFormSubmitted(false)}
                 className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
               >
                 Close

@@ -12,36 +12,73 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 import { TbLoader } from "react-icons/tb";
-import emailjs from "@emailjs/browser";
 
 const WorkforceContactForm = () => {
-  const [submitRign, setSubmitRing] = useState(false);
-  const [showPopup, setShowPopup] = useState(false);
-  const form = useRef();
-  const publicKey = "vqs8cPefiJoNphzzB";
-  const serviceId = "service_55ubscz";
-  const templeteId = "template_be7y4a9";
-  const sendEmail = (e) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    company_name: "",
+    number: "",
+    email: "",
+    website: "",
+    worker_size: "",
+    worker_need: "",
+    message: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitRing(true);
-    emailjs
-      .sendForm(serviceId, templeteId, form.current, {
-        publicKey: publicKey,
-      })
-      .then(
-        () => {
-          console.log("SUCCESS!");
-          setShowPopup(true);
-          setSubmitRing(false);
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-          alert(
-            "Someting is error sending data do not panic we will resolve soon. Please Email us"
-          );
-          setSubmitRing(false);
+    setIsLoading(true);
+    try {
+      await fetch(
+        "https://formsubmit.co/ajax/800386826fd1b74ec1bab79279390a7c",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            company_name: formData.company_name,
+            number: formData.number,
+            email: formData.email,
+            website: formData.website,
+            worker_size: formData.worker_size,
+            worker_need: formData.worker_need,
+            message: formData.message,
+            _captcha: false,
+            // _next: "https://cloudconektion.com/thank-you",
+          }),
         }
       );
+
+      setFormSubmitted(true);
+
+      setTimeout(() => {
+        setFormSubmitted(false);
+        setFormData({
+          name: "",
+          company_name: "",
+          number: "",
+          email: "",
+          website: "",
+          worker_size: "",
+          worker_need: "",
+          message: "",
+        });
+      }, 3000);
+      setIsLoading(false);
+    } catch (error) {
+      console.error("Error sending form:", error);
+      setIsLoading(false);
+    }
   };
 
   const formVariants = {
@@ -92,7 +129,6 @@ const WorkforceContactForm = () => {
           viewport={{ once: true }}
         >
           <div className="md:flex">
-           
             <div className="hidden md:block md:w-2/5 bg-gradient-to-br from-[#1A9695] to-[#1A9695]/90 p-8">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -139,17 +175,14 @@ const WorkforceContactForm = () => {
                   <h4 className="font-bold mb-2">Contact Information</h4>
                   <p className="text-sm text-blue-100">
                     <span className="block">Email: info@ababil.group</span>
-                    {/* <span className="block">Phone: +1 (555) 123-4567</span> */}
                   </p>
                 </div>
               </motion.div>
             </div>
 
-          
             <div className="md:w-3/5 p-8 md:p-10">
               <motion.form
-                ref={form}
-                onSubmit={sendEmail}
+                onSubmit={handleSubmit}
                 variants={formVariants}
                 initial="hidden"
                 whileInView="visible"
@@ -170,6 +203,8 @@ const WorkforceContactForm = () => {
                       type="text"
                       id="name"
                       name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
                       className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                       placeholder="John Smith"
                       required
@@ -193,6 +228,8 @@ const WorkforceContactForm = () => {
                         type="text"
                         id="company"
                         name="company_name"
+                        value={formData.company_name}
+                        onChange={handleInputChange}
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                         placeholder="Your Company Inc."
                         required
@@ -215,6 +252,8 @@ const WorkforceContactForm = () => {
                         type="tel"
                         id="phone"
                         name="number"
+                        value={formData.number}
+                        onChange={handleInputChange}
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                         placeholder="+1 (555) 123-4567"
                         required
@@ -239,6 +278,8 @@ const WorkforceContactForm = () => {
                         type="email"
                         id="email"
                         name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                         placeholder="your.email@example.com"
                         required
@@ -260,7 +301,9 @@ const WorkforceContactForm = () => {
                       <input
                         type="url"
                         id="website"
-                        // name="website"
+                        name="website"
+                        value={formData.website}
+                        onChange={handleInputChange}
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                         placeholder="https://yourcompany.com"
                       />
@@ -278,7 +321,9 @@ const WorkforceContactForm = () => {
                     </label>
                     <select
                       id="workforceSize"
-                      name="size"
+                      name="worker_size"
+                      value={formData.worker_size}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-white"
                       required
                     >
@@ -300,7 +345,9 @@ const WorkforceContactForm = () => {
                     </label>
                     <select
                       id="serviceNeeded"
-                      name="need"
+                      name="worker_need"
+                      value={formData.worker_need}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-white"
                       required
                     >
@@ -325,6 +372,8 @@ const WorkforceContactForm = () => {
                   <textarea
                     id="message"
                     name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
                     rows="4"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1A9695] focus:border-[#1A9695] transition"
                     placeholder="Tell us about your specific requirements, timeline, and any other details..."
@@ -337,10 +386,10 @@ const WorkforceContactForm = () => {
                     type="submit"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className={`w-full py-4 px-6 cursor-pointer bg-gradient-to-r from-[#1A9695] to-[#1A9695]/90 text-white font-bold rounded-lg shadow-md hover:shadow-lg transition `}
+                    className={`w-full py-4 px-6 cursor-pointer bg-gradient-to-r from-[#1A9695] to-[#1A9695]/90 text-white font-bold rounded-lg shadow-md hover:shadow-lg transition`}
                   >
-                    {submitRign ? (
-                      <TbLoader className="animate-spin w-4 h-4" />
+                    {isLoading ? (
+                      <TbLoader className="animate-spin w-6 h-6 mx-auto" />
                     ) : (
                       "Request Workforce Consultation"
                     )}
@@ -351,8 +400,9 @@ const WorkforceContactForm = () => {
           </div>
         </motion.div>
       </div>
+
       <AnimatePresence>
-        {showPopup && (
+        {formSubmitted && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -373,10 +423,10 @@ const WorkforceContactForm = () => {
                 Thank You!
               </h3>
               <p className="text-gray-600 mb-6">
-                We've received your application and will contact you shortly.
+                We've received your message and will contact you shortly.
               </p>
               <button
-                onClick={() => setShowPopup(false)}
+                onClick={() => setFormSubmitted(false)}
                 className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
               >
                 Close
